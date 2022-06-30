@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/* Các biến màu */
+:root {
+  --primary-color: #3bb77e;
+  --secondary-color: #ffba43;
+  --white-color: #ffffff;
+  --white-light-color: #e6e6e6;
+  --title-color: #1c2137;
+  --sub-title-color: #ffba43;
+  --body-text: #4a4a4a;
+  --light-green-color: #e2f9ee;
+  --light-yellow-color: #fff8ed;
+  --warning-color: #ff0000;
+  --light-grey: #f9faff;
+}
+
+/* Các biến phông chữ */
+:root {
+  --primary-font: "Roboto", sans-serif;
+}
