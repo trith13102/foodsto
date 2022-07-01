@@ -27,3 +27,8 @@
 :root {
   --primary-font: "Roboto", sans-serif;
 }
+
+
+html{
+  font-family: var(--primary-font);
+}
