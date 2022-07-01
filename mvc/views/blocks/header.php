@@ -58,7 +58,6 @@
                         </div> -->
                     </li>
                 </ul>
-            </div>
             <div class="iq-shop-btn">
                 <ul>
                     <li class="menu-item no-down">
@@ -82,11 +81,15 @@
                         </a>
                     </li>
                     <li class="menu-item no-down">
-                        <a href="" target="_self">
-                            <i class="fas fa-search"></i>
-                        </a>
+                        <form action="" id="search-box" method="post" target="_self">
+                            <button id="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <input type="text" id="search-text" placeholder="Tìm kiếm" required>
+                        </form>
                     </li>
                 </ul>
+            </div>
             </div>
         </div>
     </div>

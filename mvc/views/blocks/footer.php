@@ -12,7 +12,7 @@
                     <div class="widget">
                         <p>
                             Đăng ký nhận tin tức miễn phí và nhận ngay voucher
-                            giảm 10% cho lần đầu mua hàng đầu tiên tại FoodSto
+                            giảm 10% cho lần mua hàng đầu tiên tại FoodSto
                         </p>
                     </div>
                     <ul class="infor-share">
@@ -84,7 +84,7 @@
                             <li>
                                 <a href="">
                                     <i class="fa fa-envelope"></i>
-                                    <span>foodstostore@gmail.com</span>
+                                    <span>Foodstostore@gmail.com</span>
                                 </a>
                             </li>
                             <li>
