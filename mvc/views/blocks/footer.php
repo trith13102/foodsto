@@ -65,7 +65,7 @@
                                 <a href="">Về chúng tôi</a>
                             </li>
                             <li>
-                                <a href="">liên hệ</a>
+                                <a href="">Liên hệ</a>
                             </li>
                             <li>
                                 <a href="">Blog</a>
