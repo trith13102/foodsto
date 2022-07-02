@@ -5,7 +5,9 @@
          public function default()
          {
              $model = $this->model('homeModel');
-             $this->view('homeView', []);
+             $this->view('homeView', [
+                'testData' => $model->getData()
+             ]);
          }
 
          public function action()

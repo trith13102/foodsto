@@ -24,7 +24,27 @@
 
      <main>
           <div class="banner-main_home">
-               <h1 style="padding-top: 300px;">Test deployment</h1>
+               <div style="padding: 200px 0">
+                    <?php
+                         $testData = isset($data['testData']) ? $data['testData'] : [];
+                    ?>
+                    <table class="table mx-auto is-bordered is-striped is-narrow is-hoverable">
+                         <tr>
+                              <th>ID</th>
+                              <th>Dữ liệu</th>
+                         </tr>
+                         <?php
+                              foreach ($testData as $dataRow) {
+                                  echo '
+                                        <tr>
+                                             <td>'.$dataRow['id'].'</td>
+                                             <td>'.$dataRow['value'].'</td>
+                                        </tr> 
+                                   ';
+                              }
+                         ?>
+                    </table>
+               </div>
           </div>
      </main>
 
