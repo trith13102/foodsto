@@ -9,7 +9,7 @@
 
          public function getData()
          {
-            $query = "SELECT * FROM my_table";
+            $query = "SELECT * FROM members";
             $raw = $this->dbConnect->query($query);
 
             $result = [];

@@ -31,14 +31,16 @@
                     <table class="table mx-auto is-bordered is-striped is-narrow is-hoverable">
                          <tr>
                               <th>ID</th>
-                              <th>Dữ liệu</th>
+                              <th>Họ và Tên</th>
+                              <th>Vai trò</th>
                          </tr>
                          <?php
                               foreach ($testData as $dataRow) {
                                   echo '
                                         <tr>
                                              <td>'.$dataRow['id'].'</td>
-                                             <td>'.$dataRow['value'].'</td>
+                                             <td>'.$dataRow['full_name'].'</td>
+                                             <td>'.$dataRow['role'].'</td>
                                         </tr> 
                                    ';
                               }
