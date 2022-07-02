@@ -24,7 +24,7 @@
 
      <main>
           <div class="banner-main_home">
-               <h1>Test deployment</h1>
+               <h1 style="padding-top: 300px;">Test deployment</h1>
           </div>
      </main>
 
