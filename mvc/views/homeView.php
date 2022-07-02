@@ -9,9 +9,9 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
      <base href="http://localhost/foodsto/" target="_blank">
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-     <link rel="stylesheet" href="public/css/homeView.css">
      <link rel="stylesheet" href="public/css/base.css">
      <link rel="stylesheet" href="public/css/headerFooter.css">
+     <link rel="stylesheet" href="public/css/homeView.css">
      <title>FoodSto Store</title>
 
 </head>
@@ -19,13 +19,16 @@
 <body>
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      <script src="public/js/homeView.js"></script>
-     
 
-     <?php require_once './mvc/views/blocks/header.php'; ?>
+     <?php require_once 'mvc/views/blocks/header.php'; ?>
 
-     <div class="main"></div>
+     <main>
+          <div class="banner-main_home">
 
-     <?php require_once './mvc/views/blocks/footer.php'; ?>
+          </div>
+     </main>
+
+     <?php require_once 'mvc/views/blocks/footer.php'; ?>
 
 </body>
 
