@@ -12,7 +12,7 @@
      <link rel="stylesheet" href="public/css/homeView.css">
      <link rel="stylesheet" href="public/css/base.css">
      <link rel="stylesheet" href="public/css/headerFooter.css">
-     <title>Greeting</title>
+     <title>FoodSto Store</title>
 
 </head>
 
@@ -21,11 +21,11 @@
      <script src="public/js/homeView.js"></script>
      
 
-     <?php require_once "./mvc/views/blocks/header.php"; ?>
+     <?php require_once './mvc/views/blocks/header.php'; ?>
 
      <div class="main"></div>
 
-     <?php require_once "./mvc/views/blocks/footer.php"; ?>
+     <?php require_once './mvc/views/blocks/footer.php'; ?>
 
 </body>
 
