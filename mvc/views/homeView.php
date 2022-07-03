@@ -23,30 +23,7 @@
      <?php require_once 'mvc/views/blocks/header.php'; ?>
 
      <main>
-          <div class="banner-main_home">
-               <div style="padding: 200px 0">
-                    <?php
-                         $testData = isset($data['testData']) ? $data['testData'] : [];
-                    ?>
-                    <table class="table mx-auto is-bordered is-striped is-narrow is-hoverable">
-                         <tr>
-                              <th>ID</th>
-                              <th>Họ và Tên</th>
-                              <th>Vai trò</th>
-                         </tr>
-                         <?php
-                              foreach ($testData as $dataRow) {
-                                  echo '
-                                        <tr>
-                                             <td>'.$dataRow['id'].'</td>
-                                             <td>'.$dataRow['full_name'].'</td>
-                                             <td>'.$dataRow['role'].'</td>
-                                        </tr> 
-                                   ';
-                              }
-                         ?>
-                    </table>
-               </div>
+          <div class="banner-main_home">               
           </div>
      </main>
 
