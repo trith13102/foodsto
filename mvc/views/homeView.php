@@ -22,7 +22,8 @@
 
      <?php require_once 'mvc/views/blocks/header.php'; ?>
 
-     <div class="banner-main_home"> </div>
+     <div class="banner-main_home">          
+     </div>
 
      <main>
 
