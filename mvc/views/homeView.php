@@ -25,6 +25,7 @@
      <div class="banner-main_home"> </div>
 
      <main>
+<<<<<<< HEAD
 
           <section class="home__title-bar">
                <div class="title-bar__list">
@@ -160,6 +161,10 @@
                </div>
           </section>
 
+=======
+          <div class="banner-main_home">               
+          </div>
+>>>>>>> c08cae66b7737c4ac332e9cff09e554ed424339f
      </main>
 
      <?php require_once 'mvc/views/blocks/footer.php'; ?>
