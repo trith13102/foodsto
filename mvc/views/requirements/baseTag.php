@@ -1,3 +1,3 @@
 <?php
 
-echo '<base href="https://foodsto-store.herokuapp.com/" target="_blank">';
+echo '<base href="http://localhost/foodsto/" target="_blank">';
