@@ -33,11 +33,9 @@ module.exports = {
       "7xl": "5rem",
     },
     fontFamily: {
-      Sailec: "SailecRegular",
-      SailecM: "SailecMedium",
-      HermannSB: "HermannSB",
-      HermannSBI: "HermannSBI",
+      "primary-font": "'Roboto', sans-serif"
     },
+
     extend: {
       spacing: {
         30: "7.5rem",
@@ -52,13 +50,18 @@ module.exports = {
         7: "1.75rem",
       },
       colors: {
-        current: "#003057",
-        "blue-light": "rgb(245, 249, 255)",
-        blue: "#3369FF",
-        "royal-blue": "#26459B",
-        "navy-blue": "#4D6E89",
-        "peach-orange": "rgb(255, 211, 150)",
-        "malibu-blue": "rgb(139, 188, 255)",
+        "primary-color": "#3bb77e",
+        "secondary-color": "#ffba43",
+        "white-color": "#ffffff",
+        "white-light-color": "#e6e6e6",
+        "title-color": "#1c2137",
+        "sub-title-color": "#ffba43",
+        "body-text": "#4a4a4a",
+        "descr-text": "#6c7689",
+        "light-green-color": "#e2f9ee",
+        "light-yellow-color": "#fff8ed",
+        "warning-color": "#ff0000",
+        "light-grey": "#f9faff",
       },
     },
   },

@@ -17,7 +17,7 @@
 </head>
 
 <body>
-     <div class="w-44 h-96 bg-red-500"></div>
+     <div class="w-44 h-96 bg-secondary-color"></div>
 </body>
 
 </html>
