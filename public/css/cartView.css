@@ -642,6 +642,10 @@ video {
   z-index: 10;
 }
 
+.float-right {
+  float: right;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1047,6 +1051,10 @@ video {
   padding: 1rem;
 }
 
+.p-30 {
+  padding: 7.5rem;
+}
+
 .py-26 {
   padding-top: 6.5rem;
   padding-bottom: 6.5rem;
@@ -1102,14 +1110,24 @@ video {
   padding-right: 0.25rem;
 }
 
-.py-30 {
-  padding-top: 7.5rem;
-  padding-bottom: 7.5rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-7\.5 {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.py-30 {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
 }
 
 .pt-36 {

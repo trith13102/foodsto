@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <?php require_once 'mvc/views/requirements/baseTag.php'; ?>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -38,7 +37,7 @@
     <main class="font-primary-font relative">
         <div class="absolute z-10 left-auto -top-15 h-[13.25rem] w-[14.2rem] -right-12.5 bg-[url('https://wordpress.iqonic.design/foodsto/wp-content/themes/foodsto/assets/images/backend/pattern-leaf-top.png')] "></div>
         <!--  Images and sub info-->
-        <div class="container mx-auto">
+        <div class="container px-4 mx-auto">
             <section class="product flex pt-30 justify-between">
                 <div class="product__image w-[42%]">
                     <div class="overflow-hidden mb-7.5 rounded-md">
@@ -79,7 +78,7 @@
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </span>
-                        <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                        <button class="tracking-wider uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
                     </form>
                     <a href="" class="block hover:text-primary-color"><i class="far fa-heart mr-2.25"></i><span>Thêm vào danh sách yêu thích</span></a>
                     <ul class="mt-4 flex gap-x-2">
@@ -223,7 +222,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -251,7 +250,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -279,7 +278,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -307,7 +306,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -335,7 +334,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
