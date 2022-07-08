@@ -92,7 +92,7 @@
                                 <td colspan="6">
                                     <div class="flex p-4">
                                         <div class="coupon flex">
-                                            <input class="rounded-md mr-4 p-4 bg-light-green-color border outline-none h-[46px] text-body-text" type="text" placeholder="Mã giảm giá">
+                                            <input class="placeholder-body-text rounded-md mr-4 p-4 bg-light-green-color border outline-none h-[46px] text-body-text" type="text" placeholder="Mã giảm giá">
                                             <button class="text-white duration-500 tracking-wide bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Áp dụng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
                                         </div>
                                         <button class="ml-auto tracking-wide text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Cập nhật giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
@@ -118,7 +118,7 @@
                         </tbody>
                     </table>
                     <div class="py-4">
-                        <a href="" class="inline-block mb-3 tracking-wider leading-relaxed ml-auto uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Tiến hành thanh toán<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                        <a href="checkout" class="inline-block mb-3 tracking-wider leading-relaxed ml-auto uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Tiến hành thanh toán<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                     </div>
                 </div>
             </article>
@@ -127,7 +127,6 @@
 
 
     <script src="public/js/cartView.js"></script>
-
     <?php require_once 'mvc/views/blocks/footer.php'; ?>
 
 </body>

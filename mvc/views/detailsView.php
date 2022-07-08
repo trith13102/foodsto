@@ -121,15 +121,15 @@
                 <div id="tab__info" class="tabs__content hidden">
                     <table class="w-full rounded-md border border-primary-color border-separate">
                         <tr class="leading-loose">
-                            <th class="border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Quy cách</th>
+                            <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Quy cách</th>
                             <td class="italic px-7.5 py-2">1 cái, 2 cái, 3 cái</td>
                         </tr>
                         <tr class="leading-loose bg-[#00000006]">
-                            <th class="border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Lợi ích sức khỏe</th>
+                            <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Lợi ích sức khỏe</th>
                             <td class="italic px-7.5 py-2">Có</td>
                         </tr>
                         <tr class="leading-loose">
-                            <th class="border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Kích thước</th>
+                            <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Kích thước</th>
                             <td class="italic px-7.5 py-2">5 x 5 x 10cm</td>
                         </tr>
                     </table>
@@ -138,8 +138,8 @@
                     <h2 class="font-bold text-3xl text-title-color mb-7.5">2 đánh giá cho Bolthouse</h2>
                     <ol>
                         <li class="flex mb-5">
-                            <img class="block rounded-full w-20 h-20" src="https://secure.gravatar.com/avatar/172ae4e4ae71d2afcc0e98f33c1b4cfc?s=60&d=mm&r=g">
-                            <div class="ml-7.5 flex flex-col mb-4 justify-between">
+                            <img class="mb-4 block rounded-full w-20 h-20" src="https://secure.gravatar.com/avatar/172ae4e4ae71d2afcc0e98f33c1b4cfc?s=60&d=mm&r=g">
+                            <div class="ml-7.5 flex flex-col justify-between">
                                 <b class="text-title-color text-lg">ADMIN</b>
                                 <span class="uppercase text-primary-color text-sm font-bold">9 Tháng 7, 2022</span>
                                 <p>Ngon lắm!</p>
@@ -149,8 +149,8 @@
                             </span>
                         </li>
                         <li class="flex mb-5">
-                            <img class="block rounded-full w-20 h-20" src="https://secure.gravatar.com/avatar/172ae4e4ae71d2afcc0e98f33c1b4cfc?s=60&d=mm&r=g">
-                            <div class="ml-7.5 flex flex-col mb-4 justify-between">
+                            <img class="mb-4 block rounded-full w-20 h-20" src="https://secure.gravatar.com/avatar/172ae4e4ae71d2afcc0e98f33c1b4cfc?s=60&d=mm&r=g">
+                            <div class="ml-7.5 flex flex-col justify-between">
                                 <b class="text-title-color text-lg">ADMIN</b>
                                 <span class="uppercase text-primary-color text-sm font-bold">9 Tháng 7, 2022</span>
                                 <p>Sản phẩm tốt, đáng để mua!</p>
@@ -170,16 +170,16 @@
                             </span>
                         </div>
                         <div class="form__comment mb-5">
-                            <label for="comment" class="block leading-none mb-4 font-medium">Ý kiến của bạn *</label>
+                            <label for="comment" class="block leading-loose mb-4 font-medium">Ý kiến của bạn *</label>
                             <textarea class="rounded-md w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4 h-28" name="" id="comment" cols="45" rows="8"></textarea>
                         </div>
                         <div class="form__author grid grid-cols-2 gap-x-4 mb-5">
                             <p>
-                                <label for="name" class="block leading-none">Tên *</label>
+                                <label for="name" class="mb-4 block leading-none">Tên *</label>
                                 <input id="name" type="text" class="rounded-md h-11 w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
                             </p>
                             <p>
-                                <label for="email" class="block leading-none">Email *</label>
+                                <label for="email" class="mb-4 block leading-none">Email *</label>
                                 <input id="email" type="text" class="rounded-md h-11 w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
                             </p>
                         </div>
