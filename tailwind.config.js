@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["**/*.{html,php}", "*/*.{html,php}" , "./mvc/views/detailsView.php", "./mvc/views/cartView.php"],
+  content: ["**/*.{html,php}", "*/*.{html,php}" , "./mvc/views/detailsView.php", "./mvc/views/cartView.php", "./mvc/views/checkoutView.php"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     screens: {

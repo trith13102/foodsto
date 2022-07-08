@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="public/css/base.css">
     <link rel="stylesheet" href="public/css/headerFooter.css">
-    <link rel="stylesheet" href="public/css/cartView.css">
+    <link rel="stylesheet" href="public/css/tailwindCommon.css">
     <title>Giỏ hàng - FoodSto</title>
 
 </head>
