@@ -126,7 +126,7 @@
     </main>
 
 
-    <script src="public/js/detailsView.js"></script>
+    <script src="public/js/cartView.js"></script>
 
     <?php require_once 'mvc/views/blocks/footer.php'; ?>
 
