@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["**/*.{html,php}", "*/*.{html,php}"],
+  content: ["**/*.{html,php}", "*/*.{html,php}" , "./mvc/views/detailsView.php"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     screens: {
@@ -25,6 +25,7 @@ module.exports = {
       base: "1rem",
       lg: "1.125rem",
       xl: "1.25rem",
+      "title" : "3.188rem",
       "2xl": "1.5rem",
       "3xl": "1.875rem",
       "4xl": "2.25rem",
@@ -33,7 +34,8 @@ module.exports = {
       "7xl": "5rem",
     },
     fontFamily: {
-      "primary-font": "'Roboto', sans-serif"
+      "primary-font": "'Roboto', sans-serif",
+      "great-vibes": "'Great Vibes', cursive",
     },
 
     extend: {
@@ -48,6 +50,8 @@ module.exports = {
         15: "3.75rem",
         18: "4.5rem",
         7: "1.75rem",
+        19: "4.75rem",
+        12.5: "3.125rem",
       },
       colors: {
         "primary-color": "#3bb77e",
