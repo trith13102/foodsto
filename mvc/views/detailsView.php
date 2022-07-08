@@ -24,7 +24,7 @@
     <script src="public/js/homeView.js"></script>
 
     <?php require_once 'mvc/views/blocks/header.php'; ?>
-    <div class="banner__nav">
+    <div class="banner__nav font-primary-font">
         <div class="pt-36 py-26 text-center text-title-color">
             <h1 class="font-bold text-[70px]">Bolthouse</h1>
             <ol class="flex justify-center text-base mt-3">
