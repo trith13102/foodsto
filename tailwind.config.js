@@ -1,7 +1,16 @@
 module.exports = {
-  content: ["**/*.{html,php}", "*/*.{html,php}" , "./mvc/views/detailsView.php", "./mvc/views/cartView.php", "./mvc/views/checkoutView.php"],
+  content: [
+    "**/*.{html,php}",
+    "*/*.{html,php}",
+    "./mvc/views/detailsView.php",
+    "./mvc/views/cartView.php",
+    "./mvc/views/checkoutView.php",
+  ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
+    boxShadow: {
+      "custom-shadow-1": "0 0 2rem 0 rgba(136,152,170,.15) !important",
+    },
     screens: {
       xs: "375px",
       sm: "576px",
@@ -25,7 +34,7 @@ module.exports = {
       base: "1rem",
       lg: "1.125rem",
       xl: "1.25rem",
-      "title" : "3.188rem",
+      title: "3.188rem",
       "2xl": "1.5rem",
       "3xl": "1.875rem",
       "4xl": "2.25rem",
@@ -66,6 +75,7 @@ module.exports = {
         "light-yellow-color": "#fff8ed",
         "warning-color": "#ff0000",
         "light-grey": "#f9faff",
+        "whiten-bg-color": "#f9faff",
       },
     },
   },
@@ -75,5 +85,7 @@ module.exports = {
   plugins: [],
 };
 
-// Chạy lệnh dưới đây để khởi động TailwindCSS
-// npx tailwindcss -i ./public/css/tailwind/<pageView>.css -o ./public/css/<pageView>.css --watch
+// Không cần tạo file mới chỉ cần
+// 1. Thêm thẻ <link rel="stylesheet" href="public/css/tailwindCommon.css">
+// 2. Chạy lệnh dưới đây để khởi động TailwindCSS
+// npx tailwindcss -i ./public/css/tailwind/tailwindCommon.css -o ./public/css/tailwindCommon.css --watch
