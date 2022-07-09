@@ -9,7 +9,7 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     boxShadow: {
-      "custom-shadow-1": "0 0 2rem 0 rgba(136,152,170,.15) !important",
+      "custom-shadow-1": "rgba(149, 157, 165, 0.2) 0px 8px 24px",
     },
     screens: {
       xs: "375px",
