@@ -6,6 +6,11 @@
          {
              $model = $this->model('adminModel');
 
-             $this->view('adminView', []);
+             $this->view('adminView', [
+                'categories' => $model->getCategories(),
+             ]);
          }
      }
+
+
+     

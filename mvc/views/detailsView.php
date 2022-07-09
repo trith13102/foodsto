@@ -64,7 +64,9 @@
                     </div>
                     <div class="flex items-center">
                         <span class="flex">
-                            <?php for ($i = 0; $i < 5; $i++) echo '<i class="fa-solid fa-star text-secondary-color"></i>'; ?>
+                            <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="fa-solid fa-star text-secondary-color"></i>';
+} ?>
                         </span>
                         <a href="" class="hover:text-secondary-color transition-colors ml-4">(2 đánh giá của khách hàng)</a>
                     </div>
@@ -146,7 +148,9 @@
                                 <p>Ngon lắm!</p>
                             </div>
                             <span class="flex ml-auto">
-                                <?php for ($i = 0; $i < 5; $i++) echo '<i class="fa-solid fa-star text-secondary-color"></i>'; ?>
+                                <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="fa-solid fa-star text-secondary-color"></i>';
+} ?>
                             </span>
                         </li>
                         <li class="flex mb-5">
@@ -157,7 +161,9 @@
                                 <p>Sản phẩm tốt, đáng để mua!</p>
                             </div>
                             <span class="flex ml-auto">
-                                <?php for ($i = 0; $i < 5; $i++) echo '<i class="fa-solid fa-star text-secondary-color"></i>'; ?>
+                                <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="fa-solid fa-star text-secondary-color"></i>';
+} ?>
                             </span>
                         </li>
                     </ol>
@@ -167,7 +173,9 @@
                         <div class="form__rating mb-4 flex">
                             <label class="font-medium">Đánh giá của bạn *</label>
                             <span class="ml-7.5">
-                                <?php for ($i = 0; $i < 5; $i++) echo '<i class="rating__star fa-regular fa-star text-secondary-color"></i>'; ?>
+                                <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="rating__star fa-regular fa-star text-secondary-color"></i>';
+} ?>
                             </span>
                         </div>
                         <div class="form__comment mb-5">
@@ -217,7 +225,9 @@
                                             <div class="flex justify-between items-center mt-2 mb-2.25">
                                                 <p class="text-primary-color font-semibold text-lg">$7.50</p>
                                                 <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; $i++) echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>'; ?>
+                                                    <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+} ?>
                                                 </span>
                                             </div>
                                         </div>
@@ -245,7 +255,9 @@
                                             <div class="flex justify-between items-center mt-2 mb-2.25">
                                                 <p class="text-primary-color font-semibold text-lg">$7.50</p>
                                                 <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; $i++) echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>'; ?>
+                                                    <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+} ?>
                                                 </span>
                                             </div>
                                         </div>
@@ -273,7 +285,9 @@
                                             <div class="flex justify-between items-center mt-2 mb-2.25">
                                                 <p class="text-primary-color font-semibold text-lg">$7.50</p>
                                                 <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; $i++) echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>'; ?>
+                                                    <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+} ?>
                                                 </span>
                                             </div>
                                         </div>
@@ -301,7 +315,9 @@
                                             <div class="flex justify-between items-center mt-2 mb-2.25">
                                                 <p class="text-primary-color font-semibold text-lg">$7.50</p>
                                                 <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; $i++) echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>'; ?>
+                                                    <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+} ?>
                                                 </span>
                                             </div>
                                         </div>
@@ -329,7 +345,9 @@
                                             <div class="flex justify-between items-center mt-2 mb-2.25">
                                                 <p class="text-primary-color font-semibold text-lg">$7.50</p>
                                                 <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; $i++) echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>'; ?>
+                                                    <?php for ($i = 0; $i < 5; ++$i) {
+    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+} ?>
                                                 </span>
                                             </div>
                                         </div>

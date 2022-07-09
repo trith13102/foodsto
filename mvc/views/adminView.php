@@ -17,7 +17,14 @@
 </head>
 
 <body>
-     <div class="w-44 h-96 bg-secondary-color"></div>
+     <div class="w-44 h-96 bg-secondary-color">
+          <?php
+               $categories = isset($data['categories']) ? $data['categories'] : [];
+               foreach ($categories as $category) {
+                   print_r($category);
+               }
+          ?>
+     </div>
 </body>
 
 </html>
