@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <?php require_once 'mvc/views/requirements/baseTag.php'; ?>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="public/css/base.css">
     <link rel="stylesheet" href="public/css/headerFooter.css">
-    <link rel="stylesheet" href="public/css/detailsView.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="public/css/tailwindCommon.css">
 
     <title>Bolthouse - FoodSto</title>
 
@@ -24,7 +23,7 @@
     <script src="public/js/homeView.js"></script>
 
     <?php require_once 'mvc/views/blocks/header.php'; ?>
-    <div class="banner__nav">
+    <div class="banner__nav font-primary-font">
         <div class="pt-36 py-26 text-center text-title-color">
             <h1 class="font-bold text-[70px]">Bolthouse</h1>
             <ol class="flex justify-center text-base mt-3">
@@ -38,7 +37,7 @@
     <main class="font-primary-font relative">
         <div class="absolute z-10 left-auto -top-15 h-[13.25rem] w-[14.2rem] -right-12.5 bg-[url('https://wordpress.iqonic.design/foodsto/wp-content/themes/foodsto/assets/images/backend/pattern-leaf-top.png')] "></div>
         <!--  Images and sub info-->
-        <div class="container mx-auto">
+        <div class="container px-4 mx-auto">
             <section class="product flex pt-30 justify-between">
                 <div class="product__image w-[42%]">
                     <div class="overflow-hidden mb-7.5 rounded-md">
@@ -81,7 +80,7 @@
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </span>
-                        <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                        <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
                     </form>
                     <a href="" class="block hover:text-primary-color"><i class="far fa-heart mr-2.25"></i><span>Thêm vào danh sách yêu thích</span></a>
                     <ul class="mt-4 flex gap-x-2">
@@ -124,15 +123,15 @@
                 <div id="tab__info" class="tabs__content hidden">
                     <table class="w-full rounded-md border border-primary-color border-separate">
                         <tr class="leading-loose">
-                            <th class="border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Quy cách</th>
+                            <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Quy cách</th>
                             <td class="italic px-7.5 py-2">1 cái, 2 cái, 3 cái</td>
                         </tr>
                         <tr class="leading-loose bg-[#00000006]">
-                            <th class="border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Lợi ích sức khỏe</th>
+                            <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Lợi ích sức khỏe</th>
                             <td class="italic px-7.5 py-2">Có</td>
                         </tr>
                         <tr class="leading-loose">
-                            <th class="border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Kích thước</th>
+                            <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Kích thước</th>
                             <td class="italic px-7.5 py-2">5 x 5 x 10cm</td>
                         </tr>
                     </table>
@@ -141,8 +140,8 @@
                     <h2 class="font-bold text-3xl text-title-color mb-7.5">2 đánh giá cho Bolthouse</h2>
                     <ol>
                         <li class="flex mb-5">
-                            <img class="block rounded-full w-20 h-20" src="https://secure.gravatar.com/avatar/172ae4e4ae71d2afcc0e98f33c1b4cfc?s=60&d=mm&r=g">
-                            <div class="ml-7.5 flex flex-col mb-4 justify-between">
+                            <img class="mb-4 block rounded-full w-20 h-20" src="https://secure.gravatar.com/avatar/172ae4e4ae71d2afcc0e98f33c1b4cfc?s=60&d=mm&r=g">
+                            <div class="ml-7.5 flex flex-col justify-between">
                                 <b class="text-title-color text-lg">ADMIN</b>
                                 <span class="uppercase text-primary-color text-sm font-bold">9 Tháng 7, 2022</span>
                                 <p>Ngon lắm!</p>
@@ -154,8 +153,8 @@
                             </span>
                         </li>
                         <li class="flex mb-5">
-                            <img class="block rounded-full w-20 h-20" src="https://secure.gravatar.com/avatar/172ae4e4ae71d2afcc0e98f33c1b4cfc?s=60&d=mm&r=g">
-                            <div class="ml-7.5 flex flex-col mb-4 justify-between">
+                            <img class="mb-4 block rounded-full w-20 h-20" src="https://secure.gravatar.com/avatar/172ae4e4ae71d2afcc0e98f33c1b4cfc?s=60&d=mm&r=g">
+                            <div class="ml-7.5 flex flex-col justify-between">
                                 <b class="text-title-color text-lg">ADMIN</b>
                                 <span class="uppercase text-primary-color text-sm font-bold">9 Tháng 7, 2022</span>
                                 <p>Sản phẩm tốt, đáng để mua!</p>
@@ -179,16 +178,16 @@
                             </span>
                         </div>
                         <div class="form__comment mb-5">
-                            <label for="comment" class="block leading-none mb-4 font-medium">Ý kiến của bạn *</label>
+                            <label for="comment" class="block leading-loose mb-4 font-medium">Ý kiến của bạn *</label>
                             <textarea class="rounded-md w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4 h-28" name="" id="comment" cols="45" rows="8"></textarea>
                         </div>
                         <div class="form__author grid grid-cols-2 gap-x-4 mb-5">
                             <p>
-                                <label for="name" class="block leading-none">Tên *</label>
+                                <label for="name" class="mb-4 block leading-none">Tên *</label>
                                 <input id="name" type="text" class="rounded-md h-11 w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
                             </p>
                             <p>
-                                <label for="email" class="block leading-none">Email *</label>
+                                <label for="email" class="mb-4 block leading-none">Email *</label>
                                 <input id="email" type="text" class="rounded-md h-11 w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
                             </p>
                         </div>
@@ -233,7 +232,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -263,7 +262,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -293,7 +292,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -323,7 +322,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -353,7 +352,7 @@
                                         </div>
                                     </a>
                                     <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                         <ul class="flex gap-x-1">
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                             <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
