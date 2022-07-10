@@ -30,9 +30,8 @@ const myChart1 = new Chart(ctx1, {
       {
         label: "Số lượt mua",
         data: [12, 19, 3, 5, 2, 3, 20, 21, 22, 23, 34, 12],
-        fill: false,
         borderColor: "#3bb77e",
-        tension: 0.1,
+        tension: 0.2,
       },
     ],
   },
@@ -45,7 +44,6 @@ const myChart1 = new Chart(ctx1, {
     plugins: {
       legend: {
         labels: {
-          // This more specific font property overrides the global property
           font: {
             size: 14,
             family: '"Roboto", sans-serif',
