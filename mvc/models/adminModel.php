@@ -4,14 +4,14 @@
      {
          public function getCategories()
          {
-             $script = 'SELECT * FROM san_pham';
-             $raw = $this->dbConnect->query($script);
-             
-             $result = [];
-             while ($row = $raw->fetch_assoc()) {
-               array_push($result, $row);
+             $query = 'SELECT ten_dmuc FROM danhmuc_sp';
+             $raw = $this->dbConnect->query($query);
+
+             $categories = [];
+             while ($category = $raw->fetch_assoc()) {
+                 array_push($categories, $category);
              }
 
-             return $result;
+             return $categories;
          }
      }

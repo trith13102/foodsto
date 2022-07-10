@@ -43,7 +43,7 @@ module.exports = {
       "7xl": "5rem",
     },
     fontFamily: {
-      "primary-font": "'Roboto', sans-serif",
+      "primary-font": "'Open Sans', sans-serif",
       "great-vibes": "'Great Vibes', cursive",
     },
 
