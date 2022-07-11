@@ -8,14 +8,14 @@
 
              $pageData = [$page];
              switch ($page) {
-                case 'category':
-                    array_push($pageData, $model->getCategories());
-                    break;
-                case 'account': break;
-                case 'product': break;
-                case 'discount': break;
-                default: break;
-             }
+                 case 'category':
+                     array_push($pageData, $model->getCategories());
+                     break;
+                 case 'account': break;
+                 case 'product': break;
+                 case 'discount': break;
+                 default: break;
+              }
 
              $this->view('adminView', [
                 'pageData' => $pageData,
