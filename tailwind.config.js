@@ -76,6 +76,7 @@ module.exports = {
         "warning-color": "#ff0000",
         "light-grey": "#f9faff",
         "whiten-bg-color": "#f9faff",
+        "modal-bg-color": "rgba(0, 0, 0, 0.7)",
       },
     },
   },
