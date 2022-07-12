@@ -38,10 +38,10 @@
                         <div class="menu-sol">
                             <ul class="list-menu-sol">
                                 <li>
-                                    <a href="" target="_self">Đăng nhập</a>
+                                    <a href="login" target="_self">Đăng nhập</a>
                                 </li>
                                 <li>
-                                    <a href="" target="_self">Đăng Ký</a>
+                                    <a href="login/signup" target="_self">Đăng Ký</a>
                                 </li>
                             </ul>
                         </div>
