@@ -35,7 +35,7 @@
     </div>
 
     <main class="font-primary-font relative">
-        <div class="absolute z-10 left-auto -top-15 h-[13.25rem] w-[14.2rem] -right-12.5 bg-[url('https://wordpress.iqonic.design/foodsto/wp-content/themes/foodsto/assets/images/backend/pattern-leaf-top.png')] "></div>
+        <div class="absolute z-10 left-auto -top-15 h-[13.25rem] w-[14.2rem] -right-0 bg-[url('https://wordpress.iqonic.design/foodsto/wp-content/themes/foodsto/assets/images/backend/pattern-leaf-top.png')] "></div>
         <!--  Images and sub info-->
         <div class="container px-4 mx-auto">
             <section class="product flex pt-30 justify-between">

@@ -29,9 +29,9 @@ const myChart1 = new Chart(ctx1, {
     datasets: [
       {
         label: "Số lượt mua",
-        data: [12, 19, 3, 5, 2, 3, 20, 21, 22, 23, 34, 12],
+        data: [12, 19, 3, 5, 2, 3, 22, 21, 22, 23, 34, 12],
         borderColor: "#3bb77e",
-        tension: 0.2,
+        tension: 0.1,
       },
     ],
   },

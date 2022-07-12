@@ -5,17 +5,16 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
      <?php require_once 'mvc/views/requirements/baseTag.php'; ?>
-     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-     <link rel="stylesheet" href="public/css/base.css">
-     <link rel="stylesheet" href="public/css/headerFooter.css">
-     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
      <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
           integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
      <script src="node_modules/chart.js/dist/chart.js"></script>
+     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
      <link rel="stylesheet" href="public/css/tailwindCommon.css">
+     <link rel="stylesheet" href="public/css/base.css">
      <title>FoodSto Management System</title>
      <style>
      #drop-down-menu:before {
@@ -37,9 +36,9 @@
      </style>
 </head>
 
-<body class="font-primary-font">
+<body class="font-primary-font ">
      <main class="flex h-screen overflow-hidden">
-          <aside class="z-50 sticky top-0 left-0 w-1/6 shadow-custom-shadow-1 bg-white">
+          <aside class="z-40 sticky top-0 left-0 w-1/6 shadow-custom-shadow-1 bg-white">
                <section class="px-8 py-10">
                     <a href="admin" target="_self">
                          <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1654415483/page_images/wide-logo_zoohrq.png"
@@ -49,25 +48,25 @@
                <section class="px-8">
                     <ul>
                          <li class=""><a
-                                   class="flex items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
+                                   class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
                                    href="admin/default/dashboard" target="_self"><i
                                         class="pr-2 bx bxs-bar-chart-alt-2 bx-sm text-primary-color"></i>Số liệu thống
                                    kê</a></li>
                          <li class=""><a
-                                   class="flex items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
+                                   class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
                                    href="admin/default/category" target="_self"><i
                                         class="pr-2 bx bxs-category-alt bx-sm text-primary-color"></i> Danh mục</a></li>
                          <li class=""><a
-                                   class="flex items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
+                                   class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
                                    href="admin/default/account" target="_self"><i
                                         class="pr-2 bx bxs-user-account bx-sm text-primary-color"></i> Tài khoản</a>
                          </li>
                          <li class=""><a
-                                   class="flex items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
+                                   class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
                                    href="admin/default/product" target="_self"><i
                                         class="pr-2 bx bxs-package bx-sm text-primary-color"></i> Sản phẩm</a></li>
                          <li class=""><a
-                                   class="flex items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
+                                   class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear"
                                    href="admin/default/discount" target="_self"><i
                                         class="pr-2 bx bxs-discount bx-sm text-primary-color"></i> Chương trình giảm
                                    giá</a></li>
@@ -89,7 +88,7 @@
                </div>
                <div class="px-10 py-5">
                     <div class="relative flex items-center justify-between  ">
-                         <h1 class="font-medium uppercase text-xl text-white">
+                         <h1 class="font-medium uppercase text-md text-white">
                               <?php
                                    $pageType = isset($data['pageData'][0]) ? $data['pageData'][0] : '';
                                    $pageTitle = [
@@ -122,16 +121,30 @@
                               </div>
                          </div>
                     </div>
-                    <div class="grid grid-cols-4 gap-5 my-16">
+                    <div class="grid grid-cols-4 gap-x-[20px] gap-y-[40px] my-16">
                          <?php
                               if ($pageType != '') {
-                                  require_once 'mvc/views/blocks/adminPageBlocks/'.$pageType.'.php';
+                                  //     require_once 'mvc/views/blocks/adminPageBlocks/'.$pageType.'.php';
+                                  if ($pageType == 'dashboard') {
+                                      require_once 'mvc/views/blocks/adminPageBlocks/dashboard.php';
+                                  } else {
+                                      require_once 'mvc/views/blocks/adminPageBlocks/category.php';
+                                  }
                               }
                          ?>
                     </div>
                </div>
           </section>
      </main>
+     <!-- <div class="z-50 fixed top-0 left-0 flex items-center justify-center w-screen h-screen bg-modal-bg-color backdrop-blur-sm">
+          <div class="w-1/4 h-1/5 rounded-md bg-white">
+               <h1>Xoá mục này</h1>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quo molestiae ullam nam, placeat id enim laborum aliquid, consectetur eaque necessitatibus repellendus iusto neque rerum doloremque! Voluptas in vitae quia.</p>
+          </div>
+          <div>
+               <button>Close</button>
+          </div>
+     </div> -->
      <script src="public/js/adminView.js"></script>
 </body>
 
