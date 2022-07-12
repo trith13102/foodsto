@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="public/css/tailwindCommon.css">
-    <link rel="stylesheet" href="public/css/categoryView.css">
-
-
+    <title>Danh Mục - FoodSto</title>
 
 </head>
 

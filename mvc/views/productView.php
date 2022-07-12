@@ -10,12 +10,9 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="public/css/base.css">
     <link rel="stylesheet" href="public/css/headerFooter.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="public/css/tailwindCommon.css">
-    <link rel="stylesheet" href="public/css/categoryView.css">
     <link rel="stylesheet" href="public/css/productView.css">
-    <title>Product</title>
+    <title>Sản Phẩm - FoodSto</title>
 
 </head>
 
