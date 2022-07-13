@@ -6,7 +6,8 @@ class Login extends Controller
         $this->view(
             "loginView",
             [
-                "page" => "loginForm"
+                "page" => "loginForm",
+                
             ]
         );
     }
