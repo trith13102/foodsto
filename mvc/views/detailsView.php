@@ -118,7 +118,7 @@
                         <li>Tâm trạng tốt hơn</li>
                     </ul>
                     <p class="my-4">Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque.</p>
-    
+
                 </div>
                 <div id="tab__info" class="tabs__content hidden">
                     <table class="w-full rounded-md border border-primary-color border-separate">
@@ -198,7 +198,7 @@
                         <button type="submit" class="uppercase text-white bg-primary-color hover:bg-secondary-color duration-500 transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Gửi</button>
                     </form>
                 </div>
-    
+
             </section>
             <!-- Related product -->
             <section class="mt-40 pb-30">
@@ -225,8 +225,8 @@
                                                 <p class="text-primary-color font-semibold text-lg">$7.50</p>
                                                 <span class="flex">
                                                     <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-} ?>
+                                            echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+                                        } ?>
                                                 </span>
                                             </div>
                                         </div>

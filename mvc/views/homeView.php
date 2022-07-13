@@ -12,6 +12,8 @@
      <link rel="stylesheet" href="public/css/base.css">
      <link rel="stylesheet" href="public/css/headerFooter.css">
      <link rel="stylesheet" href="public/css/homeView.css">
+     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     <link rel="stylesheet" href="public/css/tailwindCommon.css">
      <title>FoodSto Store</title>
 
 </head>
@@ -189,12 +191,12 @@
 
           <section class="home_product-bar">
                <div class="home_product-filters">
-                    <button data-filter=".breakfast-cereals" class="show active">Ngũ cốc ăn sáng</button>
-                    <button data-filter=".fruit-yogurt">Sữa chua trái cây</button>
-                    <button data-filter=".salads">Salads</button>
+                    <button class="tabs__title show"><a href="#breakfast-cereals">Ngũ cốc ăn sáng</a></button>
+                    <button class="tabs__title"><a href="#fruit-yogurt">Sữa chua trái cây</a></button>
+                    <button class="tabs__title"><a href="#salads">Salads</a></button>
                </div>
                <div class="home_product">
-                    <div class="h-product-list .breakfast-cereals">
+                    <div class="tabs__content h-product-list active" id="breakfast-cereals">
                          <div class="h-product-main">
                               <div class="h-product-item">
                                    <div class="inner-h-product">
@@ -544,7 +546,7 @@
                          </div>
                     </div>
 
-                    <div class="h-product-list .fruit-yogurt">
+                    <div class="tabs__content h-product-list" id="fruit-yogurt">
                          <div class="h-product-main">
                               <div class="h-product-item">
                                    <div class="inner-h-product">
@@ -895,7 +897,7 @@
                          </div>
                     </div>
 
-                    <div class="h-product-list .salads">
+                    <div class="tabs__content h-product-list" id="salads">
                          <div class="h-product-main">
                               <div class="h-product-item">
                                    <div class="inner-h-product">
@@ -1595,47 +1597,101 @@
                               <div class="title-divider"></div>
                          </div>
                     </section>
-                    <div class="h-respond__container">
+                    <div class="h-respond__container mySwiper">
                          <div class="h-respond__list">
                               <div class="h-respond__item">
-                                   <div class="h-item__main">
-                                        <p>
-                                             Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
-                                        </p>
-                                        <i class="fas fa-quote-right"></i>
-                                   </div>
-                                   <div class="h-item__name">
-                                        <h5>Shirley Edwards</h5>
-                                        <div class="h-item__user-img">
-                                             <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                                   <div class="h-inner-respond__item">
+                                        <div class="h-item__main">
+                                             <p>
+                                                  Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
+                                             </p>
+                                             <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="h-item__name">
+                                             <h5>Shirley Edwards</h5>
+                                             <div class="h-item__user-img">
+                                                  <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                                             </div>
                                         </div>
                                    </div>
                               </div>
                               <div class="h-respond__item">
-                                   <div class="h-item__main">
-                                        <p>
-                                             Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
-                                        </p>
-                                        <i class="fas fa-quote-right"></i>
-                                   </div>
-                                   <div class="h-item__name">
-                                        <h5>Shirley Edwards</h5>
-                                        <div class="h-item__user-img">
-                                             <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                                   <div class="h-inner-respond__item">
+                                        <div class="h-item__main">
+                                             <p>
+                                                  Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
+                                             </p>
+                                             <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="h-item__name">
+                                             <h5>Shirley Edwards</h5>
+                                             <div class="h-item__user-img">
+                                                  <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                                             </div>
                                         </div>
                                    </div>
                               </div>
                               <div class="h-respond__item">
-                                   <div class="h-item__main">
-                                        <p>
-                                             Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
-                                        </p>
-                                        <i class="fas fa-quote-right"></i>
+                                   <div class="h-inner-respond__item">
+                                        <div class="h-item__main">
+                                             <p>
+                                                  Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
+                                             </p>
+                                             <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="h-item__name">
+                                             <h5>Shirley Edwards</h5>
+                                             <div class="h-item__user-img">
+                                                  <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                                             </div>
+                                        </div>
                                    </div>
-                                   <div class="h-item__name">
-                                        <h5>Shirley Edwards</h5>
-                                        <div class="h-item__user-img">
-                                             <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                              </div>
+                              <div class="h-respond__item">
+                                   <div class="h-inner-respond__item">
+                                        <div class="h-item__main">
+                                             <p>
+                                                  Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
+                                             </p>
+                                             <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="h-item__name">
+                                             <h5>Shirley Edwards</h5>
+                                             <div class="h-item__user-img">
+                                                  <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="h-respond__item">
+                                   <div class="h-inner-respond__item">
+                                        <div class="h-item__main">
+                                             <p>
+                                                  Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
+                                             </p>
+                                             <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="h-item__name">
+                                             <h5>Shirley Edwards</h5>
+                                             <div class="h-item__user-img">
+                                                  <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="h-respond__item">
+                                   <div class="h-inner-respond__item">
+                                        <div class="h-item__main">
+                                             <p>
+                                                  Sản phẩm chất lượng, hoàn toàn tự nhiên, không chứa chất hóa học và thuốc trừ sâu. Mang lại cảm giác tươi mát!
+                                             </p>
+                                             <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="h-item__name">
+                                             <h5>Shirley Edwards</h5>
+                                             <div class="h-item__user-img">
+                                                  <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
+                                             </div>
                                         </div>
                                    </div>
                               </div>

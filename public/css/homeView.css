@@ -66,6 +66,7 @@ a.h-button.view {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding: 40px 0;
 }
 
 .view{
@@ -79,7 +80,7 @@ a.h-button.view {
 }
 
 .banner-img{
-  width: 90%;
+  width: 75%;
   position: relative;
 }
 
@@ -90,8 +91,8 @@ a.h-button.view {
 .main-img{
   width: 520px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 40px;
+  left: 10px;
   right: 0;
   margin: 0 auto;
 }
@@ -283,9 +284,9 @@ a.h-button.view {
   border: none;
 }
 
-button.show.active, button:hover {
-  background: var(--primary-color);
-  color: var(--white-color);
+.show, .tabs__title:hover {
+  background: var(--primary-color) !important;
+  color: var(--white-color) !important;
   box-shadow: -1.15px 10.94px 39.56px 3.44px rgb(0 0 0 / 15%);
 }
 
@@ -295,6 +296,14 @@ button.show.active, button:hover {
 
 .h-product-list{
   margin: 0 -15px;
+}
+
+.tabs__content{
+  display: none;
+}
+
+.tabs__content.active{
+  display: block;
 }
 
 .h-product-main{
@@ -767,14 +776,30 @@ a.add-to-wishlist:hover,
   color: var(--white-color);
 }
 
+.respond__container{
+  overflow: hidden;
+}
+
+.h-respond__container{
+  margin: 0 -15px;
+  overflow: hidden;
+}
+
 .h-respond__list{
   display: flex;
-  justify-content: space-between;
+  transition-property: transform;
+  box-sizing: content-box;
 }
 
 .h-respond__item{
-  width: 32%;
+  flex-shrink: 0;
+  width: 477px;
+  margin: 0 auto;
+}
+
+.h-inner-respond__item{
   padding: 10px;
+  margin: 0 15px;
   font-family: var(--primary-font);
   font-size: 1em;
   box-shadow: 0px 4px 28.14px 0.86px rgb(0 0 0 / 5%);
