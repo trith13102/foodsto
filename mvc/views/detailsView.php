@@ -103,7 +103,7 @@
                     <button class="tabs__title rounded-md py-2.5 px-7.5 hover:bg-primary-color hover:text-white transition-colors duration-500" data-name="tab__info">Thông tin phụ</button>
                     <button class="tabs__title rounded-md py-2.5 px-7.5 hover:bg-primary-color hover:text-white transition-colors duration-500" data-name="tab__reviews">Đánh giá (2)</button>
                 </div>
-                <div id="tab__desc" class="tabs__content hidden">
+                <div id="tab__desc" class="tabs__contents">
                     <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et.</p>
                     <div class="grid grid-cols-4 my-7.5 gap-x-7.5">
                         <img class="rounded-md" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655171112/product_images/ubgolasezpmmacnnmjas.jpg" alt="">
@@ -120,7 +120,7 @@
                     <p class="my-4">Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque.</p>
 
                 </div>
-                <div id="tab__info" class="tabs__content hidden">
+                <div id="tab__info" class="tabs__contents">
                     <table class="w-full rounded-md border border-primary-color border-separate">
                         <tr class="leading-loose">
                             <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Quy cách</th>
@@ -136,7 +136,7 @@
                         </tr>
                     </table>
                 </div>
-                <div id="tab__reviews" class="tabs__content hidden">
+                <div id="tab__reviews" class="tabs__contents">
                     <h2 class="font-bold text-3xl text-title-color mb-7.5">2 đánh giá cho Bolthouse</h2>
                     <ol>
                         <li class="flex mb-5">
@@ -148,8 +148,8 @@
                             </div>
                             <span class="flex ml-auto">
                                 <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="fa-solid fa-star text-secondary-color"></i>';
-} ?>
+                                echo '<i class="fa-solid fa-star text-secondary-color"></i>';
+                            } ?>
                             </span>
                         </li>
                         <li class="flex mb-5">

@@ -24,11 +24,12 @@
 
     //Tabs
     var tabsTitle = document.querySelectorAll('.tabs__title');
-    var tabsContent = document.querySelectorAll('.tabs__content');
-    tabsTitle.forEach(title => title.onclick = () => {
+    var tabsContent = document.querySelectorAll('.tabs__contents');
+    tabsTitle.forEach((title, index) => title.onclick = () => {
         tabsContent.forEach(content => content.style.display = 'none');
         tabsTitle.forEach(titleStyle => titleStyle.classList.remove("text-white", "bg-primary-color"));
         title.classList.add("text-white", "bg-primary-color");
+        console.log(title.getAttribute("data-name"));
         document.getElementById(title.getAttribute("data-name")).style.display = 'block';
     });
  
