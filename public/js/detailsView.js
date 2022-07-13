@@ -31,7 +31,7 @@
         title.classList.add("text-white", "bg-primary-color");
         document.getElementById(title.getAttribute("data-name")).style.display = 'block';
     });
-
+ 
     tabsTitle[0].click();
 
     //Swiper
