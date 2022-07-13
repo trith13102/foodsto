@@ -61,7 +61,7 @@
             <div class="iq-shop-btn">
                 <ul>
                     <li class="menu-item no-down">
-                        <a href="" target="_self">
+                        <a href="cart" target="_self">
                             <i class="fas fa-shopping-basket"></i>
                             <div class="basket-item-count">
                                 <span class="cart-items-count">
