@@ -17,7 +17,7 @@
                         <div class="menu-sol">
                             <ul class="list-menu-sol">
                                 <li>
-                                    <a href="" target="_self">Danh mục sản phẩm</a>
+                                    <a href="category" target="_self">Danh mục sản phẩm</a>
                                 </li>
                                 <li>
                                     <a href="" target="_self">Sản phẩm</a>
