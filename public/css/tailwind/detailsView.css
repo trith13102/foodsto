@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.banner__nav {
+    background: url(https://res.cloudinary.com/foodstocloud/image/upload/v1657201007/page_images/food-2-1-1536x344-1-4_jmqbt1.png);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.shadow-product {
+    box-shadow: 0px 1px 30px 0px rgb(36 38 43 / 10%); 
+}
