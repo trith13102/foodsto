@@ -368,7 +368,7 @@ a.h-button.view {
   font-size: 0.875em;
 }
 
-.h-product__title-price a{
+.h-product__title{
   font-family: var(--primary-font);
   color: var(--title-color);
   word-wrap: break-word;
@@ -376,7 +376,7 @@ a.h-button.view {
   font-weight: 600;
   letter-spacing: 0.02em;
   font-size: 1.4em;
-  margin: 10px 0;
+  /* margin: 10px 0; */
   display: block;
 }
 
@@ -388,6 +388,7 @@ a.h-button.view {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 10px 0;
 }
 
 ins{
@@ -398,10 +399,10 @@ ins{
   font-weight: 600;
 }
 
-del{
+/* del{
   font-size: 1em;
   font-family: var(--primary-font);
-}
+} */
 
 .h-ratings{
   display: flex;
@@ -906,4 +907,24 @@ a.add-to-wishlist:hover,
 
 .read i{
   font-size: 0.8em;
+}
+
+/* modal */
+#modal-container{
+  cursor: default;
+}
+
+#modal{
+  width: 960px;
+}
+
+.modal-img img{
+  width: 460px !important;
+}
+
+.fa-solid.fa-xmark{
+  top: 20px;
+  right: 20px;
+  color: gray;
+  font-size: 1.3rem;
 }
