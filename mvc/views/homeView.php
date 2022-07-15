@@ -5,7 +5,6 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
      <?php require_once 'mvc/views/requirements/baseTag.php'; ?>
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -203,82 +202,104 @@
                                         <div class="h-product-img">
                                              <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655112834/product_images/d2qx4eynlriebzyhonkq.jpg" alt="">
                                         </div>
-                                        <div class="h-product_content">
-                                             <div class="h-product__category">
-                                                  <span class="h-category">Ngũ cốc</span>
-                                                  ,
-                                                  <span class="h-category">Đồ ăn nhẹ</span>
+                                        <div class="py-[15px] px-[5px] text-left">
+                                             <div class="block items-center">
+                                                  <span class="text-[14px]">Bánh mì</span>
+                                                  <span class="text-[14px]"> , </span>
+                                                  <span class="text-[14px]">Ngũ cốc ăn sáng</span>
                                              </div>
-                                             <div class="h-product__title-price">
-                                                  <a href="" class="h-product__title">Khoai tây chiên</a>
-                                                  <div class="h-product__price">
-                                                       <div class="h-pricing-details">
-                                                            <ins>
-                                                                 <span>10.000</span> VNĐ
-                                                            </ins>
+                                             <div class="text-left">
+                                                  <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
+                                                       <a href="" class="hover:text-primary-color transition-colors duration-700">Khoai tây chiên</a>
+                                                  </h5>
+                                                  <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
+                                                       <div class="text-primary-color">
+                                                            <span>10.000 </span>
+                                                            <span>VNĐ</span>
                                                        </div>
-                                                       <div class="h-ratings">
-                                                            <ul>
-                                                                 <li>
-                                                                      <i class="fas fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="fas fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="fas fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="fas fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="far fa-star"></i>
-                                                                 </li>
-                                                            </ul>
-                                                            <span class="h-review">(4)</span>
+                                                       <div class="iq-woo-product-price-rating-holder flex justify-between">
+                                                            <div class="h-ratings">
+                                                                 <ul>
+                                                                      <li><i class="fas fa-star"></i></li>
+                                                                      <li><i class="fas fa-star"></i></li>
+                                                                      <li><i class="fas fa-star"></i></li>
+                                                                      <li><i class="fas fa-star"></i></li>
+                                                                      <li><i class="fas fa-star"></i></li>
+                                                                 </ul>
+                                                                 <span class="h-review">(4)</span>
+                                                            </div>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
+                                             </div>
+                                             <div class="relative">
+                                                  <ul class="flex">
+                                                       <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                            <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                 Thêm vào giỏ hàng
+                                                            </a>
+                                                       </li>
+                                                       <li class="inline-block">
+                                                            <span class="feedback">
+                                                                 <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                      <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                 </a>
+                                                            </span>
+                                                       </li>
+                                                       <li class="inline-block ml-[5px]">
+                                                            <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+
+                                                            <div id="modal-container" class="modal hidden relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+
+                                                                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+                                                                 <div class="fixed z-50 inset-0 overflow-y-auto">
+                                                                      <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+
+                                                                           <div id="modal" class="relative flex flex-row bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all  w-1/2">
+                                                                                <span class="onSale">Sale!</span>
+                                                                                <div class="modal-img w-1/2">
+                                                                                     <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655112834/product_images/d2qx4eynlriebzyhonkq.jpg" alt="">
+                                                                                </div>
+                                                                                <div class="bg-white px-4 pt-5 pb-4 w-1/2 relative">
+                                                                                     <btn id="btn-close" class="fa-solid fa-xmark absolute cursor-pointer"></btn>
+                                                                                     <h2 class="text-title text-title-color font-bold">Bolthouse</h2>
+                                                                                     <div class="text-primary-color text-4xl mb-2 font-medium leading-relaxed">
+                                                                                          <del class="text-2xl text-body-text">
+                                                                                               <span>15.000</span> VNĐ
+                                                                                          </del>
+                                                                                          <ins>
+                                                                                               <span>10.000</span>
+                                                                                               <span>VNĐ</span>
+                                                                                          </ins>
+                                                                                     </div>
+                                                                                     <p class="inline-block text-body-text mb-3">Cà rốt, sinh tố, nước trái cây và nước xốt được tính đến. Một khẩu phần bằng 1/2 cốc nước trái cây. Khuyến nghị hàng ngày.</p>
+                                                                                     <form action="" class="flex my-4">
+                                                                                          <span class="flex mr-4">
+                                                                                               <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
+                                                                                                    <i class="fa-solid fa-minus"></i>
+                                                                                               </button>
+                                                                                               <input id="qty" name="qty" class="appearance-none outline-none mx-1 bg-light-green-color border-b border-b-primary-color px-4 text-center rounded-md w-16" readonly type="number" value="1" min="1">
+                                                                                               <button class="button-plus bg-primary-color text-white text-center rounded-md w-11 h-11  border border-primary-color" type="button">
+                                                                                                    <i class="fa-solid fa-plus"></i>
+                                                                                               </button>
+                                                                                          </span>
+                                                                                          <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                                                                                     </form>
+                                                                                     <a href="" class="inline-block mt-3 hover:text-primary-color"><i class="far fa-heart mr-2.25"></i><span>Thêm vào danh sách yêu thích</span></a>
+                                                                                     <ul class="mt-6 flex gap-x-2">
+                                                                                          <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-facebook"></i></a></li>
+                                                                                          <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-twitter"></i></a></li>
+                                                                                          <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-google-plus"></i></a></li>
+                                                                                          <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-instagram"></i></a></li>
+                                                                                     </ul>
+                                                                                </div>
                                                                            </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
-                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
-                                                            </li>
-                                                       </ul>
-                                                  </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+
+                                                       </li>
+                                                  </ul>
                                              </div>
                                         </div>
 
@@ -309,63 +330,81 @@
                                                        </div>
                                                        <div class="h-ratings">
                                                             <ul>
-                                                                 <li>
-                                                                      <i class="fas fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="fas fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="fas fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="far fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="far fa-star"></i>
-                                                                 </li>
+                                                                 <li><i class="fas fa-star"></i></li>
+                                                                 <li><i class="fas fa-star"></i></li>
+                                                                 <li><i class="fas fa-star"></i></li>
+                                                                 <li><i class="fas fa-star"></i></li>
+                                                                 <li><i class="fas fa-star"></i></li>
                                                             </ul>
-                                                            <span class="h-review">(3)</span>
+                                                            <span class="h-review">(4)</span>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
+                                                                 </a>
+                                                            </li>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
+                                                            </li>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+
+                                                                 <div id="modal-container" class="modal hidden relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+
+                                                                      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+                                                                      <div class="fixed z-50 inset-0 overflow-y-auto">
+                                                                           <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+
+                                                                                <div id="modal" class="relative flex flex-row bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all  w-1/2">
+                                                                                     <span class="onSale">Sale!</span>
+                                                                                     <div class="modal-img w-1/2">
+                                                                                          <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655112834/product_images/d2qx4eynlriebzyhonkq.jpg" alt="">
+                                                                                     </div>
+                                                                                     <div class="bg-white px-4 pt-5 pb-4 w-1/2 relative">
+                                                                                          <btn id="btn-close" class="fa-solid fa-xmark absolute cursor-pointer"></btn>
+                                                                                          <h2 class="text-title text-title-color font-bold">Bolthouse</h2>
+                                                                                          <div class="text-primary-color text-4xl mb-2 font-medium leading-relaxed">
+                                                                                               <del class="text-2xl text-body-text">
+                                                                                                    <span>15.000</span> VNĐ
+                                                                                               </del>
+                                                                                               <ins>
+                                                                                                    <span>10.000</span>
+                                                                                                    <span>VNĐ</span>
+                                                                                               </ins>
+                                                                                          </div>
+                                                                                          <p class="inline-block text-body-text mb-3">Cà rốt, sinh tố, nước trái cây và nước xốt được tính đến. Một khẩu phần bằng 1/2 cốc nước trái cây. Khuyến nghị hàng ngày.</p>
+                                                                                          <form action="" class="flex my-4">
+                                                                                               <span class="flex mr-4">
+                                                                                                    <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
+                                                                                                         <i class="fa-solid fa-minus"></i>
+                                                                                                    </button>
+                                                                                                    <input id="qty" name="qty" class="appearance-none outline-none mx-1 bg-light-green-color border-b border-b-primary-color px-4 text-center rounded-md w-16" readonly type="number" value="1" min="1">
+                                                                                                    <button class="button-plus bg-primary-color text-white text-center rounded-md w-11 h-11  border border-primary-color" type="button">
+                                                                                                         <i class="fa-solid fa-plus"></i>
+                                                                                                    </button>
+                                                                                               </span>
+                                                                                               <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                                                                                          </form>
+                                                                                          <a href="" class="inline-block mt-3 hover:text-primary-color"><i class="far fa-heart mr-2.25"></i><span>Thêm vào danh sách yêu thích</span></a>
+                                                                                          <ul class="mt-6 flex gap-x-2">
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-facebook"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-twitter"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-google-plus"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-instagram"></i></a></li>
+                                                                                          </ul>
+                                                                                     </div>
+                                                                                </div>
                                                                            </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
-                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                                      </div>
+                                                                 </div>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -395,62 +434,80 @@
                                                        <div class="h-ratings">
 
                                                             <ul>
-                                                                 <li>
-                                                                      <i class="far fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="far fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="far fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="far fa-star"></i>
-                                                                 </li>
-                                                                 <li>
-                                                                      <i class="far fa-star"></i>
-                                                                 </li>
+                                                                 <li><i class="far fa-star"></i></li>
+                                                                 <li><i class="far fa-star"></i></li>
+                                                                 <li><i class="far fa-star"></i></li>
+                                                                 <li><i class="far fa-star"></i></li>
+                                                                 <li><i class="far fa-star"></i></li>
                                                             </ul>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
+                                                                 </a>
+                                                            </li>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
+                                                            </li>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+
+                                                                 <div id="modal-container" class="modal hidden relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+
+                                                                      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+                                                                      <div class="fixed z-50 inset-0 overflow-y-auto">
+                                                                           <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+
+                                                                                <div id="modal" class="relative flex flex-row bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all  w-1/2">
+                                                                                     <span class="onSale">Sale!</span>
+                                                                                     <div class="modal-img w-1/2">
+                                                                                          <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655112834/product_images/d2qx4eynlriebzyhonkq.jpg" alt="">
+                                                                                     </div>
+                                                                                     <div class="bg-white px-4 pt-5 pb-4 w-1/2 relative">
+                                                                                          <btn id="btn-close" class="fa-solid fa-xmark absolute cursor-pointer"></btn>
+                                                                                          <h2 class="text-title text-title-color font-bold">Bolthouse</h2>
+                                                                                          <div class="text-primary-color text-4xl mb-2 font-medium leading-relaxed">
+                                                                                               <del class="text-2xl text-body-text">
+                                                                                                    <span>15.000</span> VNĐ
+                                                                                               </del>
+                                                                                               <ins>
+                                                                                                    <span>10.000</span>
+                                                                                                    <span>VNĐ</span>
+                                                                                               </ins>
+                                                                                          </div>
+                                                                                          <p class="inline-block text-body-text mb-3">Cà rốt, sinh tố, nước trái cây và nước xốt được tính đến. Một khẩu phần bằng 1/2 cốc nước trái cây. Khuyến nghị hàng ngày.</p>
+                                                                                          <form action="" class="flex my-4">
+                                                                                               <span class="flex mr-4">
+                                                                                                    <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
+                                                                                                         <i class="fa-solid fa-minus"></i>
+                                                                                                    </button>
+                                                                                                    <input id="qty" name="qty" class="appearance-none outline-none mx-1 bg-light-green-color border-b border-b-primary-color px-4 text-center rounded-md w-16" readonly type="number" value="1" min="1">
+                                                                                                    <button class="button-plus bg-primary-color text-white text-center rounded-md w-11 h-11  border border-primary-color" type="button">
+                                                                                                         <i class="fa-solid fa-plus"></i>
+                                                                                                    </button>
+                                                                                               </span>
+                                                                                               <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                                                                                          </form>
+                                                                                          <a href="" class="inline-block mt-3 hover:text-primary-color"><i class="far fa-heart mr-2.25"></i><span>Thêm vào danh sách yêu thích</span></a>
+                                                                                          <ul class="mt-6 flex gap-x-2">
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-facebook"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-twitter"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-google-plus"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-instagram"></i></a></li>
+                                                                                          </ul>
+                                                                                     </div>
+                                                                                </div>
                                                                            </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
-                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                                      </div>
+                                                                 </div>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -498,44 +555,72 @@
                                                             </ul>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
+                                                                 </a>
+                                                            </li>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
+                                                            </li>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+
+                                                                 <div id="modal-container" class="modal hidden relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+
+                                                                      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+                                                                      <div class="fixed z-50 inset-0 overflow-y-auto">
+                                                                           <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+
+                                                                                <div id="modal" class="relative flex flex-row bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all  w-1/2">
+                                                                                     <span class="onSale">Sale!</span>
+                                                                                     <div class="modal-img w-1/2">
+                                                                                          <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655112834/product_images/d2qx4eynlriebzyhonkq.jpg" alt="">
+                                                                                     </div>
+                                                                                     <div class="bg-white px-4 pt-5 pb-4 w-1/2 relative">
+                                                                                          <btn id="btn-close" class="fa-solid fa-xmark absolute cursor-pointer"></btn>
+                                                                                          <h2 class="text-title text-title-color font-bold">Bolthouse</h2>
+                                                                                          <div class="text-primary-color text-4xl mb-2 font-medium leading-relaxed">
+                                                                                               <del class="text-2xl text-body-text">
+                                                                                                    <span>15.000</span> VNĐ
+                                                                                               </del>
+                                                                                               <ins>
+                                                                                                    <span>10.000</span>
+                                                                                                    <span>VNĐ</span>
+                                                                                               </ins>
+                                                                                          </div>
+                                                                                          <p class="inline-block text-body-text mb-3">Cà rốt, sinh tố, nước trái cây và nước xốt được tính đến. Một khẩu phần bằng 1/2 cốc nước trái cây. Khuyến nghị hàng ngày.</p>
+                                                                                          <form action="" class="flex my-4">
+                                                                                               <span class="flex mr-4">
+                                                                                                    <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
+                                                                                                         <i class="fa-solid fa-minus"></i>
+                                                                                                    </button>
+                                                                                                    <input id="qty" name="qty" class="appearance-none outline-none mx-1 bg-light-green-color border-b border-b-primary-color px-4 text-center rounded-md w-16" readonly type="number" value="1" min="1">
+                                                                                                    <button class="button-plus bg-primary-color text-white text-center rounded-md w-11 h-11  border border-primary-color" type="button">
+                                                                                                         <i class="fa-solid fa-plus"></i>
+                                                                                                    </button>
+                                                                                               </span>
+                                                                                               <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                                                                                          </form>
+                                                                                          <a href="" class="inline-block mt-3 hover:text-primary-color"><i class="far fa-heart mr-2.25"></i><span>Thêm vào danh sách yêu thích</span></a>
+                                                                                          <ul class="mt-6 flex gap-x-2">
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-facebook"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-twitter"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-google-plus"></i></a></li>
+                                                                                               <li><a href="" class="block w-11 h-11 leading-[45px] text-center rounded-md border hover:bg-secondary-color text-primary-color hover:text-white transition-colors duration-700 hover:border-secondary-color border-primary-color"><i class="fab fa-instagram"></i></a></li>
+                                                                                          </ul>
+                                                                                     </div>
+                                                                                </div>
                                                                            </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
-                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
-                                                            </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                                      </div>
+                                                                 </div>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -588,44 +673,22 @@
                                                             <span class="h-review">(4)</span>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
-                                                                           </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
                                                                  </a>
                                                             </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
                                                             </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -674,44 +737,22 @@
                                                             <span class="h-review">(3)</span>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
-                                                                           </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
                                                                  </a>
                                                             </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
                                                             </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -764,44 +805,22 @@
                                                             <span class="h-review">(5)</span>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
-                                                                           </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
                                                                  </a>
                                                             </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
                                                             </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -849,44 +868,22 @@
                                                             </ul>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
-                                                                           </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
                                                                  </a>
                                                             </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
                                                             </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -943,44 +940,22 @@
                                                             <span class="h-review">(3)</span>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
-                                                                           </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
                                                                  </a>
                                                             </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
                                                             </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -1029,44 +1004,22 @@
                                                             <span class="h-review">(5)</span>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
-                                                                           </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
                                                                  </a>
                                                             </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
                                                             </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -1114,44 +1067,22 @@
                                                             </ul>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
-                                                                           </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
                                                                  </a>
                                                             </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
                                                             </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -1199,44 +1130,22 @@
                                                             <span class="h-review">(4)</span>
                                                        </div>
                                                   </div>
-                                                  <div class="buttons-holder">
-                                                       <ul>
-                                                            <li>
-                                                                 <a href="" class="h-button add-to-card">
-                                                                      <span class="h-add">
-                                                                           <div>
-                                                                                <span>T</span>
-                                                                                <span>h</span>
-                                                                                <span>ê</span>
-                                                                                <span>m</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>V</span>
-                                                                                <span>à</span>
-                                                                                <span>o</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>G</span>
-                                                                                <span>i</span>
-                                                                                <span>ỏ</span>
-                                                                                <span>&nbsp;</span>
-                                                                                <span>H</span>
-                                                                                <span>à</span>
-                                                                                <span>n</span>
-                                                                                <span>g</span>
-                                                                                <span>&nbsp; &nbsp;</span>
-                                                                           </div>
-                                                                      </span>
-                                                                      <i class="fas fa-long-arrow-alt-right"></i>
+                                                  <div class="relative">
+                                                       <ul class="flex">
+                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                 <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                      Thêm vào giỏ hàng
                                                                  </a>
                                                             </li>
-                                                            <li>
-                                                                 <a href="" class="add-to-wishlist" data-title="Add to wishlist">
-                                                                      <i class="far fa-heart"></i>
-                                                                 </a>
+                                                            <li class="inline-block">
+                                                                 <span class="feedback">
+                                                                      <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                           <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                      </a>
+                                                                 </span>
                                                             </li>
-                                                            <li>
-                                                                 <button class="h-btn__view">
-                                                                      <i class="fa fa-eye"></i>
-                                                                 </button>
+                                                            <li class="inline-block ml-[5px]">
+                                                                 <button id="btn-open" class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                             </li>
                                                        </ul>
                                                   </div>
@@ -1812,6 +1721,7 @@
           </section>
 
      </main>
+
 
      <?php require_once 'mvc/views/blocks/footer.php'; ?>
 

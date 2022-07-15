@@ -27,3 +27,9 @@ input[type="text"] {
     border-bottom-color: var(--primary-color);
     color: var(--body-text);
 }
+
+.range-min {
+    border-radius:50%;
+    -webkit-appearance: none;
+    accent-color: #F55050;
+}
