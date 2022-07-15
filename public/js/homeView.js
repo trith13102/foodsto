@@ -38,6 +38,7 @@ window.onload=function(){
     btn_open.addEventListener('click', () =>{
         modal_container.classList.remove('hidden');
     });
+    
     btn_close.addEventListener('click', () => {
         modal_container.classList.add('hidden');
     });

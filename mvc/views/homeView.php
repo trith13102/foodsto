@@ -19,7 +19,7 @@
 
 <body>
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <script src="public/js/homeView.js"></script>
+
 
      <?php require_once 'mvc/views/blocks/header.php'; ?>
 
@@ -1724,7 +1724,7 @@
 
 
      <?php require_once 'mvc/views/blocks/footer.php'; ?>
-
+     <script src="public/js/homeView.js"></script>
 </body>
 
 </html>
