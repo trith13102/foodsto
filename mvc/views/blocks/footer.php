@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="column">
                     <div class="footer-logo">
-                        <a href="home" target="_self">
+                        <a target="_self"  href="home">
                             <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1654415483/page_images/wide-logo_zoohrq.png" alt="">
                         </a>
                     </div>
@@ -17,22 +17,22 @@
                     </div>
                     <ul class="infor-share">
                         <li class="list-inline-item">
-                            <a href="">
+                            <a target="_self"  href="">
                                 <i class="fab fa-facebook"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="">
+                            <a target="_self"  href="">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="">
+                            <a target="_self"  href="">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="">
+                            <a target="_self"  href="">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </li>
@@ -43,16 +43,16 @@
                     <div class="menu-footer">
                         <ul class="menu-footer_list">
                             <li>
-                                <a href="">Tài khoản</a>
+                                <a target="_self"  href="">Tài khoản</a>
                             </li>
                             <li>
-                                <a href="">Thanh toán</a>
+                                <a target="_self"  href="">Thanh toán</a>
                             </li>
                             <li>
-                                <a href="">Mục yêu thích</a>
+                                <a target="_self"  href="">Mục yêu thích</a>
                             </li>
                             <li>
-                                <a href="">Giỏ hàng</a>
+                                <a target="_self"  href="">Giỏ hàng</a>
                             </li>
                         </ul>
                     </div>
@@ -62,13 +62,13 @@
                     <div class="menu-footer">
                         <ul class="menu-footer_list">
                             <li>
-                                <a href="">Về chúng tôi</a>
+                                <a target="_self"  href="">Về chúng tôi</a>
                             </li>
                             <li>
-                                <a href="">Liên hệ</a>
+                                <a target="_self"  href="">Liên hệ</a>
                             </li>
                             <li>
-                                <a href="">Blog</a>
+                                <a target="_self"  href="">Blog</a>
                             </li>
                         </ul>
                     </div>
@@ -82,13 +82,13 @@
                                 <span>Toà nhà Innovation lô 24, Quang Trung, Quận 12, Thành phố Hồ Chí Minh</span>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_self"  href="">
                                     <i class="fa fa-envelope"></i>
                                     <span>Foodstostore@gmail.com</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_self"  href="">
                                     <i class="fa fa-phone"></i>
                                     <span>+84123456789</span>
                                 </a>
