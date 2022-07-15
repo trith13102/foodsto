@@ -1,25 +1,70 @@
 <?php
 class Login extends Controller
 {
+    public $userModel;
+
+    public function __construct()
+    {
+        $this->userModel = $this->model('userModel');
+    }
+
     public function default()
     {
-        $this->view(
-            "loginView",
-            [
-                "page" => "loginForm",
-                
-            ]
-        );
+        if (isset($_POST["btn_login"])) {
+            // get data
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+           
+            
+            // check db
+            $result = $this->userModel->CheckUserValid($email,$password);
+
+            // show result
+            $this->view(
+                "loginView",
+                [
+                    "page" => "loginPage",
+                    "result" => $result
+                ]
+            );
+        }else{
+            $this->view(
+                "loginView",
+                [
+                    "page" => "loginPage",
+                ]
+            );
+        }
+     
     }
 
     public function signup()
     {
-        $this->view(
-            "loginView",
-            [
-                "page" => "signupForm"
-            ]
-        );
+        if (isset($_POST["btn_signup"])) {
+            // get data
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $password = password_hash($password, PASSWORD_DEFAULT);
+
+            // insert db
+            $result = $this->userModel->InsertNewUser($email,$password);
+
+            // show result
+            $this->view(
+                "loginView",
+                [
+                    "page" => "signupPage",
+                    "result" => $result
+                ]
+            );
+        }else{
+            $this->view(
+                "loginView",
+                [
+                    "page" => "signupPage"
+                ]
+            );
+        }
     }
 
     public function lostPass()
@@ -27,8 +72,10 @@ class Login extends Controller
         $this->view(
             "loginView",
             [
-                "page" => "lostPassForm"
+                "page" => "lostPassPage"
             ]
         );
     }
+
+    
 }
