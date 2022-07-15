@@ -57,6 +57,7 @@ header{
 
 .navbar-collapse{
     display: flex;
+    flex-basis: unset !important;
 }
 
 .list-menu{

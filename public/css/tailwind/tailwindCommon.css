@@ -11,3 +11,76 @@
 .shadow-product {
   box-shadow: 0px 1px 30px 0px rgb(36 38 43 / 10%);
 }
+/* Slider range */
+input[type=range] {
+  -webkit-appearance: none;
+  height: 0.5em;
+  pointer-events: none; 
+  width: 100%;
+  border-radius: 1em;
+  background: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 1px solid white;
+  border-radius:1em;
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  background-color: #ffba43;
+  z-index: 2;
+}
+/* .range-min::-webkit-slider-thumb {
+  margin-left: -0.5em;
+} */
+
+/* animation text  */
+
+@keyframes stagger {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+
+  }
+}
+.iq-button-effact {
+  --duration: 0.5s;
+  transition: transform var(--duration) ease;
+}
+
+
+.iq-button-effact:hover div span {
+  --duration: 0.5s;
+  display: inline-block;
+  animation: stagger var(--duration)  linear var(--dur);
+}
+.iq-button-effact div span:nth-child(1){
+  --dur:0.05s;
+}
+.iq-button-effact div span:nth-child(2){
+  --dur:0.1s;
+}
+.iq-button-effact div span:nth-child(3){
+  --dur:0.2s;
+}
+.iq-button-effact div span:nth-child(4){
+  --dur:0.25s;
+}
+.iq-button-effact div span:nth-child(5){
+  --dur:0.3s;
+}
+.iq-button-effact div span:nth-child(6){
+  --dur:0.35s;
+}
+.iq-button-effact div span:nth-child(7){
+  --dur:0.4s;
+}
+
+

@@ -593,11 +593,11 @@
                                     <h4 before="" class="relative before:bottom-0 before:absolute before:w-[28px] before:h-[3px] before:bg-secondary-color before:content-[attr(before)] text-[20px] mb-[15px] pb-[15px] font-[600]">
                                         Dò tìm theo giá
                                     </h4>
-                                    <form action="" method="get">
-                                        <div class="scroll-price relative mt-[30px] rounded-[1em] bg-[#602053] mb-[1em] h-[0.5em]">
-                                            <div class="ui-slider-range absolute z-[1] w-full left-[0%] h-full bg-secondary-color rounded-[1em]"></div>
-                                            <span class="ui-slider-handle left-[0%] bg-secondary-color cursor-ew-resize h-[1em] ml-[-0.5em] absolute top-[-0.3em] w-[1em] rounded-[1em] z-[2] border border-solid border-white-color"></span>
-                                            <span class="ui-slider-handle left-[100%] bg-secondary-color cursor-ew-resize h-[1em] ml-[-0.5em] absolute top-[-0.3em] w-[1em] rounded-[1em] z-[2] border border-solid border-white-color"></span>
+                                    <form action="" method="get" class="">
+                                        <div class="scroll-price relative mt-[30px] rounded-[1em] bg-[#d5d5d5] mb-[1em] h-[0.5em] ">
+                                            <div class="ui-slider-range absolute z-[1] left-[0%]  h-full bg-secondary-color rounded-[1em]"></div>
+                                            <input type="range" min="58" max="1200" value="0"    class="range-input range-min ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
+                                            <input type="range" min="58" max="1200" value="1200" class="range-input range-max ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
                                         </div>
                                         <div class="price-slider-amount">
                                             <!-- <input type="text" id="min-price" value="5> -->
@@ -713,6 +713,7 @@
 
             </div>
         </section>
+        <script src="public/js/productView.js"></script>
 
     </div>
     <?php require_once './mvc/views/blocks/footer.php' ?>
