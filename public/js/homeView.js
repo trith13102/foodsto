@@ -28,24 +28,25 @@ $(document).ready(function(){
     });
 });
 
-
+let openModal = () => {
+    var modal_container = document.getElementById("modal-container");
+    if (modal_container.classList.contains("hidden")) {
+        modal_container.classList.remove("hidden")
+    }
+}
+let closeModal = () => {
+    var modal_container = document.getElementById("modal-container");
+    if (!modal_container.classList.contains("hidden")) {
+        modal_container.classList.add("hidden")
+    }
+}
 window.onload=function(){
-    const btn_open = document.getElementById("btn-open");
-    const btn_close = document.getElementById("btn-close");
-    const modal_container = document.getElementById("modal-container");
-    const modal = document.getElementById("modal");
+    var btn_open = document.querySelectorAll(".btn-open");
 
-    btn_open.addEventListener('click', () =>{
-        modal_container.classList.remove('hidden');
-    });
-    btn_close.addEventListener('click', () => {
-        modal_container.classList.add('hidden');
-    });
-    modal_container.addEventListener('click', (e) =>{
-        if (!modal.contains(e.target)) {
-            btn_close.click();
-        }
-    })
+    for (var i = 0 ; i < btn_open.length; i++) {
+        btn_open[i].setAttribute('onclick', "openModal()");
+    }
+
 
     var btnPlus = document.getElementsByClassName('button-plus')[0];
     var btnSub = document.getElementsByClassName('button-subtract')[0];
