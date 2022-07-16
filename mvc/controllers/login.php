@@ -19,6 +19,7 @@ class Login extends Controller
             // check db
             $result = $this->userModel->CheckUserValid($email,$password);
 
+         
             // show result
             $this->view(
                 "loginView",

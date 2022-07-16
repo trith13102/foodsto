@@ -123,13 +123,17 @@ header{
     box-shadow: 0px 1px 30px 0px rgb(36 38 43 / 10%);
 }
 
-.list-menu-sol a{
+.list-menu-sol a,
+.list-menu-sol button{
     margin: 0;
     padding: 10px 15px;
     display: block;
     text-transform: capitalize;
 }
-
+.list-menu-sol h1{
+    text-align: center;
+    font-size: larger;
+}
 .list-menu-sol li:hover{
     background-color: var(--secondary-color);
     border-radius: 5px;
