@@ -18,12 +18,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-=======
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
->>>>>>> 4abe962c12fd4b1062da485b8f83d26fd7f96646
 
 
     <?php require_once 'mvc/views/blocks/header.php'; ?>
