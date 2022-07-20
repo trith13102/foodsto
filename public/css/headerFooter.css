@@ -181,11 +181,12 @@ header{
     margin-left: 2.2em;
     box-sizing: border-box;
     position: relative;
-    top: -3px;
+    top: -4px;
 }
 
 #search-text{
     width: 0;
+    height: 25px;
     border: none;
     border-bottom: 1px solid var(--primary-color);
     outline: none;
@@ -195,6 +196,8 @@ header{
     color: rgba(74, 74, 74, .6);
     transition: all 0.25s ease-in-out;
     margin-left: 25px;
+    float: none;
+    padding: 0;
 }
 
 #search-text::placeholder{
@@ -206,6 +209,7 @@ header{
 #search-text:valid{
     width: 190px;
     padding: 10px 5px 2px;
+    height: 34.6px;
 }
 
 #search-box:hover #search-btn{
