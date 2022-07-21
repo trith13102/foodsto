@@ -1,5 +1,21 @@
 <?php
 
+require 'vendor/autoload.php';
+
+use Cloudinary\Configuration\Configuration;
+use Cloudinary\Api\Upload\UploadApi;
+
+Configuration::instance([
+    'cloud' => [
+        'cloud_name' => 'foodstocloud',
+        'api_key' => '941254623563878',
+        'api_secret' => '9W0sxZv5D5rV_3akmXA59mf8tuk'
+    ],
+    'url' => [
+        'secure' => true
+    ]
+]);
+
 class Connect
 {
     public $dbConnect;
@@ -17,6 +33,16 @@ class Connect
             $this->dbDatabase
         );
         $this->dbConnect->query("SET NAMES 'utf8'");
+    }
+
+    public function uploadImage($image, $folder)
+    {
+        $folder = $folder == null ? '' : $folder;
+        $uploadImage = (new UploadApi())->upload($image, [
+            'folder' => $folder
+        ]);
+
+        return $uploadImage['secure_url'];
     }
 }
 

@@ -1,24 +1,38 @@
 <?php
 
-     class admin extends Controller
-     {
-         public function default($page = 'dashboard')
-         {
-             $model = $this->model('adminModel');
+class admin extends Controller
+{
+    public function default($page = 'dashboard')
+    {
+        $model = $this->model('adminModel');
 
-             $pageData = [$page];
-             switch ($page) {
-                 case 'category':
-                     array_push($pageData, $model->getCategories());
-                     break;
-                 case 'account': break;
-                 case 'product': break;
-                 case 'discount': break;
-                 default: break;
-              }
+        $pageData = [$page];
+        switch ($page) {
+            case 'category':
+                break;
+            case 'account':
+                break;
+            case 'product':
+                break;
+            case 'discount':
+                break;
+            default:
+                break;
+        }
 
-             $this->view('adminView', [
-                'pageData' => $pageData,
-             ]);
-         }
-     }
+        $this->view('adminView', [
+            'pageData' => $pageData,
+        ]);
+    }
+
+    public function addNewCategory($folder = null)
+    {
+        $model = $this->model('adminModel');
+
+        if ($model->addNewCategory($folder)) {
+            exit(header("Location: http://" . $_SERVER['HTTP_HOST'] . '/foodsto/admin/default/category'));
+        } else {
+            echo "Error!";
+        }
+    }
+}
