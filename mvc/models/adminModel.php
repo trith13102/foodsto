@@ -20,7 +20,7 @@ class adminModel extends Connect
         $name = isset($_POST['name']) ? $_POST['name'] : '';
         $description = isset($_POST['description']) ? $_POST['description'] : '';
         $local_thumbnail = isset($_FILES['thumbnail']['tmp_name']) ? $_FILES['thumbnail']['tmp_name'] : '';
-        $thumbnail = $local_thumbnail;
+        $thumbnail = $this->uploadImage($local_thumbnail, $folder);
 
         $query = "INSERT INTO categories(name, description, thumbnail) VALUES(?, ?, ?)";
         $stmt = $this->dbConnect->prepare($query);

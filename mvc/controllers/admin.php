@@ -30,6 +30,7 @@ class admin extends Controller
         $model = $this->model('adminModel');
 
         if ($model->addNewCategory($folder)) {
+            // exit(header("Location: http://" . $_SERVER['HTTP_HOST'] . '/foodsto/admin/default/category'));
             exit(header("Location: https://" . $_SERVER['HTTP_HOST'] . '/admin/default/category'));
         } else {
             echo "Error!";
