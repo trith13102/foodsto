@@ -1,4 +1,4 @@
-<form onsubmit="return validate(this)" method="POST" target="_self" action="login">
+<form onsubmit="return validate(this);" method="POST" target="_self" action="login">
     <div class="flex flex-row items-center justify-center lg:justify-start">
         <h1 class="text-title-color font-bold text-[38px] mb-4">Đăng nhập</h1>
     </div>
@@ -7,13 +7,13 @@
     <!-- Email input -->
     <div class="mb-6">
         <label for="name" class="block leading-loose mb-2.25">Email<span class="text-red-700">*</span></label>
-        <input name="email" id="name" type="text" class="rounded-md h-11 transition-colors duration-500 focus:border focus:border-primary-color w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
+        <input onfocus="removeError(this)" name="email" id="name" type="text" class="rounded-md h-11 transition-colors duration-500 focus:border focus:border-primary-color w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
     </div>
 
     <!-- Password input -->
     <div class="mb-6">
         <label for="password" class="block leading-loose mb-2.25">Mật khẩu<span class="text-red-700">*</span></label>
-        <input name="password" id="password" type="password" class="rounded-md h-11 transition-colors duration-500 focus:border focus:border-primary-color w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
+        <input onfocus="removeError(this)" name="password" id="password" type="password" class="rounded-md h-11 transition-colors duration-500 focus:border focus:border-primary-color w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
     </div>
 
     <div class="flex justify-between items-center mb-6">
@@ -35,9 +35,8 @@
     </div>
 </form>
 
-<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
 
-<script>
+<!-- <script>
     function validate(node) {
         var flag = false;
         for (let i = 0; i < node.length; i++) {
@@ -49,4 +48,4 @@
         // console.log(flag);
         return false;
     }
-</script>
+</script> -->

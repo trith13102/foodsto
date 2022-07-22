@@ -17,13 +17,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <script src="https://cdn.tailwindcss.com"></script> -->
 
-
+    <style>
+        .error {
+            border: 1px solid red;
+        }
+    </style>
 
     <title>FoodSto Store</title>
 
 </head>
 
 <body>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="public/js/validate.js"></script>
     <?php require_once "./mvc/views/blocks/header.php";    ?>
@@ -40,22 +45,24 @@
 
 
     <section class="mb-10 mt-20 font-primary-font">
+        
         <div class="px-2 text-gray-800 ">
             <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6 ">
                 <div class="xl:ml-20 xl:w-9/12 lg:w-10/12 md:w-10/12 mb-12 md:mb-0 shadow-product p-10">
-                    <?php
-                    require_once "./mvc/views/pages/" . $data["page"] . ".php";
-                    ?>
+                        <div id="error" class="hidden rounded-md h-11 transition-colors duration-500 focus:border focus:border-red-300 w-full leading-loose outline-none bg-warning-color px-4">Error</div>
+                        <?php
+                        require_once "./mvc/views/pages/" . $data["page"] . ".php";
+                        ?>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
 
     <?php require_once 'mvc/views/blocks/footer.php'; ?>
 
 
-  
+
     <script>
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
@@ -64,24 +71,41 @@
 
     <?php
     if (isset($data['result'])) {
-    ?>
-        <script>
-            console.log("<?php echo $data['result']; ?>");      
-        </script>
-        <?php
         if ($data['result'] == 'true') {
-        ?>
-        <script>
-            document.getElementById('home_link').click();
-        </script>
-        <?php
-        } else {
-        ?>
+    ?>
+            <script>
+                document.getElementById('home_link').click();
+            </script>
     <?php
         }
     }
     ?>
 
+
+    <script>
+        function validate(node) {
+            // console.log(node);
+            for (let i = 0; i < node.length; i++) {
+                // console.log(node[i].classList)
+                if (node[i].type == 'text' || node[i].type == 'password') {
+                    // console.log(validator.isEmpty(node[i].value));
+                    if (validator.isEmpty(node[i].value)) {
+                        // console.log('1');
+                        // node[i].classList.remove('border-b-primary-color');
+                        node[i].classList.add('error');
+                        // console.log(flag);
+                        document.getElementById('error').classList.remove('hidden');
+
+                    }
+                }
+            }
+            return false;
+        }
+
+        function removeError(node) {
+            node.classList.remove('error');
+        }
+    </script>
 </body>
 
 </html>

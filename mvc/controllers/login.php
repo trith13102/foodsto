@@ -14,12 +14,12 @@ class Login extends Controller
             // get data
             $email = $_POST["email"];
             $password = $_POST["password"];
-           
-            
-            // check db
-            $result = $this->userModel->CheckUserValid($email,$password);
 
-         
+
+            // check db
+            $result = $this->userModel->CheckUserValid($email, $password);
+
+
             // show result
             $this->view(
                 "loginView",
@@ -28,7 +28,7 @@ class Login extends Controller
                     "result" => $result
                 ]
             );
-        }else{
+        } else {
             $this->view(
                 "loginView",
                 [
@@ -36,7 +36,6 @@ class Login extends Controller
                 ]
             );
         }
-     
     }
 
     public function signup()
@@ -48,7 +47,7 @@ class Login extends Controller
             $password = password_hash($password, PASSWORD_DEFAULT);
 
             // insert db
-            $result = $this->userModel->InsertNewUser($email,$password);
+            $result = $this->userModel->InsertNewUser($email, $password);
 
             // show result
             $this->view(
@@ -58,7 +57,7 @@ class Login extends Controller
                     "result" => $result
                 ]
             );
-        }else{
+        } else {
             $this->view(
                 "loginView",
                 [
@@ -77,6 +76,4 @@ class Login extends Controller
             ]
         );
     }
-
-    
 }
