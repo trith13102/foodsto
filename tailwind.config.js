@@ -12,20 +12,20 @@ module.exports = {
       "custom-shadow-1": "rgba(149, 157, 165, 0.2) 0px 8px 24px",
     },
     screens: {
-      xs: "375px",
-      sm: "576px",
+      xs: "23.4375em",
+      sm: "36em",
       // => @media (min-width: 650px) { ... }
 
-      md: "768px",
+      md: "48em",
       // => @media (min-width: 768px) { ... }
 
-      lg: "992px",
+      lg: "62em",
       // => @media (min-width: 1024px) { ... }
 
-      xl: "1200px",
+      xl: "75em",
       // => @media (min-width: 1280px) { ... }
 
-      "2xl": "1400px",
+      "2xl": "87.5em",
       // => @media (min-width: 1536px) { ... }
     },
     fontSize: {

@@ -113,16 +113,10 @@
                </div>
           </section>
      </main>
-     <!-- <div class="z-50 fixed top-0 left-0 flex items-center justify-center w-screen h-screen bg-modal-bg-color backdrop-blur-sm">
-          <div class="w-1/4 h-1/5 rounded-md bg-white">
-               <h1>Xoá mục này</h1>
-               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quo molestiae ullam nam, placeat id enim laborum aliquid, consectetur eaque necessitatibus repellendus iusto neque rerum doloremque! Voluptas in vitae quia.</p>
-          </div>
-          <div>
-               <button>Close</button>
-          </div>
-     </div> -->
      <script src="public/js/adminView.js"></script>
+     <?php
+     if ($pageType == 'dashboard') echo '<script src="public/js/chart.js"></script>';
+     ?>
 </body>
 
 </html>

@@ -20,7 +20,7 @@
                                     <a href="category" target="_self">Danh mục sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="" target="_self">Sản phẩm</a>
+                                    <a href="product" target="_self">Sản phẩm</a>
                                 </li>
                                 <li>
                                     <a href="" target="_self">Bán chạy</a>
@@ -62,7 +62,7 @@
                                     <form action="" method="post" target="_self">
                                         <div>
                                             <img src="user_logo.jpg" style="border-radius: 50%; margin: auto;" alt="">
-                                           <h1><b><?php echo $_SESSION['email'] ?></b></h1> 
+                                           <h1><b><?php echo $_SESSION['email'] ?></b></h1>
                                         </div>
                                         <li>
                                             <a href="#" target="_self">Tài khoản</a>

@@ -46,13 +46,13 @@
                                 <a target="_self"  href="">Tài khoản</a>
                             </li>
                             <li>
-                                <a target="_self"  href="">Thanh toán</a>
+                                <a target="_self"  href="checkout">Thanh toán</a>
                             </li>
                             <li>
                                 <a target="_self"  href="">Mục yêu thích</a>
                             </li>
                             <li>
-                                <a target="_self"  href="">Giỏ hàng</a>
+                                <a target="_self"  href="cart">Giỏ hàng</a>
                             </li>
                         </ul>
                     </div>
