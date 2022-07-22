@@ -36,4 +36,22 @@ class admin extends Controller
             echo "Error!";
         }
     }
+
+    public function crud($method = null)
+    {
+        header('Content-Type: application/json');
+        $model = $this->model('adminModel');
+        switch ($method) {
+            case 'get_category':
+                $model->get_category();
+                break;
+            default:
+                $data = array(
+                    'message' => 'Not select method yet!',
+                );
+
+                echo json_encode($data, JSON_UNESCAPED_UNICODE);
+                break;
+        }
+    }
 }

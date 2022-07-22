@@ -16,6 +16,20 @@
      <link rel="stylesheet" href="public/css/base.css">
      <title>FoodSto Management System</title>
      <style>
+          #scroll-content::-webkit-scrollbar-track {
+               -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+               background-color: #F5F5F5;
+          }
+
+          #scroll-content::-webkit-scrollbar {
+               width: 10px;
+               background-color: #F5F5F5;
+          }
+
+          #scroll-content::-webkit-scrollbar-thumb {
+               background-color: #3bb77e;
+          }
+
           #drop-down-menu:before {
                content: "";
 
@@ -65,7 +79,7 @@
                     </div>
                </div>
           </aside>
-          <section class="relative z-0 flex-1 bg-whiten-bg-color overflow-auto">
+          <section id="scroll-content" class="relative z-0 flex-1 bg-whiten-bg-color overflow-auto">
                <div class="absolute z-[-1] top-0 left-0 right-0 w-full h-96 bg-gradient-to-r from-primary-color to-secondary-color">
                </div>
                <div class="px-10 py-5">
@@ -114,6 +128,7 @@
           </section>
      </main>
      <script src="public/js/adminView.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
      <?php
      if ($pageType == 'dashboard') echo '<script src="public/js/chart.js"></script>';
      ?>

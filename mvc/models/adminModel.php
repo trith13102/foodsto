@@ -34,4 +34,26 @@ class adminModel extends Connect
             return false;
         }
     }
+
+    public function get_category()
+    {
+        $query = "SELECT * FROM categories ORDER BY id DESC";
+        $stmt = $this->dbConnect->prepare($query);
+        $stmt->execute();
+
+        $data = [];
+        $data['status'] = '';
+        $data['categories'] = [];
+
+        if ($raw = $stmt->get_result()) {
+            $data['status'] = 'success';
+            while ($row = $raw->fetch_assoc()) {
+                array_push($data['categories'], $row);
+            }
+        } else {
+            $data['status'] = 'fail';
+        }
+
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    }
 }
