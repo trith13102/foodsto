@@ -1,5 +1,5 @@
 <?php
 
-     class checkoutModel extends Connect
-     {
-     }
+class checkoutModel extends Connect
+{
+}

@@ -6,4 +6,3 @@ let showDropDownMenu = () => {
     dropDownMenu.classList.add("hidden");
   }
 };
-

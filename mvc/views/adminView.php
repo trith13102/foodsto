@@ -67,6 +67,7 @@
                          <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/product" target="_self"><i class="pr-2 bx bxs-package bx-sm text-primary-color"></i> Sản phẩm</a></li>
                          <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/discount" target="_self"><i class="pr-2 bx bxs-discount bx-sm text-primary-color"></i> Chương trình giảm
                                    giá</a></li>
+                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/orders" target="_self"><i class="pr-2 bx bx-scatter-chart bx-sm text-primary-color"></i> Quản lý đơn hàng</a></li>
                     </ul>
                </section>
                <div class="px-8 mt-6">
@@ -93,6 +94,7 @@
                                    'account' => 'Quản lý tài khoản',
                                    'product' => 'Quản lý sản phẩm',
                                    'discount' => 'Chương trình giảm giá',
+                                   'orders' => 'Quản lý đơn hàng',
                               ];
                               echo $pageTitle[$pageType];
                               ?>
@@ -115,12 +117,9 @@
                     <div class="grid grid-cols-4 gap-x-[20px] gap-y-[40px] my-16">
                          <?php
                          if ($pageType != '') {
-                              //     require_once 'mvc/views/blocks/adminPageBlocks/'.$pageType.'.php';
-                              if ($pageType == 'dashboard') {
-                                   require_once 'mvc/views/blocks/adminPageBlocks/dashboard.php';
-                              } else {
-                                   require_once 'mvc/views/blocks/adminPageBlocks/category.php';
-                              }
+                              require_once 'mvc/views/blocks/adminPageBlocks/' . $pageType . '.php';
+                         } else {
+                              require_once 'mvc/views/blocks/adminPageBlocks/dashboard.php';
                          }
                          ?>
                     </div>
@@ -131,6 +130,7 @@
      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
      <?php
      if ($pageType == 'dashboard') echo '<script src="public/js/chart.js"></script>';
+     if ($pageType == 'category') echo '<script src="public/js/blocks/adminView/category.js"></script>';
      ?>
 </body>
 

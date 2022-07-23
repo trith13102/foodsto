@@ -1,3 +1,19 @@
+<style>
+     #loader {
+          border: 3px solid hsla(152, 51%, 47%, 0.2);
+          border-top-color: #3bb77e;
+          border-radius: 50%;
+          width: 3em;
+          height: 3em;
+          animation: spin 1s linear infinite;
+     }
+
+     @keyframes spin {
+          to {
+               transform: rotate(360deg);
+          }
+     }
+</style>
 <div class="col-span-4 p-6 rounded-md bg-white shadow-custom-shadow-1">
      <h1 class="font-medium text-[1.2rem] pb-8">Thêm danh mục mới</h1>
      <form action="admin/addNewCategory/category" method="POST" target="_self" enctype="multipart/form-data">
@@ -22,8 +38,16 @@
           </div>
      </form>
 </div>
+
 <div class="col-span-4 rounded-md bg-white shadow-custom-shadow-1 pb-8">
-     <h1 class="font-medium text-[1.2rem] p-6 pb-8">Danh sách danh mục</h1>
+     <div class="flex items-center justify-between">
+          <h1 class="font-medium text-[1.2rem] p-6 pb-8">Danh sách danh mục</h1>
+          <div class="mr-6 border border-slate-400 rounded-md overflow-hidden">
+               <input class="p-2 font-primary-font focus:outline-none text-[.9rem]" type="text" placeholder="Tìm kiếm danh mục">
+               <button class="px-6 py-2 bg-slate-600 hover:bg-slate-400 text-white font-primary-font text-[.9rem]" type="button">Tìm kiếm</button>
+          </div>
+     </div>
+
      <table class="table-auto border-t border-b w-full">
           <thead class="border-b">
                <tr class="bg-slate-100">
@@ -51,42 +75,9 @@
                          </button>
                     </td>
                </tr>
+               <div id="loader-wrapper" class="flex items-center justify-center"></div>
           </tbody>
+
      </table>
      <div></div>
 </div>
-<script>
-     let input = document.getElementById("thumbnail");
-     let image = document.getElementById("preview");
-
-     let changePreviewVisibility = () => {
-          if (input.value == "") {
-               image.src = "";
-               image.parentNode.classList.add("hidden");
-          } else {
-               image.parentNode.classList.remove("hidden");
-          }
-     }
-
-     input.addEventListener("change", (e) => {
-          if (e.target.files.length) {
-               const src = URL.createObjectURL(e.target.files[0]);
-               image.src = src;
-               console.log(image.src);
-          }
-          changePreviewVisibility();
-     });
-
-     function httpGetAsync(theUrl, callback) {
-          var xmlHttp = new XMLHttpRequest();
-          xmlHttp.onreadystatechange = function() {
-               if (xmlHttp.readyState == 4 && xmlHttp.status == 200) callback(xmlHttp);
-          }
-          xmlHttp.open("GET", theUrl, true);
-          xmlHttp.send();
-     }
-
-     httpGetAsync('admin/crud/get_category', (data) => {
-          console.log(data.responseText);
-     })
-</script>
