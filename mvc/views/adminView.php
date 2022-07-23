@@ -59,15 +59,15 @@
                </section>
                <section class="px-8">
                     <ul>
-                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/dashboard" target="_self"><i class="pr-2 bx bxs-bar-chart-alt-2 bx-sm text-primary-color"></i>Số liệu thống
+                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/dashboard" target="_self"><i class="pr-2 bx bxs-bar-chart-alt-2 bx-sm text-primary-color"></i>Số liệu thống
                                    kê</a></li>
-                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/category" target="_self"><i class="pr-2 bx bxs-category-alt bx-sm text-primary-color"></i> Danh mục</a></li>
-                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/account" target="_self"><i class="pr-2 bx bxs-user-account bx-sm text-primary-color"></i> Tài khoản</a>
+                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/category" target="_self"><i class="pr-2 bx bxs-category-alt bx-sm text-primary-color"></i> Danh mục</a></li>
+                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/account" target="_self"><i class="pr-2 bx bxs-user-account bx-sm text-primary-color"></i> Tài khoản</a>
                          </li>
-                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/product" target="_self"><i class="pr-2 bx bxs-package bx-sm text-primary-color"></i> Sản phẩm</a></li>
-                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/discount" target="_self"><i class="pr-2 bx bxs-discount bx-sm text-primary-color"></i> Chương trình giảm
+                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/product" target="_self"><i class="pr-2 bx bxs-package bx-sm text-primary-color"></i> Sản phẩm</a></li>
+                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/discount" target="_self"><i class="pr-2 bx bxs-discount bx-sm text-primary-color"></i> Chương trình giảm
                                    giá</a></li>
-                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/default/orders" target="_self"><i class="pr-2 bx bx-scatter-chart bx-sm text-primary-color"></i> Quản lý đơn hàng</a></li>
+                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/orders" target="_self"><i class="pr-2 bx bx-scatter-chart bx-sm text-primary-color"></i> Quản lý đơn hàng</a></li>
                     </ul>
                </section>
                <div class="px-8 mt-6">
@@ -87,7 +87,7 @@
                     <div class="relative flex items-center justify-between  ">
                          <h1 class="font-medium uppercase text-md text-white">
                               <?php
-                              $pageType = isset($data['pageData'][0]) ? $data['pageData'][0] : '';
+                              $pageType = isset($data['page']) ? $data['page'] : '';
                               $pageTitle = [
                                    'dashboard' => 'Số liệu thống kê',
                                    'category' => 'Quản lý danh mục',

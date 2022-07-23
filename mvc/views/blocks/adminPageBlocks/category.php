@@ -16,7 +16,7 @@
 </style>
 <div class="col-span-4 p-6 rounded-md bg-white shadow-custom-shadow-1">
      <h1 class="font-medium text-[1.2rem] pb-8">Thêm danh mục mới</h1>
-     <form action="admin/addNewCategory/category" method="POST" target="_self" enctype="multipart/form-data">
+     <form onsubmit="return false;" action="" method="POST" target="_self" enctype="multipart/form-data">
           <div class="flex flex-col mb-6">
                <label class="text-[1.1rem] font-medium font-primary-font pb-2 text-slate-500" for="name">Tên danh mục<sup>*</sup></label>
                <input class="border text-[1rem] border-slate-300 px-4 py-2 rounded-md focus:outline-none focus:border-primary-color font-primary-font" id="name" name="name" type="text" placeholder="Nhập tên danh mục">
