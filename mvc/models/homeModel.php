@@ -2,39 +2,22 @@
 
 class homeModel extends Connect
 {
-     public function getProducts()
+     
+     public function get_products()
      {
-          $query = "SELECT * FROM products ORDER BY id DESC LIMIT 4";
-          $stmt = $this->dbConnect->prepare($query);
+          $category_id = isset($_POST['category_id']) ? $_POST['category_id'] : die("FAIL");
+          $sql = "SELECT *
+                    FROM products
+                    INNER JOIN categories
+                    ON products.category_id = categories.id
+                    WHERE categories.id = '$category_id'
+                    ORDER BY products.id DESC
+                    LIMIT 4";
 
-          $stmt->execute();
-
-          $raw = $stmt->get_result();
-
-          $products = [];
-
-          while ($product = $raw->fetch_assoc()) {
-               array_push($products, $product);
-          }
-
-          return $products;
+          $query = mysqli_query($this->dbConnect, $sql);
+          $arr = mysqli_fetch_all($query);
+          echo json_encode($arr);
      }
 
-     public function getProductById()
-     {
-          $id = isset($_POST['id']) ? $_POST['id'] : '';
 
-          $query = "SELECT * FROM products WHERE id=?";
-          $stmt = $this->dbConnect->prepare($query);
-
-          $stmt->bind_param('d', $id);
-
-          $stmt->execute();
-
-          $raw = $stmt->get_result();
-
-          $product = $raw->fetch_assoc();
-
-          echo json_encode($product, JSON_UNESCAPED_UNICODE);
-     }
 }

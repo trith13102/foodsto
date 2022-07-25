@@ -5,19 +5,17 @@ class home extends Controller
     public function default()
     {
         $model = $this->model('homeModel');
-
-        $this->view('homeView', [
-            'products' => $model->getProducts(),
-        ]);
+        $this->view("homeView", []);
     }
 
-    public function crud($type = null)
+    public function crud($method = null)
     {
-        if ($type == 'method_1') {
-            $model = $this->model('homeModel');
-            $model->getProductById();
-        } else {
-            echo 'Not choose crud method yet!';
-        }
+        header('Content-Type: application/json; charset=utf-8');
+
+        $model = $this->model('homeModel');
+
+        if (!$method == null && method_exists($model, $method)) {
+            $model->$method();
+        } else die("FAIL");
     }
 }
