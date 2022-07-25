@@ -115,4 +115,9 @@ class adminModel extends Connect
 
         echo json_encode($status);
     }
+
+    public function hello_world()
+    {
+        echo json_encode(array("message" => "Hello Nguyễn Mạnh Đức"));
+    }
 }
