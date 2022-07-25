@@ -20,7 +20,6 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
     <?php require_once 'mvc/views/blocks/header.php'; ?>
 
     <div class="banner-main_home">
@@ -190,607 +189,631 @@
 
         <section class="home_product-bar">
             <div class="home_product-filters">
-                <button class="tabs__title show"><a target="_self" href="#breakfast-cereals">Ngũ cốc ăn
-                        sáng</a></button>
-                <button class="tabs__title"><a target="_self" href="#fruit-yogurt">Sữa chua trái cây</a></button>
-                <button class="tabs__title"><a target="_self" href="#salads">Salads</a></button>
+                <button class="tabs__title">
+                    <a target="_self" href="#<?php echo $category[0] ?>">
+                        Trái cây
+                    </a>
+                </button>
+                <button class="tabs__title">
+                    <a target="_self" href="#<?php echo $category[0] ?>">
+                        Trái cây
+                    </a>
+                </button>
+                <button class="tabs__title">
+                    <a target="_self" href="#<?php echo $category[0] ?>">
+                        Trái cây
+                    </a>
+                </button>
             </div>
             <div class="home_product">
-                <div class="tabs__content h-product-list active" id="breakfast-cereals">
-                    <div class="h-product-main">
-                        <?php
-                        $products = isset($data['products']) ? $data['products'] : '';
-                        foreach ($products as $product) {
-                            echo
-                            '
+                <?php
+                if (isset($data['arrCategories'])) {
+                    $categories = json_decode($data['arrCategories']);
+                    foreach ($categories as $key => $category) { ?>
+                        <div class="tabs__content h-product-list <?php echo $key == 0 ? 'active' : '' ?>" id="<?php echo $category[0] ?>">
+                            <div class="h-product-main">
+
+                                <?php
+                                $data['category_id'] = $category[0];
+                                if (isset($data['arrProducts'])) {
+                                    $products = json_decode($data['arrProducts'][0]);
+                                    foreach ($products as $key => $product) { ?>
+
+                                        <div class="h-product-item">
+                                            <div class="inner-h-product">
+                                                <div class="h-product-img">
+                                                    <img src="<?php echo $product[7] ?>" alt="">
+                                                </div>
+                                                <div class="h-product_content">
+                                                    <div class="h-product__category">
+                                                        <span class="h-category"><?php echo $category[1] ?></span>
+                                                    </div>
+                                                    <div class="h-product__title-price">
+                                                        <a target="_self" href="" class="h-product__title"><?php echo $product[3] ?></a>
+                                                        <div class="h-product__price">
+                                                            <div class="h-pricing-details">
+                                                                <ins>
+                                                                    <span><?php echo $product[4] ?></span> VNĐ
+                                                                </ins>
+                                                            </div>
+                                                            <div class="h-ratings">
+                                                                <ul>
+                                                                    <li>
+                                                                        <i class="fas fa-star"></i>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fas fa-star"></i>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fas fa-star"></i>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fas fa-star"></i>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="far fa-star"></i>
+                                                                    </li>
+                                                                </ul>
+                                                                <span class="h-review">(4)</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="relative">
+                                                            <ul class="flex">
+                                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                        Thêm vào giỏ hàng
+                                                                    </a>
+                                                                </li>
+                                                                <li class="inline-block">
+                                                                    <span class="feedback">
+                                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                </li>
+                                                                <li class="inline-block ml-[5px]">
+                                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                <?php }
+                                } ?>
+                            </div>
+
+                        </div>
+                <?php }
+                } ?>
+
+                <!-- <div class="tabs__content h-product-list" id="fruit-yogurt">
+                        <div class="h-product-main">
                             <div class="h-product-item">
                                 <div class="inner-h-product">
                                     <div class="h-product-img">
-                                        <img src="' . $product['thumbnail'] . '" alt="">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655113241/product_images/htsjy1yio9llgciww9hx.jpg" alt="">
                                     </div>
-                                    <div class="py-[15px] px-[5px] text-left">
-                                        <div class="block items-center">
-                                            <span class="text-[14px]">' . $product['category_id'] . '</span>
+                                    <div class="h-product_content">
+                                        <div class="h-product__category">
+                                            <span class="h-category">Trái cây</span>
+                                            ,
+                                            <span class="h-category">Sữa chua</span>
                                         </div>
-                                        <div class="text-left">
-                                            <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                <a target="_self" href="" class="hover:text-primary-color transition-colors duration-700">' . $product['name'] . '</a>
-                                            </h5>
-                                            <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                <div class="text-primary-color">
-                                                    <span>' . $product['price'] . ' </span>
-                                                    <span>VNĐ</span>
+                                        <div class="h-product__title-price">
+                                            <a target="_self" href="" class="h-product__title">Somoothie</a>
+                                            <div class="h-product__price">
+                                                <div class="h-pricing-details">
+                                                    <ins>
+                                                        <span>20.000</span> VNĐ
+                                                    </ins>
                                                 </div>
-                                                <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                    <div class="h-ratings">
-                                                        <ul>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                        </ul>
-                                                        <span class="h-review">(4)</span>
-                                                    </div>
+                                                <div class="h-ratings">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                    <span class="h-review">(4)</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
                                                         </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button onclick="openModal(this)" class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    <div class="hidden">' . $product['id'] . '</div>
-                                                </li>
-                                            </ul>
-                                            
+                                                    </li>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-                        ';
-                        }
-                        ?>
-                    </div>
-                </div>
-
-                <div class="tabs__content h-product-list" id="fruit-yogurt">
-                    <div class="h-product-main">
-                        <div class="h-product-item">
-                            <div class="inner-h-product">
-                                <div class="h-product-img">
-                                    <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655113241/product_images/htsjy1yio9llgciww9hx.jpg" alt="">
-                                </div>
-                                <div class="h-product_content">
-                                    <div class="h-product__category">
-                                        <span class="h-category">Trái cây</span>
-                                        ,
-                                        <span class="h-category">Sữa chua</span>
+                            <div class="h-product-item">
+                                <div class="inner-h-product">
+                                    <div class="h-product-img">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114754/product_images/qxi601gby5yrxv7otrp0.jpg" alt="">
                                     </div>
-                                    <div class="h-product__title-price">
-                                        <a target="_self" href="" class="h-product__title">Somoothie</a>
-                                        <div class="h-product__price">
-                                            <div class="h-pricing-details">
-                                                <ins>
-                                                    <span>20.000</span> VNĐ
-                                                </ins>
+                                    <div class="h-product_content">
+                                        <div class="h-product__category">
+                                            <span class="h-category">Trái cây</span>
+                                            ,
+                                            <span class="h-category">Sữa chua</span>
+                                        </div>
+                                        <div class="h-product__title-price">
+                                            <a target="_self" href="" class="h-product__title">Cam</a>
+                                            <div class="h-product__price">
+                                                <div class="h-pricing-details">
+                                                    <ins>
+                                                        <span>25.000</span> VNĐ
+                                                    </ins>
+                                                </div>
+                                                <div class="h-ratings">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                    <span class="h-review">(3)</span>
+                                                </div>
                                             </div>
-                                            <div class="h-ratings">
-                                                <ul>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                     </li>
                                                 </ul>
-                                                <span class="h-review">(4)</span>
                                             </div>
-                                        </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="h-product-item">
-                            <div class="inner-h-product">
-                                <div class="h-product-img">
-                                    <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114754/product_images/qxi601gby5yrxv7otrp0.jpg" alt="">
-                                </div>
-                                <div class="h-product_content">
-                                    <div class="h-product__category">
-                                        <span class="h-category">Trái cây</span>
-                                        ,
-                                        <span class="h-category">Sữa chua</span>
-                                    </div>
-                                    <div class="h-product__title-price">
-                                        <a target="_self" href="" class="h-product__title">Cam</a>
-                                        <div class="h-product__price">
-                                            <div class="h-pricing-details">
-                                                <ins>
-                                                    <span>25.000</span> VNĐ
-                                                </ins>
-                                            </div>
-                                            <div class="h-ratings">
-                                                <ul>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                                <span class="h-review">(3)</span>
-                                            </div>
-                                        </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="h-product-item">
-                            <div class="inner-h-product">
-                                <span class="onSale">Sale!</span>
-                                <div class="h-product-img">
-                                    <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655113774/product_images/rjso5vg8fbk2mempr2o6.jpg" alt="">
-                                </div>
-                                <div class="h-product_content">
-                                    <div class="h-product__category">
-                                        <span class="h-category">Trái cây</span>
-                                        ,
-                                        <span class="h-category">Sữa chua</span>
+                            <div class="h-product-item">
+                                <div class="inner-h-product">
+                                    <span class="onSale">Sale!</span>
+                                    <div class="h-product-img">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655113774/product_images/rjso5vg8fbk2mempr2o6.jpg" alt="">
                                     </div>
-                                    <div class="h-product__title-price">
-                                        <a target="_self" href="" class="h-product__title">Nho</a>
-                                        <div class="h-product__price">
-                                            <div class="h-pricing-details">
-                                                <del>
-                                                    <span>15.000</span> VNĐ
-                                                </del>
-                                                <ins>
-                                                    <span>10.000</span> VNĐ
-                                                </ins>
-                                            </div>
-                                            <div class="h-ratings">
+                                    <div class="h-product_content">
+                                        <div class="h-product__category">
+                                            <span class="h-category">Trái cây</span>
+                                            ,
+                                            <span class="h-category">Sữa chua</span>
+                                        </div>
+                                        <div class="h-product__title-price">
+                                            <a target="_self" href="" class="h-product__title">Nho</a>
+                                            <div class="h-product__price">
+                                                <div class="h-pricing-details">
+                                                    <del>
+                                                        <span>15.000</span> VNĐ
+                                                    </del>
+                                                    <ins>
+                                                        <span>10.000</span> VNĐ
+                                                    </ins>
+                                                </div>
+                                                <div class="h-ratings">
 
-                                                <ul>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                    <span class="h-review">(5)</span>
+                                                </div>
+                                            </div>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                     </li>
                                                 </ul>
-                                                <span class="h-review">(5)</span>
                                             </div>
-                                        </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="h-product-item">
-                            <div class="inner-h-product">
-                                <div class="h-product-img">
-                                    <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655113452/product_images/oo3ane27k5umt9xzwhyi.jpg" alt="">
-                                </div>
-                                <div class="h-product_content">
-                                    <div class="h-product__category">
-                                        <span class="h-category">Trái cây</span>
-                                        ,
-                                        <span class="h-category">Sữa chua</span>
+                            <div class="h-product-item">
+                                <div class="inner-h-product">
+                                    <div class="h-product-img">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655113452/product_images/oo3ane27k5umt9xzwhyi.jpg" alt="">
                                     </div>
-                                    <div class="h-product__title-price">
-                                        <a target="_self" href="" class="h-product__title">Bơ</a>
-                                        <div class="h-product__price">
-                                            <div class="h-pricing-details">
-                                                <ins>
-                                                    <span>10.000</span> VNĐ
-                                                </ins>
-                                            </div>
-                                            <div class="h-ratings">
+                                    <div class="h-product_content">
+                                        <div class="h-product__category">
+                                            <span class="h-category">Trái cây</span>
+                                            ,
+                                            <span class="h-category">Sữa chua</span>
+                                        </div>
+                                        <div class="h-product__title-price">
+                                            <a target="_self" href="" class="h-product__title">Bơ</a>
+                                            <div class="h-product__price">
+                                                <div class="h-pricing-details">
+                                                    <ins>
+                                                        <span>10.000</span> VNĐ
+                                                    </ins>
+                                                </div>
+                                                <div class="h-ratings">
 
-                                                <ul>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <ul>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
                                                     </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                     <div class="tabs__content h-product-list" id="salads">
-                    <div class="h-product-main">
-                        <div class="h-product-item">
-                            <div class="inner-h-product">
-                                <span class="onSale">Sale!</span>
-                                <div class="h-product-img">
-                                    <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655116048/product_images/emutw8yvztavoi8rtm67.jpg" alt="">
-                                </div>
-                                <div class="h-product_content">
-                                    <div class="h-product__category">
-                                        <span class="h-category">Salads</span>
-                                        ,
-                                        <span class="h-category">Soups</span>
+                        <div class="h-product-main">
+                            <div class="h-product-item">
+                                <div class="inner-h-product">
+                                    <span class="onSale">Sale!</span>
+                                    <div class="h-product-img">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655116048/product_images/emutw8yvztavoi8rtm67.jpg" alt="">
                                     </div>
-                                    <div class="h-product__title-price">
-                                        <a target="_self" href="" class="h-product__title">Salad rau củ</a>
-                                        <div class="h-product__price">
-                                            <div class="h-pricing-details">
-                                                <del>
-                                                    <span>30.000</span> VNĐ
-                                                </del>
-                                                <ins>
-                                                    <span>25.000</span> VNĐ
-                                                </ins>
+                                    <div class="h-product_content">
+                                        <div class="h-product__category">
+                                            <span class="h-category">Salads</span>
+                                            ,
+                                            <span class="h-category">Soups</span>
+                                        </div>
+                                        <div class="h-product__title-price">
+                                            <a target="_self" href="" class="h-product__title">Salad rau củ</a>
+                                            <div class="h-product__price">
+                                                <div class="h-pricing-details">
+                                                    <del>
+                                                        <span>30.000</span> VNĐ
+                                                    </del>
+                                                    <ins>
+                                                        <span>25.000</span> VNĐ
+                                                    </ins>
+                                                </div>
+                                                <div class="h-ratings">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                    <span class="h-review">(3)</span>
+                                                </div>
                                             </div>
-                                            <div class="h-ratings">
-                                                <ul>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                     </li>
                                                 </ul>
-                                                <span class="h-review">(3)</span>
                                             </div>
-                                        </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="h-product-item">
-                            <div class="inner-h-product">
-                                <div class="h-product-img">
-                                    <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114282/product_images/adfrdtblh0rsz2dsl7br.jpg" alt="">
-                                </div>
-                                <div class="h-product_content">
-                                    <div class="h-product__category">
-                                        <span class="h-category">Salads</span>
-                                        ,
-                                        <span class="h-category">Soups</span>
+                            <div class="h-product-item">
+                                <div class="inner-h-product">
+                                    <div class="h-product-img">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114282/product_images/adfrdtblh0rsz2dsl7br.jpg" alt="">
                                     </div>
-                                    <div class="h-product__title-price">
-                                        <a target="_self" href="" class="h-product__title">Bạc hà</a>
-                                        <div class="h-product__price">
-                                            <div class="h-pricing-details">
-                                                <ins>
-                                                    <span>10.000</span> VNĐ
-                                                </ins>
-                                            </div>
-                                            <div class="h-ratings">
+                                    <div class="h-product_content">
+                                        <div class="h-product__category">
+                                            <span class="h-category">Salads</span>
+                                            ,
+                                            <span class="h-category">Soups</span>
+                                        </div>
+                                        <div class="h-product__title-price">
+                                            <a target="_self" href="" class="h-product__title">Bạc hà</a>
+                                            <div class="h-product__price">
+                                                <div class="h-pricing-details">
+                                                    <ins>
+                                                        <span>10.000</span> VNĐ
+                                                    </ins>
+                                                </div>
+                                                <div class="h-ratings">
 
-                                                <ul>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                    <span class="h-review">(5)</span>
+                                                </div>
+                                            </div>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                     </li>
                                                 </ul>
-                                                <span class="h-review">(5)</span>
                                             </div>
-                                        </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="h-product-item">
-                            <div class="inner-h-product">
-                                <div class="h-product-img">
-                                    <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655112524/product_images/gnggai5ctgp8urqmy6pt.jpg" alt="">
-                                </div>
-                                <div class="h-product_content">
-                                    <div class="h-product__category">
-                                        <span class="h-category">Salads</span>
-                                        ,
-                                        <span class="h-category">Soups</span>
+                            <div class="h-product-item">
+                                <div class="inner-h-product">
+                                    <div class="h-product-img">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655112524/product_images/gnggai5ctgp8urqmy6pt.jpg" alt="">
                                     </div>
-                                    <div class="h-product__title-price">
-                                        <a target="_self" href="" class="h-product__title">Bông cải xanh</a>
-                                        <div class="h-product__price">
-                                            <div class="h-pricing-details">
-                                                <ins>
-                                                    <span>10.000</span> VNĐ
-                                                </ins>
-                                            </div>
-                                            <div class="h-ratings">
+                                    <div class="h-product_content">
+                                        <div class="h-product__category">
+                                            <span class="h-category">Salads</span>
+                                            ,
+                                            <span class="h-category">Soups</span>
+                                        </div>
+                                        <div class="h-product__title-price">
+                                            <a target="_self" href="" class="h-product__title">Bông cải xanh</a>
+                                            <div class="h-product__price">
+                                                <div class="h-pricing-details">
+                                                    <ins>
+                                                        <span>10.000</span> VNĐ
+                                                    </ins>
+                                                </div>
+                                                <div class="h-ratings">
 
-                                                <ul>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <ul>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
                                                     </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="h-product-item">
-                            <div class="inner-h-product">
-                                <div class="h-product-img">
-                                    <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114335/product_images/jzhhrwdz4lp4dt1dbbos.png" alt="">
-                                </div>
-                                <div class="h-product_content">
-                                    <div class="h-product__category">
-                                        <span class="h-category">Salads</span>
-                                        ,
-                                        <span class="h-category">Soups</span>
+                            <div class="h-product-item">
+                                <div class="inner-h-product">
+                                    <div class="h-product-img">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114335/product_images/jzhhrwdz4lp4dt1dbbos.png" alt="">
                                     </div>
-                                    <div class="h-product__title-price">
-                                        <a target="_self" href="" class="h-product__title">Salad rau trộn</a>
-                                        <div class="h-product__price">
-                                            <div class="h-pricing-details">
-                                                <ins>
-                                                    <span>20.000</span> VNĐ
-                                                </ins>
+                                    <div class="h-product_content">
+                                        <div class="h-product__category">
+                                            <span class="h-category">Salads</span>
+                                            ,
+                                            <span class="h-category">Soups</span>
+                                        </div>
+                                        <div class="h-product__title-price">
+                                            <a target="_self" href="" class="h-product__title">Salad rau trộn</a>
+                                            <div class="h-product__price">
+                                                <div class="h-pricing-details">
+                                                    <ins>
+                                                        <span>20.000</span> VNĐ
+                                                    </ins>
+                                                </div>
+                                                <div class="h-ratings">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="far fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                    <span class="h-review">(4)</span>
+                                                </div>
                                             </div>
-                                            <div class="h-ratings">
-                                                <ul>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
                                                     </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="far fa-star"></i>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
                                                     </li>
                                                 </ul>
-                                                <span class="h-review">(4)</span>
                                             </div>
                                         </div>
-                                        <div class="relative">
-                                            <ul class="flex">
-                                                <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                    <a target="_self" href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                        Thêm vào giỏ hàng
-                                                    </a>
-                                                </li>
-                                                <li class="inline-block">
-                                                    <span class="feedback">
-                                                        <a href="" target="_self" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                            <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                                <li class="inline-block ml-[5px]">
-                                                    <button class="btn-open hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
             </div>
         </section>
 

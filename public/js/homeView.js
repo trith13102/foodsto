@@ -55,14 +55,52 @@ window.onload = function () {
 };
 
 //Dùng Ajax để lấy dữ liệu từ API
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    //Dữ liệu được trả về từ API chính là responseText
-    let product = JSON.parse(this.responseText);
-    console.log(product.descriptions);
-  }
+let ajaxCall = (theUrl, method, postData, responseCallback) => {
+  $(document).ready(() => {
+    $.ajax({
+      url: theUrl,
+      type: method,
+      dataType: "JSON",
+      data: postData,
+    }).done((response) => responseCallback(response));
+  });
 };
-xmlhttp.open("POST", "home/crud/method_1");
-xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xmlhttp.send("id=114");
+
+let productsList = {
+  'list_1': {},
+  'list_2': {},
+  'list_3': {},
+};
+
+ajaxCall("http://localhost/foodsto/home/crud/get_products", "POST",
+{
+  "category_id": 4
+},
+(products) => {
+  console.log(products);
+})
+
+ajaxCall("http://localhost/foodsto/home/crud/get_products", "POST",
+{
+  "category_id": 14
+},
+(products) => {
+  console.log(products);
+})
+
+ajaxCall("http://localhost/foodsto/home/crud/get_products", "POST",
+{
+  "category_id": 64
+},
+(products) => {
+  console.log(products);
+
+
+})
+
+console.log(productsList);
+
+
+
+
+
