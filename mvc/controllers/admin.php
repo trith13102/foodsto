@@ -2,7 +2,7 @@
 
 class admin extends Controller
 {
-    public function default($page = 'dashboard')
+    public function default()
     {
         $model = $this->model('adminModel');
 
@@ -56,42 +56,27 @@ class admin extends Controller
         ]);
     }
 
-    public function orders()
+    public function order()
     {
         $model = $this->model('adminModel');
 
         $this->view('adminView', [
-            'page' => 'orders',
+            'page' => 'order',
         ]);
-    }
-    
-    public function addNewCategory($folder = null)
-    {
-        $model = $this->model('adminModel');
-
-        if ($model->addNewCategory($folder)) {
-            exit(header("Location: http://" . $_SERVER['HTTP_HOST'] . '/foodsto/admin/default/category'));
-            // exit(header("Location: https://" . $_SERVER['HTTP_HOST'] . '/admin/default/category'));
-        } else {
-            echo "Error!";
-        }
     }
 
     public function crud($method = null)
     {
-        header('Content-Type: application/json');
-        $model = $this->model('adminModel');
-        switch ($method) {
-            case 'get_category':
-                $model->get_category();
-                break;
-            default:
-                $data = array(
-                    'message' => 'Not select method yet!',
-                );
+        header(
+            'Content-Type: application/json; charset=utf-8'
+        );
 
-                echo json_encode($data, JSON_UNESCAPED_UNICODE);
-                break;
+        $model = $this->model('adminModel');
+
+        if (!$method == null && method_exists($model, $method)) {
+            $model->$method();
+        } else {
+            die('Not select method or method does not exist!');
         }
     }
 }

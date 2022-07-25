@@ -7,18 +7,21 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <?php require_once 'mvc/views/requirements/baseTag.php'; ?>
      <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
      <script src="node_modules/chart.js/dist/chart.js"></script>
      <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
      <link rel="stylesheet" href="public/css/tailwindCommon.css">
      <link rel="stylesheet" href="public/css/base.css">
      <title>FoodSto Management System</title>
      <style>
           #scroll-content::-webkit-scrollbar-track {
-               -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-               background-color: #F5F5F5;
+               background: transparent;
           }
 
           #scroll-content::-webkit-scrollbar {
@@ -46,11 +49,32 @@
                border-radius: 2px;
                transform: rotate(-45deg) translateY(12px);
           }
+
+          #loader-wrapper {
+               background-color: rgba(0, 0, 0, 0.8) !important;
+               backdrop-filter: blur(0.5rem);
+          }
+
+          #loader {
+               border: 3px solid hsla(152, 51%, 47%, 0.2);
+               border-top-color: #3bb77e;
+               border-radius: 50%;
+               width: 3em;
+               height: 3em;
+               animation: spin 1s linear infinite;
+          }
+
+          @keyframes spin {
+               to {
+                    transform: rotate(360deg);
+               }
+          }
      </style>
 </head>
 
 <body class="font-primary-font ">
      <main class="flex h-screen overflow-hidden">
+          <!-- ⬅️ Left: Navigation -->
           <aside class="z-40 sticky top-0 left-0 w-1/6 shadow-custom-shadow-1 bg-white">
                <section class="px-8 py-10">
                     <a href="admin" target="_self">
@@ -67,7 +91,7 @@
                          <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/product" target="_self"><i class="pr-2 bx bxs-package bx-sm text-primary-color"></i> Sản phẩm</a></li>
                          <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/discount" target="_self"><i class="pr-2 bx bxs-discount bx-sm text-primary-color"></i> Chương trình giảm
                                    giá</a></li>
-                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/orders" target="_self"><i class="pr-2 bx bx-scatter-chart bx-sm text-primary-color"></i> Quản lý đơn hàng</a></li>
+                         <li class=""><a class="flex text-[.9rem] items-center py-2.5 text-slate-400 hover:text-slate-800 hover:font-semibold transition-all ease-linear" href="admin/order" target="_self"><i class="pr-2 bx bx-scatter-chart bx-sm text-primary-color"></i> Quản lý đơn hàng</a></li>
                     </ul>
                </section>
                <div class="px-8 mt-6">
@@ -80,6 +104,8 @@
                     </div>
                </div>
           </aside>
+
+          <!-- ➡️ Right: Content -->
           <section id="scroll-content" class="relative z-0 flex-1 bg-whiten-bg-color overflow-auto">
                <div class="absolute z-[-1] top-0 left-0 right-0 w-full h-96 bg-gradient-to-r from-primary-color to-secondary-color">
                </div>
@@ -87,16 +113,16 @@
                     <div class="relative flex items-center justify-between  ">
                          <h1 class="font-medium uppercase text-md text-white">
                               <?php
-                              $pageType = isset($data['page']) ? $data['page'] : '';
-                              $pageTitle = [
+                              $page = isset($data['page']) ? $data['page'] : '';
+                              $titles = [
                                    'dashboard' => 'Số liệu thống kê',
                                    'category' => 'Quản lý danh mục',
                                    'account' => 'Quản lý tài khoản',
                                    'product' => 'Quản lý sản phẩm',
                                    'discount' => 'Chương trình giảm giá',
-                                   'orders' => 'Quản lý đơn hàng',
+                                   'order' => 'Quản lý đơn hàng',
                               ];
-                              echo $pageTitle[$pageType];
+                              echo $titles[$page];
                               ?>
                          </h1>
                          <div onclick="showDropDownMenu();" class="relative select-none">
@@ -115,23 +141,20 @@
                          </div>
                     </div>
                     <div class="grid grid-cols-4 gap-x-[20px] gap-y-[40px] my-16">
-                         <?php
-                         if ($pageType != '') {
-                              require_once 'mvc/views/blocks/adminPageBlocks/' . $pageType . '.php';
-                         } else {
-                              require_once 'mvc/views/blocks/adminPageBlocks/dashboard.php';
-                         }
-                         ?>
+                         <?php require_once 'mvc/views/blocks/adminPageBlocks/' . $page . '.php'; ?>
                     </div>
                </div>
           </section>
      </main>
+
+     <!-- ⌛ Page loader -->
+     <div id="loader-wrapper" class="hidden z-50 absolute top-0 left-0 right-0 flex items-center justify-center w-screen h-screen">
+          <div id="loader"></div>
+     </div>
+
      <script src="public/js/adminView.js"></script>
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-     <?php
-     if ($pageType == 'dashboard') echo '<script src="public/js/chart.js"></script>';
-     if ($pageType == 'category') echo '<script src="public/js/blocks/adminView/category.js"></script>';
-     ?>
+     <?php echo '<script src="public/js/blocks/adminView/' . $page . '.js"></script>'; ?>
+
 </body>
 
 </html>

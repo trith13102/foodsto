@@ -2,8 +2,9 @@
 
 require 'vendor/autoload.php';
 
-use Cloudinary\Configuration\Configuration;
+use Cloudinary\Api\Admin\AdminApi;
 use Cloudinary\Api\Upload\UploadApi;
+use Cloudinary\Configuration\Configuration;
 
 Configuration::instance([
     'cloud' => [
@@ -38,11 +39,32 @@ class Connect
     public function uploadImage($image, $folder)
     {
         $folder = $folder == null ? '' : $folder;
-        $uploadImage = (new UploadApi())->upload($image, [
-            'folder' => $folder
-        ]);
 
-        return $uploadImage['secure_url'];
+        $result = (new AdminApi())->assetsByIds("category/h9qju5o9fy7bgwysgvxw");
+
+        // $response = (new UploadApi())->upload($image, [
+        //     'folder' => $folder,
+        //     'public_id' => md5_file($image)
+        // ]);
+
+        // return array(
+        //     'secure_url' => $response['secure_url'],
+        //     'public_id' => $response['public_id'],
+        // );
+        // print_r($response);
+        print_r($result);
+    }
+
+    public function getImage($publicID)
+    {
+        $result = (new AdminApi())->asset($publicID);
+        return $result;
+    }
+
+    public function deleteImage($publicID)
+    {
+        $result = (new AdminApi())->deleteAssets($publicID);
+        return $result;
     }
 }
 

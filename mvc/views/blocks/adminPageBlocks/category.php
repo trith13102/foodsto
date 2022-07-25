@@ -1,40 +1,27 @@
-<style>
-     #loader {
-          border: 3px solid hsla(152, 51%, 47%, 0.2);
-          border-top-color: #3bb77e;
-          border-radius: 50%;
-          width: 3em;
-          height: 3em;
-          animation: spin 1s linear infinite;
-     }
-
-     @keyframes spin {
-          to {
-               transform: rotate(360deg);
-          }
-     }
-</style>
 <div class="col-span-4 p-6 rounded-md bg-white shadow-custom-shadow-1">
      <h1 class="font-medium text-[1.2rem] pb-8">Thêm danh mục mới</h1>
-     <form onsubmit="return false;" action="" method="POST" target="_self" enctype="multipart/form-data">
+     <form id="add-new-form" onsubmit="return false;" method="POST" target="_self" enctype="multipart/form-data">
           <div class="flex flex-col mb-6">
-               <label class="text-[1.1rem] font-medium font-primary-font pb-2 text-slate-500" for="name">Tên danh mục<sup>*</sup></label>
-               <input class="border text-[1rem] border-slate-300 px-4 py-2 rounded-md focus:outline-none focus:border-primary-color font-primary-font" id="name" name="name" type="text" placeholder="Nhập tên danh mục">
+               <label class="text-[1rem] font-medium font-primary-font pb-2 text-slate-500" for="name">Tên danh mục<sup>*</sup></label>
+               <input onclick="hideError(this)" onblur="checkTextInput(this, 'string')" class="border text-[1rem] border-slate-300 px-4 py-2 rounded-md focus:outline-none focus:border-primary-color font-primary-font" id="name" name="name" type="text" placeholder="Nhập tên danh mục">
+               <p class="hidden flex items-center pt-2 font-medium text-[.8rem] text-red-400"></p>
           </div>
           <div class="flex flex-col mb-6">
-               <label class="text-[1.1rem] font-medium font-primary-font pb-2 text-slate-500" for="description">Mô tả danh mục<sup>*</sup></label>
-               <input class="border text-[1rem] border-slate-300 px-4 py-2 rounded-md focus:outline-none focus:border-primary-color font-primary-font" id="description" name="description" type="text" placeholder="Nhập tên danh mục">
+               <label class="text-[1rem] font-medium font-primary-font pb-2 text-slate-500" for="description">Mô tả danh mục<sup>*</sup></label>
+               <input onclick="hideError(this)" onblur="checkTextInput(this, 'string')" class="border text-[1rem] border-slate-300 px-4 py-2 rounded-md focus:outline-none focus:border-primary-color font-primary-font" id="description" name="description" type="text" placeholder="Nhập tên danh mục">
+               <p class="hidden flex items-center pt-2 font-medium text-[.8rem] text-red-400"></p>
           </div>
           <div class="flex flex-col mb-6">
-               <label class="text-[1.1rem] font-medium font-primary-font pb-2 text-slate-500" for="thumbnail">Ảnh thu nhỏ<sup>*</sup></label>
-               <input class="w-80 border text-[1rem] border-slate-300 px-4 py-2 rounded-md focus:outline-none focus:border-primary-color font-primary-font" id="thumbnail" name="thumbnail" type="file" placeholder="Nhập tên danh mục">
-               <div class="hidden overflow-hidden w-80 mt-4 border-2 border-primary-color rounded-lg">
+               <label class="text-[1rem] font-medium font-primary-font pb-2 text-slate-500" for="thumbnail">Ảnh thu nhỏ<sup>*</sup></label>
+               <input onclick="hideError(this)" onchange="checkForFileInput(this)" class="w-80 border text-[1rem] border-slate-300 px-4 py-2 rounded-md focus:outline-none focus:border-primary-color font-primary-font" id="thumbnail" name="thumbnail" type="file" placeholder="Nhập tên danh mục">
+               <p class="hidden flex items-center pt-2 font-medium text-[.8rem] text-red-500">Đây là dòng báo lỗi nếu có lỗi.</p>
+               <div class="hidden overflow-hidden w-52 mt-4 border-2 border-primary-color rounded-lg">
                     <img id="preview" class="" alt="Preview Image" />
                </div>
           </div>
-          <div class="flex pt-20 pb-2">
-               <button class="w-44 h-10 text-[.9rem] text-white mr-2 bg-primary-color rounded-md drop-shadow-md hover:translate-y-[-0.1rem] hover:drop-shadow-xl font-medium transition-all" type="submit">Thêm</button>
-               <button class="w-44 h-10 text-[.9rem] text-stone-800 ml-2 bg-slate-100 rounded-md drop-shadow-md hover:translate-y-[-0.1rem] hover:drop-shadow-xl font-medium transition-all" type="submit">Nhập lại</button>
+          <div class="flex pt-6 pb-2">
+               <button onclick="validate('add-new-form')" class="w-44 h-10 text-[.9rem] text-white mr-2 bg-primary-color rounded-md drop-shadow-md hover:translate-y-[-0.1rem] hover:drop-shadow-xl font-medium transition-all" type="button">Thêm</button>
+               <button onclick="resetForm('add-new-form')" class="w-44 h-10 text-[.9rem] text-stone-800 ml-2 bg-slate-100 rounded-md drop-shadow-md hover:translate-y-[-0.1rem] hover:drop-shadow-xl font-medium transition-all" type="button">Nhập lại</button>
           </div>
      </form>
 </div>
@@ -44,7 +31,7 @@
           <h1 class="font-medium text-[1.2rem] p-6 pb-8">Danh sách danh mục</h1>
           <div class="mr-6 border border-slate-400 rounded-md overflow-hidden">
                <input class="p-2 font-primary-font focus:outline-none text-[.9rem]" type="text" placeholder="Tìm kiếm danh mục">
-               <button class="px-6 py-2 bg-slate-600 hover:bg-slate-400 text-white font-primary-font text-[.9rem]" type="button">Tìm kiếm</button>
+               <button onclick="pushNotification('Hello World')" class="px-6 py-2 bg-slate-600 hover:bg-slate-400 text-white font-primary-font text-[.9rem]" type="button">Tìm kiếm</button>
           </div>
      </div>
 
@@ -75,9 +62,7 @@
                          </button>
                     </td>
                </tr>
-               <div id="loader-wrapper" class="flex items-center justify-center"></div>
           </tbody>
-
      </table>
      <div></div>
 </div>
