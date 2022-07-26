@@ -40,31 +40,18 @@ class Connect
     {
         $folder = $folder == null ? '' : $folder;
 
-        $result = (new AdminApi())->assetsByIds("category/h9qju5o9fy7bgwysgvxw");
+        $check = json_decode(json_encode((new AdminApi())->assetsByIds(['' . $folder . '/' . md5_file($image) . ''])));
 
-        // $response = (new UploadApi())->upload($image, [
-        //     'folder' => $folder,
-        //     'public_id' => md5_file($image)
-        // ]);
+        if ($check->resources) {
+            return $check->resources[0]->secure_url;
+        } else {
+            $response = (new UploadApi())->upload($image, [
+                'folder' => $folder,
+                'public_id' => md5_file($image)
+            ]);
 
-        // return array(
-        //     'secure_url' => $response['secure_url'],
-        //     'public_id' => $response['public_id'],
-        // );
-        // print_r($response);
-        print_r($result);
-    }
-
-    public function getImage($publicID)
-    {
-        $result = (new AdminApi())->asset($publicID);
-        return $result;
-    }
-
-    public function deleteImage($publicID)
-    {
-        $result = (new AdminApi())->deleteAssets($publicID);
-        return $result;
+            return $response['secure_url'];
+        }
     }
 }
 

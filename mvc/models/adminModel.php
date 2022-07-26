@@ -16,7 +16,7 @@ class adminModel extends Connect
                 array_push($categories, $category);
             }
 
-            echo json_encode($categories);
+            echo json_encode($categories, JSON_UNESCAPED_UNICODE);
         } else {
             echo json_encode(array('message' => 'NOT_FOUND'));
         }
@@ -31,10 +31,13 @@ class adminModel extends Connect
         $query = 'SELECT COUNT(id) AS COUNT FROM categories WHERE name LIKE "' . $category . '" ';
         $raw = $this->dbConnect->query($query);
 
-        if ($raw->num_rows) {
+        if ($raw->fetch_assoc()['COUNT']) {
             echo json_encode(array('message' => 'ALREADY_EXISTS'));
+            return json_encode(array('message' => 'ALREADY_EXISTS'));
         } else {
             echo json_encode(array('message' => 'NOT_FOUND'));
+            return
+                json_encode(array('message' => 'NOT_FOUND'));
         }
     }
 
@@ -46,17 +49,22 @@ class adminModel extends Connect
         $description = isset($_POST['description']) ? $_POST['description'] : die('NOT_ENOUGH_PARAMETERS');
         $thumbnail = isset($_POST['thumbnail']) ? $_POST['thumbnail'] : die('NOT_ENOUGH_PARAMETERS');
 
-        $imagedUploaded = $this->uploadImage($thumbnail, 'category');
-        // $secure_url = $imagedUploaded['secure_url'];
-        // $public_id = $imagedUploaded['public_id'];
+        $query = 'SELECT COUNT(id) AS COUNT FROM categories WHERE name LIKE "' . $name . '" ';
+        $raw = $this->dbConnect->query($query);
 
-        // $query = 'INSERT INTO categories (name, description, thumbnail, thumbnail_public_id) VALUES ("' . $name . '", "' . $description . '", "' . $secure_url . '", "' . $public_id . '")';
+        if ($raw->fetch_assoc()['COUNT']) {
+            echo json_encode(array('message' => 'ALREADY_EXISTS'));
+        } else {
+            $imagedUploaded = $this->uploadImage($thumbnail, 'category');
 
-        // if ($this->dbConnect->query($query)) {
-        //     echo json_encode(array('message' => 'SUCCESS'));
-        // } else {
-        //     echo json_encode(array('message' => 'FAIL'));
-        // }
+            $query = 'INSERT INTO categories (name, description, thumbnail) VALUES ("' . $name . '", "' . $description . '", "' . $imagedUploaded . '")';
+
+            if ($this->dbConnect->query($query)) {
+                echo json_encode(array('message' => 'SUCCESS'));
+            } else {
+                echo json_encode(array('message' => 'FAIL'));
+            }
+        }
     }
 
     public function update_category()
@@ -68,9 +76,11 @@ class adminModel extends Connect
         $description = isset($_POST['description']) ? $_POST['description'] : die('NOT_ENOUGH_PARAMETERS');
         $thumbnail = isset($_POST['thumbnail']) ? $_POST['thumbnail'] : die('NOT_ENOUGH_PARAMETERS');
 
-        // $thumbnail = $this->uploadImage($thumbnail, 'category');
+        $imagedUploaded = $this->uploadImage($thumbnail, 'category');
 
-        $query = 'UPDATE categories SET name="' . $name . '", description="' . $description . '", thumbnail="' . $thumbnail . '" WHERE id="' . $id . '"';
+
+
+        $query = 'UPDATE categories SET name="' . $name . '", description="' . $description . '", thumbnail="' . $imagedUploaded . '" WHERE id="' . $id . '"';
 
         if ($this->dbConnect->query($query)) {
             echo json_encode(array('message' => 'SUCCESS'));
@@ -85,12 +95,6 @@ class adminModel extends Connect
 
         $id = isset($_POST['id']) ? $_POST['id'] : die('NOT_ENOUGH_PARAMETERS');
 
-        $query = 'SELECT thumbnail_public_id FROM categories WHERE id="' . $id . '"';
-        $raw = $this->dbConnect->query($query);
-
-        $publicId = $raw->fetch_assoc()['thumbnail_public_id'];
-        $status = $this->deleteImage($publicId);
-
         $query = 'DELETE FROM categories WHERE id="' . $id . '"';
 
         if ($this->dbConnect->query($query)) {
@@ -98,21 +102,5 @@ class adminModel extends Connect
         } else {
             echo json_encode(array('message' => 'FAIL'));
         }
-    }
-
-    public function get_images()
-    {
-        $publicId = isset($_POST['public_id']) ? $_POST['public_id'] : die("NOT POST");
-        $image = $this->getImage($publicId);
-
-        echo json_encode($image);
-    }
-
-    public function delete_image()
-    {
-        $publicId = isset($_POST['public_id']) ? $_POST['public_id'] : die("NOT POST");
-        $status = $this->deleteImage($publicId);
-
-        echo json_encode($status);
     }
 }

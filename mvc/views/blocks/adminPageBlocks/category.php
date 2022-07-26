@@ -46,7 +46,7 @@
                </tr>
           </thead>
           <tbody id="data-place">
-               <tr class=" hover:bg-slate-100 transition-all duration-400 w-full border-b h-ful">
+               <!-- <tr class=" hover:bg-slate-100 transition-all duration-400 w-full border-b h-ful">
                     <td class="font-[700] text-left text-[.8rem] text-primary-color uppercase px-6 py-2">
                          <img class="w-[20rem] border-1 border-black" src="https://res.cloudinary.com/foodstocloud/image/upload/v1657664939/category/bakery-4_u7eyha.png" alt="">
                     </td>
@@ -61,7 +61,7 @@
                               <i class="bx bxs-trash text-[.9rem] text-white"></i>
                          </button>
                     </td>
-               </tr>
+               </tr> -->
           </tbody>
      </table>
      <div></div>
