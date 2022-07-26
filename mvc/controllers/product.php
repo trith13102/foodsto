@@ -6,6 +6,12 @@
          {
              $model = $this->model('productModel');
 
-             $this->view('productView', []);
+             $this->view('productView', [
+                'getPage' =>$model->getPage(),
+                'arrProducts'=>$model->showProduct(),
+                'popular' => $model->popularProducts(),
+                'numberPages' => $model->pagesProduct()
+            ]);
+
          }
      }

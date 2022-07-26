@@ -51,526 +51,88 @@
                             </div>
                             <!-- List-Product -->
                             <div class=" mx-[-15px] flex flex-wrap">
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
+                                <?php foreach ($data['arrProducts'] as $product) { ?>
+                                    <div class="w-[33.33%] px-[15px] mb-[30px]">
+                                        <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
+                                            <div>
+                                                <img class="w-full rounded-[5px]" src="<?php echo $product['thumbnail'] ?>" alt="">
                                             </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
+                                            <div class="py-[15px] px-[5px] text-left">
+                                                <div class="block items-center">
+                                                    <span class="text-[14px]"><?php echo $product['categoryName']; ?></span>
+                                                </div>
+                                                <div class="text-left">
+                                                    <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
+                                                        <a href="" class="hover:text-primary-color transition-colors duration-700"><?php echo $product['name'] ?></a>
+                                                    </h5>
+                                                    <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
+                                                        <div class="text-primary-color">
+                                                            <span>$ </span>
+                                                            <span><?php echo number_format($product['price']); ?></span>
+                                                        </div>
+                                                        <div class="iq-woo-product-price-rating-holder flex justify-between">
+                                                            <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
+                                                                <ul>
+                                                                    <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                    <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                    <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                    <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                    <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                </ul>
+                                                                <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                <div class="relative">
+                                                    <ul class="flex">
+                                                        <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                            <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                Thêm vào giỏ hàng
                                                             </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
-                                            </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                        </div>
-                                                    </div>
+                                                        </li>
+                                                        <li class="inline-block">
+                                                            <span class="feedback">
+                                                                <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                    <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="inline-block ml-[5px]">
+                                                            <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
-                                            </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
-                                            </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
-                                            </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
-                                            </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
-                                            </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
-                                            </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]">Bánh mì</span>
-                                                <span class="text-[14px]"> , </span>
-                                                <span class="text-[14px]">Ngũ cốc ăn sáng</span>
-                                            </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700">Bolthouse</a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span>100</span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
+                                <?php } ?>
+
+
+
                             </div>
                             <!-- Number-Pages  -->
                             <div class="pagination text-center">
                                 <ul class="flex justify-center">
-                                    <li class="inline-block">
-                                        <span aria-current="page" class="pages-number block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-white-color bg-primary-color border-primary-color">
-                                            1
-                                        </span>
-                                    </li>
-                                    <li class="inline-block">
-                                        <a href="" target="_blank" class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
-                                            2
-                                        </a>
-                                    </li>
                                     
+                    
+                                    <?php for ($i = 1; $i <= $data['numberPages']; $i++) {  ?>
+                                        <?php if ($i == $data['getPage']) { ?>
+                                            <li class="inline-block">
+                                                <span aria-current="page" class="pages-number block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-white-color bg-primary-color border-primary-color">
+                                                    <?php echo $i ?>
+                                                </span>
+                                            </li>
+                                        <?php } else { ?>
+                                            <li class="inline-block">
+                                                <a href="product&page=<?php echo $i ?>" target="_blank" class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
+                                                    <?php echo $i ?>
+                                                </a>
+                                            </li>
+
+                                    <?php }
+                                    } ?>
+
                                 </ul>
                             </div>
                         </div>
@@ -596,7 +158,7 @@
                                     <form action="" method="get" class="">
                                         <div class="scroll-price relative mt-[30px] rounded-[1em] bg-[#d5d5d5] mb-[1em] h-[0.5em] ">
                                             <div class="ui-slider-range absolute z-[1] left-[0%]  h-full bg-secondary-color rounded-[1em]"></div>
-                                            <input type="range" min="58" max="1200" value="0"    class="range-input range-min ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
+                                            <input type="range" min="58" max="1200" value="0" class="range-input range-min ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
                                             <input type="range" min="58" max="1200" value="1200" class="range-input range-max ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
                                         </div>
                                         <div class="price-slider-amount">
@@ -656,7 +218,7 @@
                                     <h4 before="" class="relative before:bottom-0 before:absolute before:w-[28px] before:h-[3px] before:bg-secondary-color before:content-[attr(before)] text-[20px] mb-[15px] pb-[15px] font-[600]">
                                         Sản phẩm phổ biến
                                     </h4>
-                                    <div class="flex items-start mb-[15px]">
+                                    <!-- <div class="flex items-start mb-[15px]">
                                         <div class="w-[80px] h-[80px] mr-[10px]">
                                             <img class="w-full h-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114216/product_images/ewpox6n9joghkl9z5b6j.jpg" alt="">
                                         </div>
@@ -685,25 +247,27 @@
                                                 <span class="woocommerce-Price-amount amount no-underline"><span class="woocommerce-Price-currencySymbol no-underline">$</span>7.50</span>
                                             </ins>
                                         </div>
-                                    </div>
-                                    <div class="flex items-start mb-[15px]">
-                                        <div class="w-[80px] h-[80px] mr-[10px]">
-                                            <img class="w-full h-full rounded-[5px]" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114216/product_images/ewpox6n9joghkl9z5b6j.jpg" alt="">
+                                    </div> -->
+                                    <?php while ($row = mysqli_fetch_array($data['popular'])) { ?>
+                                        <div class="flex items-start mb-[15px]">
+                                            <div class="w-[80px] h-[80px] mr-[10px]">
+                                                <img class="w-full h-full rounded-[5px]" src="<?php echo $row['thumbnail'] ?>" alt="">
+                                            </div>
+                                            <div class="self-center flex-1">
+                                                <a href="" target="_blank">
+                                                    <h5 class="text-title-color text-[1.37em] font-[600] hover:text-primary-color transition-all duration-500">
+                                                        <?php echo $row['name'] ?>
+                                                    </h5>
+                                                </a>
+                                                <del class="mr-5px text-secondary-color inline-block">
+                                                    <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>7500</span>
+                                                </del>
+                                                <ins class="no-underline">
+                                                    <span class="woocommerce-Price-amount amount no-underline"><span class="woocommerce-Price-currencySymbol no-underline">$</span><?php echo number_format($row['price']) ?></span>
+                                                </ins>
+                                            </div>
                                         </div>
-                                        <div class="self-center flex-1">
-                                            <a href="" target="_blank">
-                                                <h5 class="text-title-color text-[1.37em] font-[600] hover:text-primary-color transition-all duration-500">
-                                                    Bánh mì
-                                                </h5>
-                                            </a>
-                                            <del class="mr-5px text-secondary-color inline-block">
-                                                <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>10</span>
-                                            </del>
-                                            <ins class="no-underline">
-                                                <span class="woocommerce-Price-amount amount no-underline"><span class="woocommerce-Price-currencySymbol no-underline">$</span>7.50</span>
-                                            </ins>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
 
                                 </div>
                             </div>
