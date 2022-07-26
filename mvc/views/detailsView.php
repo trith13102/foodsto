@@ -1,3 +1,8 @@
+<?php
+    $row = $data["product"];
+    $list = $data["category"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +19,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="public/css/tailwindCommon.css">
 
-    <title>Bolthouse - FoodSto</title>
+    <title><?php echo $row['name'] . " - FoodSto" ?></title>
 
 </head>
 
@@ -23,13 +28,14 @@
     <script src="public/js/homeView.js"></script>
 
     <?php require_once 'mvc/views/blocks/header.php'; ?>
+
     <div class="banner__nav font-primary-font">
         <div class="pt-36 py-26 text-center text-title-color">
-            <h1 class="font-bold text-[70px]">Bolthouse</h1>
+            <h1 class="font-bold text-[70px]"><?php echo $row['name'] ?></h1>
             <ol class="flex justify-center text-base mt-3">
                 <li class="flex items-center justify-center"><i class="fa-solid fa-house-chimney mr-2"></i><a href="" class="block hover:text-primary-color">Trang chủ</a></li>
                 <li class="flex items-center justify-center"><i class="fa-solid fa-chevron-right text-xs pl-2 pr-4"></i><a href="" class="block hover:text-primary-color transition-colors">Sản phẩm</a></li>
-                <li class="flex items-center justify-center"><i class="fa-solid fa-chevron-right text-xs pl-2 pr-4"></i><a href="" class="block hover:text-primary-color transition-colors">Bolthouse</a></li>
+                <li class="flex items-center justify-center"><i class="fa-solid fa-chevron-right text-xs pl-2 pr-4"></i><a href="" class="block hover:text-primary-color transition-colors"><?php echo $row['name'] ?></a></li>
             </ol>
         </div>
     </div>
@@ -42,35 +48,34 @@
                 <div class="product__image w-[42%]">
                     <div class="overflow-hidden mb-7.5 rounded-md">
                         <div class="product__image--show flex transition-transform duration-700">
-                            <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114089/product_images/mjggsl5l7iakjesdapb1.png" alt="">
-                            <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                            <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114023/product_images/visgq0suwwzz4wc2lvwt.jpg" alt="">
+                            <img src="<?php echo $row['thumbnail'] ?>" alt="">
+                            <img src="<?php echo $row['thumbnail'] ?>" alt="">
+                            <img src="<?php echo $row['thumbnail'] ?>" alt="">
                         </div>
                     </div>
                     <div class="product__image--mini grid grid-cols-3 gap-x-4">
-                        <img class="rounded-md transition-all duration-500 cursor-pointer" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114089/product_images/mjggsl5l7iakjesdapb1.png" alt="">
-                        <img class="rounded-md transition-all duration-500 cursor-pointer" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114877/product_images/sb9b5tdmr840odmxhkxl.jpg" alt="">
-                        <img class="rounded-md transition-all duration-500 cursor-pointer" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114023/product_images/visgq0suwwzz4wc2lvwt.jpg" alt="">
+                        <img class="rounded-md transition-all duration-500 cursor-pointer" src="<?php echo $row['thumbnail'] ?>" alt="">
+                        <img class="rounded-md transition-all duration-500 cursor-pointer" src="<?php echo $row['thumbnail'] ?>" alt="">
+                        <img class="rounded-md transition-all duration-500 cursor-pointer" src="<?php echo $row['thumbnail'] ?>" alt="">
                     </div>
                 </div>
                 <div class="product__details border p-7.5 w-[55%] rounded-md">
-                    <h2 class="text-title text-title-color font-bold">Bolthouse</h2>
-                    <p class="text-body-text my-2.25">Cà rốt, sinh tố, nước trái cây và nước xốt được tính đến. Một khẩu phần bằng 1/2 cốc nước trái cây. Khuyến nghị hàng ngày.</p>
+                    <h2 class="text-title text-title-color font-bold"><?php echo $row['name'] ?></h2>
+                    <p class="text-body-text my-2.25"><?php echo $row['descriptions'] ?></p>
                     <div class="mb-7.5">
                         <span class="text-lg text-title-color">Thể loại: </span>
-                        <a href="" class="text-primary-color hover:text-secondary-color transition-colors">Bánh mì</a>,
-                        <a href="" class="text-primary-color hover:text-secondary-color transition-colors">Ngũ cốc ăn sáng</a>
+                        <a href="" class="text-primary-color hover:text-secondary-color transition-colors"><?php echo $row["name_category"] ?></a>
                     </div>
                     <div class="flex items-center">
                         <span class="flex">
                             <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="fa-solid fa-star text-secondary-color"></i>';
-} ?>
+                                echo '<i class="fa-solid fa-star text-secondary-color"></i>';
+                            } ?>
                         </span>
                         <a href="" class="hover:text-secondary-color transition-colors ml-4">(2 đánh giá của khách hàng)</a>
                     </div>
-                    <p class="text-primary-color text-4xl font-medium leading-relaxed">$100.00</p>
-                    <form action="" class="flex mb-4">
+                    <p class="text-primary-color text-4xl font-medium leading-relaxed"><?php echo "$" . number_format($row['price']) ?></p>
+                    <form action="cart?add&id=<?php echo $row['id']?>" target="_self" method="POST" class="flex mb-4">
                         <span class="flex mr-4">
                             <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
                                 <i class="fa-solid fa-minus"></i>
@@ -80,7 +85,7 @@
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </span>
-                        <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                        <button type="submit" name="insert" class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
                     </form>
                     <a href="" class="block hover:text-primary-color"><i class="far fa-heart mr-2.25"></i><span>Thêm vào danh sách yêu thích</span></a>
                     <ul class="mt-4 flex gap-x-2">
@@ -106,10 +111,10 @@
                 <div id="tab__desc" class="tabs__contents">
                     <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et.</p>
                     <div class="grid grid-cols-4 my-7.5 gap-x-7.5">
-                        <img class="rounded-md" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655171112/product_images/ubgolasezpmmacnnmjas.jpg" alt="">
-                        <img class="rounded-md" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655116223/product_images/mabtc6zfsymculllnt07.jpg" alt="">
-                        <img class="rounded-md" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655116126/product_images/bzkuetfa7gqykmbhqgsw.jpg" alt="">
-                        <img class="rounded-md" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655116048/product_images/emutw8yvztavoi8rtm67.jpg" alt="">
+                        <img class="rounded-md" src="<?php echo $row['thumbnail'] ?>" alt="">
+                        <img class="rounded-md" src="<?php echo $row['thumbnail'] ?>" alt="">
+                        <img class="rounded-md" src="<?php echo $row['thumbnail'] ?>" alt="">
+                        <img class="rounded-md" src="<?php echo $row['thumbnail'] ?>" alt="">
                     </div>
                     <ul class="pl-4 text-primary-color list-disc">
                         <li>Sức khỏe tim mạch và ngăn ngừa đột quỵ</li>
@@ -131,8 +136,8 @@
                             <td class="italic px-7.5 py-2">Có</td>
                         </tr>
                         <tr class="leading-loose">
-                            <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Kích thước</th>
-                            <td class="italic px-7.5 py-2">5 x 5 x 10cm</td>
+                            <th class="text-left border-r border-r-primary-color font-semibold py-2.25 pl-5 pr-1 w-44">Cân nặng</th>
+                            <td class="italic px-7.5 py-2"><?php echo $row['weight'] . " kg"; ?></td>
                         </tr>
                     </table>
                 </div>
@@ -148,8 +153,8 @@
                             </div>
                             <span class="flex ml-auto">
                                 <?php for ($i = 0; $i < 5; ++$i) {
-                                echo '<i class="fa-solid fa-star text-secondary-color"></i>';
-                            } ?>
+                                    echo '<i class="fa-solid fa-star text-secondary-color"></i>';
+                                } ?>
                             </span>
                         </li>
                         <li class="flex mb-5">
@@ -161,8 +166,8 @@
                             </div>
                             <span class="flex ml-auto">
                                 <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="fa-solid fa-star text-secondary-color"></i>';
-} ?>
+                                    echo '<i class="fa-solid fa-star text-secondary-color"></i>';
+                                } ?>
                             </span>
                         </li>
                     </ol>
@@ -173,8 +178,8 @@
                             <label class="font-medium">Đánh giá của bạn *</label>
                             <span class="ml-7.5">
                                 <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="rating__star fa-regular fa-star text-secondary-color"></i>';
-} ?>
+                                    echo '<i class="rating__star fa-regular fa-star text-secondary-color"></i>';
+                                } ?>
                             </span>
                         </div>
                         <div class="form__comment mb-5">
@@ -210,157 +215,40 @@
                 <!-- Slider auto product -->
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide rounded-md">
-                            <div class="p-4">
-                                <div class="px-2.25 shadow-product pt-2.25">
-                                    <a href="#" class="w-full group">
-                                        <div class=" w-full overflow-hidden">
-                                            <img class="group-hover:scale-105 w-full transition-transform duration-500" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114089/product_images/mjggsl5l7iakjesdapb1.png">
-                                        </div>
-                                        <div class="product__content pt-4 px-1">
-                                            <p class="text-sm">Ngũ cốc ăn sáng</p>
-                                            <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">Bánh mì ăn sáng</h1>
-                                            <div class="flex justify-between items-center mt-2 mb-2.25">
-                                                <p class="text-primary-color font-semibold text-lg">$7.50</p>
-                                                <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; ++$i) {
-                                            echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-                                        } ?>
-                                                </span>
+                        <?php 
+                            foreach($list as $raw) {
+                                echo '<div class="swiper-slide rounded-md">
+                                <div class="p-4">
+                                    <div class="px-2.25 shadow-product pt-2.25">
+                                        <a href="details?id='.$raw['id'].'" class="w-full group">
+                                            <div class=" w-full overflow-hidden">
+                                                <img class="group-hover:scale-105 w-full transition-transform duration-500" src="'.$raw['thumbnail'].'">
                                             </div>
+                                            <div class="product__content pt-4 px-1">
+                                                <p class="text-sm">'.$raw['name_category'].'</p>
+                                                <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">'.$raw['name'].'</h1>
+                                                <div class="flex justify-between items-center mt-2 mb-2.25">
+                                                    <p class="text-primary-color font-semibold text-lg">$'.number_format($raw['price']).'</p>
+                                                    <span class="flex">';
+                                                        for ($i = 0; $i < 5; ++$i) {
+                                                            echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+                                                        }
+                                                    echo '</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="bars-button flex justify-between pb-4">
+                                            <a href="cart?add&id='.$raw['id'].'" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                            <ul class="flex gap-x-1">
+                                                <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
+                                                <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
+                                            </ul>
                                         </div>
-                                    </a>
-                                    <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
-                                        <ul class="flex gap-x-1">
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
-                                        </ul>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide rounded-md">
-                            <div class="p-4">
-                                <div class="px-2.25 shadow-product pt-2.25">
-                                    <a href="#" class="w-full group">
-                                        <div class=" w-full overflow-hidden">
-                                            <img class="group-hover:scale-105 w-full transition-transform duration-500" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114089/product_images/mjggsl5l7iakjesdapb1.png">
-                                        </div>
-                                        <div class="product__content pt-4 px-1">
-                                            <p class="text-sm">Ngũ cốc ăn sáng</p>
-                                            <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">Bánh mì ăn sáng</h1>
-                                            <div class="flex justify-between items-center mt-2 mb-2.25">
-                                                <p class="text-primary-color font-semibold text-lg">$7.50</p>
-                                                <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-} ?>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
-                                        <ul class="flex gap-x-1">
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide rounded-md">
-                            <div class="p-4">
-                                <div class="px-2.25 shadow-product pt-2.25">
-                                    <a href="#" class="w-full group">
-                                        <div class=" w-full overflow-hidden">
-                                            <img class="group-hover:scale-105 w-full transition-transform duration-500" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114089/product_images/mjggsl5l7iakjesdapb1.png">
-                                        </div>
-                                        <div class="product__content pt-4 px-1">
-                                            <p class="text-sm">Ngũ cốc ăn sáng</p>
-                                            <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">Bánh mì ăn sáng</h1>
-                                            <div class="flex justify-between items-center mt-2 mb-2.25">
-                                                <p class="text-primary-color font-semibold text-lg">$7.50</p>
-                                                <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-} ?>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
-                                        <ul class="flex gap-x-1">
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide rounded-md">
-                            <div class="p-4">
-                                <div class="px-2.25 shadow-product pt-2.25">
-                                    <a href="#" class="w-full group">
-                                        <div class=" w-full overflow-hidden">
-                                            <img class="group-hover:scale-105 w-full transition-transform duration-500" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114089/product_images/mjggsl5l7iakjesdapb1.png">
-                                        </div>
-                                        <div class="product__content pt-4 px-1">
-                                            <p class="text-sm">Ngũ cốc ăn sáng</p>
-                                            <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">Bánh mì ăn sáng</h1>
-                                            <div class="flex justify-between items-center mt-2 mb-2.25">
-                                                <p class="text-primary-color font-semibold text-lg">$7.50</p>
-                                                <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-} ?>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
-                                        <ul class="flex gap-x-1">
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide rounded-md">
-                            <div class="p-4">
-                                <div class="px-2.25 shadow-product pt-2.25">
-                                    <a href="#" class="w-full group">
-                                        <div class=" w-full overflow-hidden">
-                                            <img class="group-hover:scale-105 w-full transition-transform duration-500" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114089/product_images/mjggsl5l7iakjesdapb1.png">
-                                        </div>
-                                        <div class="product__content pt-4 px-1">
-                                            <p class="text-sm">Ngũ cốc ăn sáng</p>
-                                            <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">Bánh mì ăn sáng</h1>
-                                            <div class="flex justify-between items-center mt-2 mb-2.25">
-                                                <p class="text-primary-color font-semibold text-lg">$7.50</p>
-                                                <span class="flex">
-                                                    <?php for ($i = 0; $i < 5; ++$i) {
-    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-} ?>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="bars-button flex justify-between pb-4">
-                                        <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
-                                        <ul class="flex gap-x-1">
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
-                                            <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </div>';
+                            }
+                        ?>
                     </div>
                 </div>
             </section>
@@ -374,4 +262,3 @@
 </body>
 
 </html>
-

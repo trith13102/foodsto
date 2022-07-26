@@ -1,5 +1,8 @@
 <?php
 
-     class cartModel extends Connect
-     {
-     }
+
+class cartModel extends Connect
+{
+     
+
+}
