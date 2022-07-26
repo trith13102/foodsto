@@ -33,7 +33,7 @@
         <div class="container mx-auto px-4">
             <article class="p-7.5 shadow-product">
                 <!-- Form Product -->
-                <form action="" class="border">
+                <form action="cart" target="_self" method="POST" class="border">
                     <table class="w-full rounded-md overflow-hidden ">
                         <thead class="border-b">
                             <tr class="text-xl font-bold text-left text-title-color">
@@ -47,46 +47,44 @@
                         </thead>
                         <tbody>
                             <!-- Row Product -->
-                            <tr class="border-b">
-                                <td class="align-middle p-4">
-                                    <a href="" class="w-7.5 h-7.5 inline-block text-center rounded-md text-white bg-primary-color text-lg">x</a>
-                                </td>
-                                <td class="align-middle p-4"><img class="rounded-md w-20 h-20" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114089/product_images/mjggsl5l7iakjesdapb1.png" alt=""></td>
-                                <td class="align-middle p-4">Bolthouse</td>
-                                <td class="align-middle p-4">$100.00</td>
-                                <td class="align-middle p-4">
-                                    <span class="flex mr-4">
-                                        <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
-                                            <i class="fa-solid fa-minus"></i>
-                                        </button>
-                                        <input id="qty" name="qty" class="appearance-none outline-none mx-1 bg-light-green-color border-b border-b-primary-color px-4 text-center rounded-md w-16" readonly type="number" value="1" min="1">
-                                        <button class="button-plus bg-primary-color text-white text-center rounded-md w-11 h-11  border border-primary-color" type="button">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </button>
-                                    </span>
-                                </td>
-                                <td class="align-middle p-4">$300.00</td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="align-middle p-4">
-                                    <a href="" class="w-7.5 h-7.5 inline-block text-center rounded-md text-white bg-primary-color text-lg">x</a>
-                                </td>
-                                <td class="align-middle p-4"><img class="rounded-md w-20 h-20" src="https://res.cloudinary.com/foodstocloud/image/upload/v1655114475/product_images/hm3jrzr9gtrtqmnlmahu.jpg" alt=""></td>
-                                <td class="align-middle p-4">Nescafe</td>
-                                <td class="align-middle p-4">$7.00</td>
-                                <td class="align-middle p-4">
-                                    <span class="flex mr-4">
-                                        <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
-                                            <i class="fa-solid fa-minus"></i>
-                                        </button>
-                                        <input id="qty" name="qty" class="appearance-none outline-none mx-1 bg-light-green-color border-b border-b-primary-color px-4 text-center rounded-md w-16" readonly type="number" value="1" min="1">
-                                        <button class="button-plus bg-primary-color text-white text-center rounded-md w-11 h-11  border border-primary-color" type="button">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </button>
-                                    </span>
-                                </td>
-                                <td class="align-middle p-4">$300.00</td>
-                            </tr>
+                            <?php
+                            $cart = $data["cart"];
+                            $_SESSION['total'] = 0;
+                            
+                            if (sizeof($cart) > 0) {
+                                foreach ($cart as $product) {
+                                    echo '<tr class="border-b">
+                                        <td class="align-middle p-4">
+                                            <a href="cart?remove&id=' . $product['id'] . '" target="_self" class="w-7.5 h-7.5 inline-block text-center rounded-md text-white bg-primary-color text-lg">x</a>
+                                        </td>
+                                        <td class="align-middle p-4"> <a href=details?id='.$product['id'].' target="_self">
+                                        <img class="rounded-md w-20 h-20" src="' . $product['image'] . '" alt=""></a>
+                                        </td>
+                                        <td class="align-middle p-4">' . $product['name'] . '</td>
+                                        <td class="align-middle p-4">$' . number_format($product['price']) . '</td>
+                                        <td class="align-middle p-4">
+                                            <span class="flex mr-4">
+                                                <a href="cart?subtraction&id=' . $product['id'] . '" target="_self" class="flex items-center justify-center button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </a>
+                                                <input type="hidden" name="idProduct[]" value="'.$product['id'].'">
+                                                <input id="qty" name="qtyProduct[]" class="input-qty appearance-none outline-none mx-1 bg-light-green-color border-b border-b-primary-color px-4 text-center rounded-md w-16" type="number" value="' . $product['qty'] . '" min="1">
+                                                <a href="cart?addition&id=' . $product['id'] . '" target="_self" class="flex items-center justify-center button-plus bg-primary-color text-white text-center rounded-md w-11 h-11  border border-primary-color" type="button">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td class="align-middle p-4">$' . number_format($product['subtotal']) . '</td>
+                                    </tr>';
+                                    $_SESSION['total'] += $product['subtotal'];
+                                }
+                            } else {
+                                echo '<tr class="border-b">
+                                    <td colspan="6" class="align-middle p-4 text-center font-bold">Không có sản phẩm nào trong giỏ hàng.</td>
+                                    <tr>';
+                            }
+                            ?>
+
                             <!-- Subtotal Product -->
                             <tr>
                                 <td colspan="6">
@@ -95,7 +93,7 @@
                                             <input class="placeholder-body-text rounded-md mr-4 p-4 bg-light-green-color border outline-none h-[46px] text-body-text" type="text" placeholder="Mã giảm giá">
                                             <button class="text-white duration-500 tracking-wide bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Áp dụng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
                                         </div>
-                                        <button class="ml-auto tracking-wide text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Cập nhật giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                                        <button type="submit" name="update" class="ml-auto tracking-wide text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Cập nhật giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -109,11 +107,15 @@
                         <tbody class="border text-left">
                             <tr>
                                 <th class="leading-tight text-xl p-4 w-[35%] font-bold">Thành tiền</th>
-                                <td class="p-4">$320.00</td>
+                                <td class="p-4">
+                                    <?php echo '$'.number_format($_SESSION['total']);?>
+                                </td>
                             </tr>
                             <tr>
                                 <th class="leading-tight text-xl p-4 w-[35%] font-bold">Tổng cộng</th>
-                                <td class="p-4 font-medium">$320.00</td>
+                                <td class="p-4 font-medium">
+                                    <?php echo '$'.number_format($_SESSION['total']);?>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -124,9 +126,10 @@
             </article>
         </div>
     </main>
-
-
-    <script src="public/js/cartView.js"></script>
+    <script>
+        var newURL = location.href.split("?")[0];
+        window.history.pushState('object', document.title, newURL);
+    </script>
     <?php require_once 'mvc/views/blocks/footer.php'; ?>
 
 </body>

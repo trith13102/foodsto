@@ -75,7 +75,7 @@
                         <a href="" class="hover:text-secondary-color transition-colors ml-4">(2 đánh giá của khách hàng)</a>
                     </div>
                     <p class="text-primary-color text-4xl font-medium leading-relaxed"><?php echo "$" . number_format($row['price']) ?></p>
-                    <form action="" class="flex mb-4">
+                    <form action="cart?add&id=<?php echo $row['id']?>" target="_self" method="POST" class="flex mb-4">
                         <span class="flex mr-4">
                             <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
                                 <i class="fa-solid fa-minus"></i>
@@ -85,7 +85,7 @@
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </span>
-                        <button class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                        <button type="submit" name="insert" class="uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
                     </form>
                     <a href="" class="block hover:text-primary-color"><i class="far fa-heart mr-2.25"></i><span>Thêm vào danh sách yêu thích</span></a>
                     <ul class="mt-4 flex gap-x-2">
@@ -238,7 +238,7 @@
                                             </div>
                                         </a>
                                         <div class="bars-button flex justify-between pb-4">
-                                            <a href="#" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                            <a href="cart?add&id='.$raw['id'].'" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                             <ul class="flex gap-x-1">
                                                 <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                                 <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
