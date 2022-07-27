@@ -23,6 +23,7 @@ class cart extends Controller
             if (!isset($_SESSION['cart'][$product['id']])) {
                 $_SESSION['cart'][$product['id']] = array(
                     'id' => (int)$product['id'],
+                    'sku' => $product['sku'],
                     'name' => $product['name'],
                     'price' => (float)$product['price'],
                     'image' => $product['thumbnail'],

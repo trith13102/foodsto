@@ -74,7 +74,7 @@
                         </span>
                         <a href="" class="hover:text-secondary-color transition-colors ml-4">(2 đánh giá của khách hàng)</a>
                     </div>
-                    <p class="text-primary-color text-4xl font-medium leading-relaxed"><?php echo "$" . number_format($row['price']) ?></p>
+                    <p class="text-primary-color text-4xl font-medium leading-relaxed"><?php echo number_format($row['price']). ' VNĐ';?></p>
                     <form action="cart?add&id=<?php echo $row['id']?>" target="_self" method="POST" class="flex mb-4">
                         <span class="flex mr-4">
                             <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
@@ -228,7 +228,7 @@
                                                 <p class="text-sm">'.$raw['name_category'].'</p>
                                                 <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">'.$raw['name'].'</h1>
                                                 <div class="flex justify-between items-center mt-2 mb-2.25">
-                                                    <p class="text-primary-color font-semibold text-lg">$'.number_format($raw['price']).'</p>
+                                                    <p class="text-primary-color font-semibold text-lg">'.number_format($raw['price']).' VNĐ</p>
                                                     <span class="flex">';
                                                         for ($i = 0; $i < 5; ++$i) {
                                                             echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';

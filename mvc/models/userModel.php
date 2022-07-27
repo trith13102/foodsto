@@ -48,5 +48,13 @@ class UserModel extends Connect
       if (!isset($_SESSION['full_name'])) {
          $_SESSION['full_name'] =  $user['full_name'];
       }
+
+      if (!isset($_SESSION['phone'])) {
+         $_SESSION['phone'] =  $user['phone'];
+      }
+
+      if (!isset($_SESSION['address'])) {
+         $_SESSION['address'] =  $user['default_shipping_address'];
+      }
    }
 }

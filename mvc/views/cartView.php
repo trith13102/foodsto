@@ -50,31 +50,31 @@
                             <?php
                             $cart = $data["cart"];
                             $_SESSION['total'] = 0;
-                            
+
                             if (sizeof($cart) > 0) {
                                 foreach ($cart as $product) {
                                     echo '<tr class="border-b">
                                         <td class="align-middle p-4">
                                             <a href="cart?remove&id=' . $product['id'] . '" target="_self" class="w-7.5 h-7.5 inline-block text-center rounded-md text-white bg-primary-color text-lg">x</a>
                                         </td>
-                                        <td class="align-middle p-4"> <a href=details?id='.$product['id'].' target="_self">
+                                        <td class="align-middle p-4"> <a href=details?id=' . $product['id'] . ' target="_self">
                                         <img class="rounded-md w-20 h-20" src="' . $product['image'] . '" alt=""></a>
                                         </td>
                                         <td class="align-middle p-4">' . $product['name'] . '</td>
-                                        <td class="align-middle p-4">$' . number_format($product['price']) . '</td>
+                                        <td class="align-middle p-4">'. number_format($product['price']). ' VNĐ</td>
                                         <td class="align-middle p-4">
                                             <span class="flex mr-4">
                                                 <a href="cart?subtraction&id=' . $product['id'] . '" target="_self" class="flex items-center justify-center button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
                                                     <i class="fa-solid fa-minus"></i>
                                                 </a>
-                                                <input type="hidden" name="idProduct[]" value="'.$product['id'].'">
+                                                <input type="hidden" name="idProduct[]" value="' . $product['id'] . '">
                                                 <input id="qty" name="qtyProduct[]" class="input-qty appearance-none outline-none mx-1 bg-light-green-color border-b border-b-primary-color px-4 text-center rounded-md w-16" type="number" value="' . $product['qty'] . '" min="1">
                                                 <a href="cart?addition&id=' . $product['id'] . '" target="_self" class="flex items-center justify-center button-plus bg-primary-color text-white text-center rounded-md w-11 h-11  border border-primary-color" type="button">
                                                     <i class="fa-solid fa-plus"></i>
                                                 </a>
                                             </span>
                                         </td>
-                                        <td class="align-middle p-4">$' . number_format($product['subtotal']) . '</td>
+                                        <td class="align-middle p-4">' . number_format($product['subtotal']) . ' VNĐ</td>
                                     </tr>';
                                     $_SESSION['total'] += $product['subtotal'];
                                 }
@@ -86,21 +86,26 @@
                             ?>
 
                             <!-- Subtotal Product -->
-                            <tr>
-                                <td colspan="6">
-                                    <div class="flex p-4">
-                                        <div class="coupon flex">
-                                            <input class="placeholder-body-text rounded-md mr-4 p-4 bg-light-green-color border outline-none h-[46px] text-body-text" type="text" placeholder="Mã giảm giá">
-                                            <button class="text-white duration-500 tracking-wide bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Áp dụng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                            <?php
+                            if (sizeof($cart) > 0) {
+                                echo '                            <tr>
+                                    <td colspan="6">
+                                        <div class="flex p-4">
+                                            <div class="coupon flex">
+                                                <input class="placeholder-body-text rounded-md mr-4 p-4 bg-light-green-color border outline-none h-[46px] text-body-text" type="text" placeholder="Mã giảm giá">
+                                                <button class="text-white duration-500 tracking-wide bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Áp dụng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                                            </div>
+                                            <button type="submit" name="update" class="ml-auto tracking-wide text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Cập nhật giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
                                         </div>
-                                        <button type="submit" name="update" class="ml-auto tracking-wide text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Cập nhật giỏ hàng<i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>';
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </form>
                 <!-- Cart total -->
+
                 <div class="pt-18">
                     <h1 class="font-bold text-title-color mb-7.5 text-[51px] leading-tight">Tổng tiền giỏ hàng</h1>
                     <table class="w-full rounded-md overflow-hidden">
@@ -108,19 +113,31 @@
                             <tr>
                                 <th class="leading-tight text-xl p-4 w-[35%] font-bold">Thành tiền</th>
                                 <td class="p-4">
-                                    <?php echo '$'.number_format($_SESSION['total']);?>
+                                    <?php echo number_format($_SESSION['total']) . ' VNĐ'; ?>
                                 </td>
                             </tr>
                             <tr>
                                 <th class="leading-tight text-xl p-4 w-[35%] font-bold">Tổng cộng</th>
                                 <td class="p-4 font-medium">
-                                    <?php echo '$'.number_format($_SESSION['total']);?>
+                                    <?php echo number_format($_SESSION['total']) . ' VNĐ'; ?>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="py-4">
-                        <a href="checkout" class="inline-block mb-3 tracking-wider leading-relaxed ml-auto uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Tiến hành thanh toán<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                        <?php
+                        if (isset($_SESSION['email']) && sizeof($cart) > 0) {
+                            echo '<a href="checkout" target="_self" class="inline-block mb-3 tracking-wider leading-relaxed ml-auto uppercase text-white duration-500 bg-secondary-color hover:bg-primary-color transition-colors px-7.5 py-3 text-sm font-medium rounded-md shadow">Tiến hành thanh toán<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>';
+                        } else if (!isset($_SESSION['email'])) {
+                            echo '<div class="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex justify-center items-center w-full" role="alert">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times-circle" class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path>
+                                    </svg>
+                                    <p>Vui lòng <a href="login" class="text-primary-color">đăng nhập</a> trước khi thanh toán.</p>
+                            </div>';
+                        }
+
+                        ?>
                     </div>
                 </div>
             </article>
