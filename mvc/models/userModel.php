@@ -9,16 +9,7 @@ class UserModel extends Connect
       if (mysqli_query($this->dbConnect, $qr)) {
          $result = true;
 
-         if (!isset($_SESSION['is_logged_in'])) {
-            $_SESSION['is_logged_in'] = 1;
-         }
-
-         if (!isset($_SESSION['email'])) {
-            $_SESSION['email'] = $email;
-         }
-         if (!isset($_SESSION['password'])) {
-            $_SESSION['password'] = $password;
-         }
+         $this->CheckUserValid($email, $password);
       }
       return json_encode($result);
    }
@@ -54,8 +45,8 @@ class UserModel extends Connect
       if (!isset($_SESSION['id'])) {
          $_SESSION['id'] =  $user['id'];
       }
-      if (!isset($_SESSION['fullname'])) {
-         $_SESSION['fullname'] =  $user['fullname'];
+      if (!isset($_SESSION['full_name'])) {
+         $_SESSION['full_name'] =  $user['full_name'];
       }
    }
 }
