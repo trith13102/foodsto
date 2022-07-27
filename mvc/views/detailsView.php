@@ -255,6 +255,7 @@
         </div>
         <div class="absolute z-10 left-0 top-auto -bottom-18 right-auto h-[13.25rem] w-[14.2rem] bg-[url('https://wordpress.iqonic.design/foodsto/wp-content/themes/foodsto/assets/images/backend/pattern-leaf-bottom.png')] "></div>
     </main>
+    <div class="hidden opacity-70"></div>
     <script src="public/js/detailsView.js"></script>
 
     <?php require_once 'mvc/views/blocks/footer.php'; ?>

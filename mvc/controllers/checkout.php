@@ -6,6 +6,17 @@
          {
              $model = $this->model('checkoutModel');
 
-             $this->view('checkoutView', []);
+             $this->view('checkoutView', [
+                'page' => 'checkout',
+             ]);
+         }
+
+         public function success() 
+         {
+            $model = $this->model('checkoutModel');
+
+            $this->view('checkoutView', [
+                'page' => 'checkoutSuccess',
+            ]);
          }
      }
