@@ -15,7 +15,7 @@ class admin extends Controller
                 'page' => 'dashboard',
             ]);
         } else {
-            $this->view('loginAdmin', []);
+            $this->view('adminLogin', []);
         }
     }
 }
