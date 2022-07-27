@@ -140,7 +140,8 @@ header{
     border-radius: 5px;
 }
 
-.list-menu-sol li:hover a{
+.list-menu-sol li:hover a,
+.list-menu-sol li:hover button{
     color: var(--white-color) !important;
 }
 
