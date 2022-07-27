@@ -8,7 +8,7 @@
   </div>
   <div class="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
     <div class="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
-      <div class="shadow-product flex flex-col justify-start items-start  bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
+      <div class="shadow-product rounded-md flex flex-col justify-start items-start  bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
         <p class="text-lg md:text-xl  font-semibold leading-6 xl:leading-5 ">Chi tiết đơn hàng</p>
         <?php foreach ($row as $raw) {
           if (isset($raw['thumbnail_product'])) {
@@ -32,7 +32,7 @@
         } ?>
       </div>
       <div class="flex justify-center flex-col md:flex-row items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
-        <div class="shadow-product flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50  space-y-6">
+        <div class="shadow-product rounded-md flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50  space-y-6">
           <h3 class="text-xl  font-semibold leading-5 ">Tóm tắt đơn hàng</h3>
           <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
             <div class="flex justify-between w-full">
@@ -53,7 +53,7 @@
             <p class="text-base font-semibold leading-4"><?php echo number_format($row[0]['order_amount']) . ' VNĐ' ?></p>
           </div>
         </div>
-        <div class="shadow-product flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50  space-y-6">
+        <div class="shadow-product rounded-md flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50  space-y-6">
           <h3 class="text-xl  font-semibold leading-5 ">Vận chuyển</h3>
           <div class="flex justify-between items-start w-full">
             <div class="flex justify-center items-center space-x-4">
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-    <div class="shadow-product bg-gray-50  w-full xl:w-96 flex justify-between items-center md:items-start px-4 py-6 md:p-6 xl:p-8 flex-col">
+    <div class="shadow-product rounded-md bg-gray-50  w-full xl:w-96 flex justify-between items-center md:items-start px-4 py-6 md:p-6 xl:p-8 flex-col">
       <h3 class="text-xl font-semibold leading-5">Khách hàng</h3>
       <div class="flex flex-col md:flex-row xl:flex-col justify-start items-stretch h-full w-full md:space-x-6 lg:space-x-8 xl:space-x-0">
         <div class="flex flex-col justify-start items-start flex-shrink-0">
