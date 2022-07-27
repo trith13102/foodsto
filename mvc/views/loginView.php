@@ -95,11 +95,11 @@
                         node[i].classList.add('error');
                         // console.log(flag);
                         document.getElementById('error').classList.remove('hidden');
-
+                        return false;
                     }
                 }
             }
-            return false;
+            return true;
         }
 
         function removeError(node) {
