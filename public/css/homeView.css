@@ -163,17 +163,17 @@ a.h-button.view {
 }
 
 .ser-img1 {
-  background: url(https://res.cloudinary.com/foodstocloud/image/upload/v1656759733/category_images/sr-home-1_vh0o99.png);
+  background: url(https://res.cloudinary.com/foodstocloud/image/upload/v1658915388/category/img1-1_otlp3b.png);
   background-size: cover;
 }
 
 .ser-img2 {
-  background: url(https://res.cloudinary.com/foodstocloud/image/upload/v1656759733/category_images/sr-home-2_wkmfpi.png);
+  background: url(https://res.cloudinary.com/foodstocloud/image/upload/v1658915388/category/img2-1_rftx0a.png);
   background-size: cover;
 }
 
 .ser-img3 {
-  background: url(https://res.cloudinary.com/foodstocloud/image/upload/v1656759733/category_images/sr-home-3_wcuprv.png);
+  background: url(https://res.cloudinary.com/foodstocloud/image/upload/v1658915303/category/img3-1_pzvxde.png);
   background-size: cover;
 }
 
@@ -994,4 +994,27 @@ a.add-to-wishlist:hover,
   top: 20px;
   right: 20px;
   color: gray;
+}
+
+/* modal-check */
+
+.icon-check{
+  width: 100%;
+  text-align: center;
+}
+
+.fa-solid.fa-check {
+  border: 0.1em solid rgb(134 220 166 / 30%);
+  color: var(--primary-color);
+  border-radius: 50px;
+  padding: 0.4em 0.45em;
+  font-size: 2.2em;
+}
+
+#modal-title{
+  font-size: 1.8em;
+  text-align: center;
+  font-weight: 700;
+  margin: 1em 0 0;
+  color:  #595959;
 }
