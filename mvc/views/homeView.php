@@ -1444,6 +1444,7 @@
         </div>
     </div>
     <script src="public/js/homeView.js"></script>
+  
 </body>
 
 </html>
