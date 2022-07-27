@@ -1,0 +1,274 @@
+@import "./utils.scss";
+@import "./dashboard.scss";
+
+* {
+     margin: 0;
+
+     padding: 0;
+
+     box-sizing: border-box;
+
+     font-family: $primary-font;
+}
+
+body {
+     min-height: 100vh;
+
+     background-color: $body-color;
+
+     transition: $tran-05;
+}
+
+/* ===== Sidebar ===== */
+
+.sidebar {
+     z-index: 100;
+
+     position: fixed;
+     top: 0;
+     left: 0;
+
+     width: 250px;
+     height: 100%;
+
+     padding: 10px 14px;
+
+     background: $white-color;
+
+     transition: $tran-05;
+
+     &.close {
+          width: 88px;
+     }
+
+     li {
+          display: flex;
+          align-items: center;
+
+          height: 50px;
+
+          margin-top: 10px;
+
+          list-style: none;
+     }
+
+     header .image {
+          min-width: 60px;
+
+          border-radius: 6px;
+     }
+
+     .icon {
+          display: flex;
+
+          align-items: center;
+          justify-content: center;
+
+          min-width: 60px;
+          height: 100%;
+
+          border-radius: 6px;
+
+          font-size: 20px;
+     }
+
+     .text,
+     .icon {
+          color: $text-color;
+
+          transition: $tran-03;
+     }
+
+     .text {
+          opacity: 1;
+
+          font-size: 17px;
+          font-weight: 500;
+
+          white-space: nowrap;
+     }
+
+     &.close .text {
+          opacity: 0;
+     }
+
+     header {
+          position: relative;
+
+          .image-text {
+               display: flex;
+               align-items: center;
+          }
+
+          .logo-text {
+               display: flex;
+               flex-direction: column;
+          }
+     }
+}
+
+/* ===== Reusable code - Here ===== */
+
+/* =========================== */
+
+header .image-text {
+     .name {
+          margin-top: 2px;
+
+          font-size: 18px;
+          font-weight: 600;
+     }
+
+     .profession {
+          display: block;
+
+          margin-top: -2px;
+
+          font-size: 14px;
+     }
+}
+
+.sidebar header {
+     .image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+               width: 40px;
+
+               border-radius: 6px;
+          }
+     }
+
+     .toggle {
+          position: absolute;
+          right: -25px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          height: 25px;
+          width: 25px;
+
+          border-radius: 50%;
+
+          font-size: 22px;
+
+          cursor: pointer;
+
+          background-color: $primary-color;
+          color: $white-color;
+
+          transition: $tran-05;
+
+          transform: translateY(-50%) rotate(180deg);
+     }
+}
+
+.sidebar {
+     &.close .toggle {
+          transform: translateY(-50%) rotate(0deg);
+     }
+
+     .menu {
+          margin-top: 15px;
+     }
+
+     li {
+          &.search-box {
+               border-radius: 6px;
+
+               cursor: pointer;
+
+               background-color: $primary-color-light;
+
+               transition: $tran-05;
+               input {
+                    height: 100%;
+                    width: 100%;
+
+                    border: none;
+
+                    outline: none;
+
+                    border-radius: 6px;
+
+                    font-size: 17px;
+                    font-weight: 500;
+
+                    background-color: $primary-color-light;
+                    color: $text-color;
+
+                    transition: $tran-05;
+               }
+          }
+
+          a {
+               display: flex;
+               align-items: center;
+
+               height: 100%;
+               width: 100%;
+
+               list-style: none;
+
+               border-radius: 6px;
+
+               text-decoration: none;
+
+               transition: $tran-03;
+
+               background-color: transparent;
+
+               &:hover {
+                    background-color: $primary-color;
+
+                    .icon,
+                    .text {
+                         color: $white-color;
+                    }
+               }
+          }
+     }
+}
+
+.sidebar .menu-bar {
+     overflow-y: scroll;
+
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+
+     height: calc(100% - 55px);
+}
+
+.menu-bar::-webkit-scrollbar {
+     display: none;
+}
+
+.sidebar.close ~ .home {
+     left: 78px;
+
+     width: calc(100% - 78px);
+     height: 100vh;
+}
+
+.home {
+     position: absolute;
+     top: 0;
+     top: 0;
+
+     left: 250px;
+     height: 100vh;
+
+     width: calc(100% - 250px);
+
+     padding: 10px 25px;
+
+     color: $text-color;
+     background-color: $body-color;
+
+     transition: $tran-05;
+}
