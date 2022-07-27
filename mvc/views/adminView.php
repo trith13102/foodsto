@@ -13,7 +13,7 @@
      <script src="node_modules/chart.js/dist/chart.js"></script>
      <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
      <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+     <link rel="shortcut icon" href="favicon.ico">
      <link rel="stylesheet" href="public/scss/admin/admin.css">
      <title>FoodSto Management System</title>
 </head>
