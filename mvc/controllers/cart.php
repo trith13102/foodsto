@@ -3,14 +3,10 @@ if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 
 class cart extends Controller
 {
-    public function __construct()
-    {
-        $model = $this->model('cartModel');
-    }
-
     public function default()
     {
-
+        
+        $model = $this->model('cartModel');
         $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
         // Add To Cart
         if (isset($_GET['add'])) {

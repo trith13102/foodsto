@@ -1,4 +1,5 @@
 <?php
+if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 
 class checkout extends Controller
 {
@@ -14,13 +15,11 @@ class checkout extends Controller
                     'page' => 'checkoutSuccess',
                     'result' => $model->getOrder()
                 ]);
-            } else {
-                $this->view('checkoutView', [
-                    'page' => 'checkout',
-                ]);
             }
+        } else if (sizeof($_SESSION['cart']) > 0 && isset($_SESSION['email'])) {
+            $this->view('checkoutView', ['page' => 'checkout',]);
+        } else {
+            $this->view('cartView', ["cart" => $_SESSION['cart'],]);
         }
-
-        $this->view('checkoutView', ['page' => 'checkout']);
     }
 }
