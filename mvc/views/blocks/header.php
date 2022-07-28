@@ -97,7 +97,7 @@
                                 <i class="fas fa-shopping-basket"></i>
                                 <div class="basket-item-count">
                                     <span class="cart-items-count">
-                                        0
+                                        <?php echo (isset($_SESSION['cart'])) ? count(($_SESSION['cart'])) : '0';?>
                                     </span>
                                 </div>
                             </a>
