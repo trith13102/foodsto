@@ -19,92 +19,67 @@
 </head>
 
 <body>
-     <aside class="sidebar close">
-          <header>
-               <div class="image-text">
-                    <span class="image">
-                         <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1658906602/page_images/Rounded-logo_dats5s.png" alt="">
-                    </span>
-
-                    <div class="text logo-text">
-                         <span class="name">FoodSto MS</span>
-                         <span class="profession">Quản trị viên</span>
-                    </div>
+     <div class="wrapper">
+          <aside class="sidebar">
+               <div class="information">
+                    <img class="logo" src="https://res.cloudinary.com/foodstocloud/image/upload/v1654415483/page_images/wide-logo_zoohrq.png" alt="">
                </div>
-
-               <i class='bx bx-chevron-right toggle'></i>
-          </header>
-
-          <div class="menu-bar">
                <div class="menu">
-
-                    <li class="search-box">
-                         <i class='bx bx-search icon'></i>
-                         <input type="text" placeholder="Tìm kiếm...">
-                    </li>
-
-                    <ul class="menu-links">
-                         <li class="nav-link">
+                    <ul class="links-menu">
+                         <li class="link">
                               <a href="admin/default/dashboard" target="_self">
-                                   <i class='bx bxs-pie-chart-alt-2 icon'></i>
-                                   <span class="text nav-text">Số liệu thống kê</span>
+                                   <i class='bx bxs-pie-chart-alt-2'></i>
+                                   <p>Số liệu thống kê</p>
                               </a>
                          </li>
-
-                         <li class="nav-link">
+                         <li class="link">
                               <a href="admin/default/account" target="_self">
-                                   <i class='bx bxs-user-circle icon'></i>
-                                   <span class="text nav-text">Các loại tài khoản</span>
+                                   <i class='bx bxs-user-circle'></i>
+                                   <p>Các loại tài khoản</p>
                               </a>
                          </li>
-
-                         <li class="nav-link">
-                              <a href="admin/default/product" target="_self">
-                                   <i class='bx bxs-box icon'></i>
-                                   <span class="text nav-text">Sản phẩm đang bán</span>
-                              </a>
-                         </li>
-
-                         <li class="nav-link">
-                              <a href="admin/default/discount" target="_self">
-                                   <i class='bx bxs-offer icon'></i>
-                                   <span class="text nav-text">Sản phẩm giảm giá</span>
-                              </a>
-                         </li>
-
-                         <li class="nav-link">
-                              <a href="admin/default/category" target="_self">
-                                   <i class='bx bxs-category-alt icon'></i>
-                                   <span class="text nav-text">Danh mục sản phẩm</span>
-                              </a>
-                         </li>
-
-                         <li class="nav-link">
+                         <li class="link">
                               <a href="admin/default/order" target="_self">
-                                   <i class='bx bxs-shopping-bag-alt icon'></i>
-                                   <span class="text nav-text">Đơn hàng đang giao</span>
+                                   <i class='bx bxs-package'></i>
+                                   <p>Quản lý đơn hàng</p>
                               </a>
                          </li>
-
+                         <li class="link">
+                              <a href="admin/default/discount" target="_self">
+                                   <i class='bx bxs-offer'></i>
+                                   <p>Sản phẩm giảm giá</p>
+                              </a>
+                         </li>
+                         <li class="link">
+                              <a href="admin/default/product" target="_self">
+                                   <i class='bx bxs-box'></i>
+                                   <p>Sản phẩm đang bán</p>
+                              </a>
+                         </li>
+                         <li class="link">
+                              <a href="admin/default/category" target="_self">
+                                   <i class='bx bxs-category'></i>
+                                   <p>Danh mục sản phẩm</p>
+                              </a>
+                         </li>
                     </ul>
                </div>
-
-               <div class="bottom-content">
-                    <li class="">
-                         <a href="admin/logout" target="_self">
-                              <i class='bx bx-log-out icon'></i>
-                              <span class="text nav-text">Đăng xuất</span>
-                         </a>
-                    </li>
+               <div class="controller">
+                    <a class="logout" href="admin/logout" target="_self">
+                         <i class='bx bx-log-out'></i>
+                         <p>Đăng xuất</p>
+                    </a>
                </div>
+          </aside>
+          <div class="content">
+               <?php
+               $page = isset($data['page']) ? $data['page'] : '';
+               require_once 'blocks/adminBlocks/' . $page . '.php';
+               ?>
           </div>
-     </aside>
-     <div class="home">
-          <?php
-          $page = isset($data['page']) ? $data['page'] : '';
-          require_once 'blocks/adminBlocks/' . $page . '.php';
-          ?>
      </div>
+
+
      <script src="public/js/adminView.js"></script>
      <?php echo '<script src="public/js/blocks/adminView/' . $page . '.js"></script>'; ?>
 </body>

@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 /* ===== Fonts ===== */
 /* ===== Colors ===== */
-/* ====== Transition ====== */
 * {
   margin: 0;
   padding: 0;
@@ -9,184 +8,77 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
-body {
-  min-height: 100vh;
-  background-color: #f4f7ff;
-  transition: all 0.5s ease;
+.wrapper {
+  display: grid;
+  grid-template-columns: 15% 85%;
 }
 
-/* ===== Sidebar ===== */
 .sidebar {
-  z-index: 100;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
-  width: 250px;
-  height: 100%;
-  padding: 10px 14px;
-  background: #fff;
-  transition: all 0.5s ease;
-}
-.sidebar.close {
-  width: 88px;
-}
-.sidebar li {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  margin-top: 10px;
-  list-style: none;
-}
-.sidebar header .image {
-  min-width: 60px;
-  border-radius: 6px;
-}
-.sidebar .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 60px;
-  height: 100%;
-  border-radius: 6px;
-  font-size: 20px;
-}
-.sidebar .text,
-.sidebar .icon {
-  color: #707070;
-  transition: all 0.3s ease;
-}
-.sidebar .text {
-  opacity: 1;
-  font-size: 17px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-.sidebar.close .text {
-  opacity: 0;
-}
-.sidebar header {
-  position: relative;
-}
-.sidebar header .image-text {
-  display: flex;
-  align-items: center;
-}
-.sidebar header .logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===== Reusable code - Here ===== */
-/* =========================== */
-header .image-text .name {
-  margin-top: 2px;
-  font-size: 18px;
-  font-weight: 600;
-}
-header .image-text .profession {
-  display: block;
-  margin-top: -2px;
-  font-size: 14px;
-}
-
-.sidebar header .image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sidebar header .image img {
-  width: 40px;
-  border-radius: 6px;
-}
-.sidebar header .toggle {
-  position: absolute;
-  right: -25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  font-size: 22px;
-  cursor: pointer;
-  background-color: #3bb77e;
-  color: #fff;
-  transition: all 0.5s ease;
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.sidebar.close .toggle {
-  transform: translateY(-50%) rotate(0deg);
-}
-.sidebar .menu {
-  margin-top: 15px;
-}
-.sidebar li.search-box {
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: #f6f5ff;
-  transition: all 0.5s ease;
-}
-.sidebar li.search-box input {
-  height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
-  border-radius: 6px;
-  font-size: 17px;
-  font-weight: 500;
-  background-color: #f6f5ff;
-  color: #707070;
-  transition: all 0.5s ease;
-}
-.sidebar li a {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  list-style: none;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  background-color: transparent;
-}
-.sidebar li a:hover {
-  background-color: #3bb77e;
-}
-.sidebar li a:hover .icon,
-.sidebar li a:hover .text {
-  color: #fff;
-}
-
-.sidebar .menu-bar {
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100% - 55px);
-}
-
-.menu-bar::-webkit-scrollbar {
-  display: none;
-}
-
-.sidebar.close ~ .home {
-  left: 118px;
-  width: calc(100% - 118px);
+  width: 100%;
   height: 100vh;
+  padding: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-
-.home {
-  position: absolute;
-  top: 0;
-  top: 0;
-  left: 250px;
-  height: 100vh;
-  width: calc(100% - 250px);
-  padding: 10px 40px;
+.sidebar .information {
+  margin-bottom: 20px;
+}
+.sidebar .information .logo {
+  display: block;
+  width: 80%;
+}
+.sidebar .menu {
+  flex-basis: 100%;
+}
+.sidebar .menu .links-menu {
+  list-style-type: none;
+}
+.sidebar .menu .links-menu .link {
+  margin: 30px 0;
+}
+.sidebar .menu .links-menu .link a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px 10px 10px;
+  border-radius: 6px;
+  text-decoration: none;
   color: #707070;
-  background-color: #f4f7ff;
-  transition: all 0.5s ease;
+  background-color: #ecf0f1;
+}
+.sidebar .menu .links-menu .link a i {
+  display: block;
+  margin-right: 5px;
+  font-size: 1.1rem;
+}
+.sidebar .controller {
+  margin-bottom: 30px;
+}
+.sidebar .controller .logout {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #707070;
+  background-color: #ecf0f1;
+}
+.sidebar .controller .logout i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.sidebar .controller .logout:hover {
+  opacity: 0.8;
+}
+
+.content {
+  padding: 30px;
 }
 
 /*# sourceMappingURL=admin.css.map */
