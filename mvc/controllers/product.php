@@ -10,7 +10,8 @@
                 'getPage' =>$model->getPage(),
                 'arrProducts'=>$model->showProduct(),
                 'popular' => $model->popularProducts(),
-                'numberPages' => $model->pagesProduct()
+                'numberPages' => $model->pagesProduct(),
+                'keyword' => $model->search()
             ]);
 
          }

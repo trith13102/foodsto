@@ -52,4 +52,19 @@ class productModel extends Connect
           $show_pages = ceil($total_products / $this->showProduct);
           return $show_pages;
      }
+
+     // Search
+     public function search(){
+          if(isset($_GET['keyword'])){
+               $keyword = $_GET['keyword'];
+          }else {
+               $keyword="1";
+          }
+          $sql = "SELECT *,products.name AS productName  ,products.thumbnail as productThumbnail
+          FROM products
+          INNER JOIN categories 
+          ON products.category_id = categories.id
+          WHERE products.name LIKE '%".$keyword."%' ";
+          return mysqli_query($this->dbConnect, $sql);
+     }
 }
