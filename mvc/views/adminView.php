@@ -45,42 +45,42 @@
 
                     <ul class="menu-links">
                          <li class="nav-link">
-                              <a href="admin/#1" target="_self">
+                              <a href="admin/default/dashboard" target="_self">
                                    <i class='bx bxs-pie-chart-alt-2 icon'></i>
                                    <span class="text nav-text">Số liệu thống kê</span>
                               </a>
                          </li>
 
                          <li class="nav-link">
-                              <a href="admin/#2" target="_self">
+                              <a href="admin/default/account" target="_self">
                                    <i class='bx bxs-user-circle icon'></i>
                                    <span class="text nav-text">Các loại tài khoản</span>
                               </a>
                          </li>
 
                          <li class="nav-link">
-                              <a href="admin/#3" target="_self">
+                              <a href="admin/default/product" target="_self">
                                    <i class='bx bxs-box icon'></i>
                                    <span class="text nav-text">Sản phẩm đang bán</span>
                               </a>
                          </li>
 
                          <li class="nav-link">
-                              <a href="admin/#4" target="_self">
+                              <a href="admin/default/discount" target="_self">
                                    <i class='bx bxs-offer icon'></i>
                                    <span class="text nav-text">Sản phẩm giảm giá</span>
                               </a>
                          </li>
 
                          <li class="nav-link">
-                              <a href="admin/#5" target="_self">
+                              <a href="admin/default/category" target="_self">
                                    <i class='bx bxs-category-alt icon'></i>
                                    <span class="text nav-text">Danh mục sản phẩm</span>
                               </a>
                          </li>
 
                          <li class="nav-link">
-                              <a href="admin/#6" target="_self">
+                              <a href="admin/default/order" target="_self">
                                    <i class='bx bxs-shopping-bag-alt icon'></i>
                                    <span class="text nav-text">Đơn hàng đang giao</span>
                               </a>
@@ -91,7 +91,7 @@
 
                <div class="bottom-content">
                     <li class="">
-                         <a href="admin/#7" target="_self">
+                         <a href="admin/logout" target="_self">
                               <i class='bx bx-log-out icon'></i>
                               <span class="text nav-text">Đăng xuất</span>
                          </a>
@@ -99,8 +99,14 @@
                </div>
           </div>
      </aside>
-     <div class="home"></div>
+     <div class="home">
+          <?php
+          $page = isset($data['page']) ? $data['page'] : '';
+          require_once 'blocks/adminBlocks/' . $page . '.php';
+          ?>
+     </div>
      <script src="public/js/adminView.js"></script>
+     <?php echo '<script src="public/js/blocks/adminView/' . $page . '.js"></script>'; ?>
 </body>
 
 </html>

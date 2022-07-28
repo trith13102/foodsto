@@ -1,15 +1,4 @@
 @import "./utils.scss";
-@import "./dashboard.scss";
-
-* {
-     margin: 0;
-
-     padding: 0;
-
-     box-sizing: border-box;
-
-     font-family: $primary-font;
-}
 
 body {
      min-height: 100vh;
@@ -249,9 +238,9 @@ header .image-text {
 }
 
 .sidebar.close ~ .home {
-     left: 78px;
+     left: 118px;
 
-     width: calc(100% - 78px);
+     width: calc(100% - 118px);
      height: 100vh;
 }
 
@@ -265,7 +254,7 @@ header .image-text {
 
      width: calc(100% - 250px);
 
-     padding: 10px 25px;
+     padding: 10px 40px;
 
      color: $text-color;
      background-color: $body-color;
