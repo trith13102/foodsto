@@ -1,35 +1,46 @@
 <?php
-
+if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 
 class cartModel extends Controller
 {
-    public function cart()
+    public function getID() {
+        $id = ($_REQUEST['id']) ?? null;
+        return $id;
+    }
+
+    public function addToCart()
     {
-        $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
-        // Add To Cart
-        if (isset($_GET['add'])) {
-            $subtotal = 0;
-            $product = $this->model('detailsModel')->getProductByID();
-            $qty = isset($_POST['qty']) ? (int)$_POST['qty'] : 1;
-            $subtotal = (float)$qty * $product['price'];
+        $id = $this->getID();
+        $subtotal = 0;
+        $product = $this->model('detailsModel')->getProductByID();
+        $qty = isset($_POST['qty']) ? (int)$_POST['qty'] : 1;
+        $subtotal = (float)$qty * $product['price'];
 
-
-            if (!isset($_SESSION['cart'][$product['id']])) {
-                $_SESSION['cart'][$product['id']] = array(
-                    'id' => (int)$product['id'],
-                    'sku' => $product['sku'],
-                    'name' => $product['name'],
-                    'price' => (float)$product['price'],
-                    'image' => $product['thumbnail'],
-                    'qty' => $qty,
-                    'subtotal' => $subtotal,
-                );
-            } else {
-                $_SESSION['cart'][$product['id']]['qty'] += $qty;
-                $this->loadCart($id);
-            }
+        if (!isset($_SESSION['cart'][$product['id']])) {
+            $_SESSION['cart'][$product['id']] = array(
+                'id' => (int)$product['id'],
+                'sku' => $product['sku'],
+                'name' => $product['name'],
+                'price' => (float)$product['price'],
+                'image' => $product['thumbnail'],
+                'qty' => $qty,
+                'subtotal' => $subtotal,
+            );
+        } else {
+            $_SESSION['cart'][$product['id']]['qty'] += $qty;
+            $this->loadCart($id);
         }
 
+        return $qty;
+    }
+
+    public function cart()
+    {
+        $id = $this->getID();
+        // Add To Cart
+        if (isset($_GET['add'])) {
+            $this->addToCart();
+        }
         // Edit cart
 
         if (isset($_GET['addition']) || isset($_GET['subtraction']) || isset($_GET['remove'])) {
@@ -79,4 +90,8 @@ class cartModel extends Controller
             $_SESSION['cart'][$id]['subtotal'] = $_SESSION['cart'][$id]['qty'] * $_SESSION['cart'][$id]['price'];
         }
     }
+
+
+
+
 }

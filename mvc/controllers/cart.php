@@ -1,6 +1,4 @@
 <?php
-if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
-
 class cart extends Controller
 {
     public function default()
