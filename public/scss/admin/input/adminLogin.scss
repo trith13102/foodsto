@@ -88,64 +88,45 @@ body {
                }
 
                .controller {
-               width: 100%;
+                    width: 100%;
 
-               padding-bottom: 20px;
+                    padding-bottom: 20px;
 
-               button {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    button {
+                         display: flex;
+                         align-items: center;
+                         justify-content: center;
 
-                    width: 50%;
+                         width: 50%;
 
-                    margin: 0 auto;
+                         margin: 0 auto;
 
-                    padding: 10px;
+                         padding: 10px;
 
-                    border: 0;
-                    border-radius: 6px;
+                         border: 0;
+                         border-radius: 6px;
 
-                    font-size: 1rem;
+                         font-size: 1rem;
 
-                    color: $white-color;
+                         color: $white-color;
 
-                    background-color: $primary-color;
+                         background-color: $primary-color;
 
-                    &:hover {
-                         opacity: 0.8;
+                         &:hover {
+                              opacity: 0.8;
 
-                         cursor: pointer;
+                              cursor: pointer;
+                         }
                     }
 
-                    #login-loader {
-                         width: 20px;
-                         height: 20px;
+                    button.disabled {
+                         opacity: 0.5;
 
-                         border: 3px solid hsla(228, 22%, 95%, 0.2);
-                         border-top-color: hsla(228, 22%, 95%, 0.8);
-                         border-radius: 50%;
-
-                         animation: spin 0.8s linear infinite;
-                    }
-
-                    @keyframes spin {
-                         to {
-                              transform: rotate(360deg);
+                         &:hover {
+                              pointer-events: none;
                          }
                     }
                }
-
-               button.disabled {
-                    opacity: 0.5;
-
-                    &:hover {
-                         pointer-events: none;
-                    }
-               }
           }
-          }
-
-          
      }
 }

@@ -14,7 +14,7 @@
      <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
      <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
      <link rel="shortcut icon" href="favicon.ico">
-     <link rel="stylesheet" href="public/scss/admin/admin.css">
+     <link rel="stylesheet" href="public/scss/admin/output/admin.css">
      <title>FoodSto Management System</title>
 </head>
 
@@ -27,37 +27,37 @@
                <div class="menu">
                     <ul class="links-menu">
                          <li class="link">
-                              <a href="admin/default/dashboard" target="_self">
+                              <a href="admin/dashboard" target="_self">
                                    <i class='bx bxs-pie-chart-alt-2'></i>
                                    <p>Số liệu thống kê</p>
                               </a>
                          </li>
                          <li class="link">
-                              <a href="admin/default/account" target="_self">
+                              <a href="admin/account" target="_self">
                                    <i class='bx bxs-user-circle'></i>
                                    <p>Các loại tài khoản</p>
                               </a>
                          </li>
                          <li class="link">
-                              <a href="admin/default/order" target="_self">
+                              <a href="admin/order" target="_self">
                                    <i class='bx bxs-package'></i>
                                    <p>Quản lý đơn hàng</p>
                               </a>
                          </li>
                          <li class="link">
-                              <a href="admin/default/discount" target="_self">
+                              <a href="admin/discount" target="_self">
                                    <i class='bx bxs-offer'></i>
                                    <p>Sản phẩm giảm giá</p>
                               </a>
                          </li>
                          <li class="link">
-                              <a href="admin/default/product" target="_self">
+                              <a href="admin/product" target="_self">
                                    <i class='bx bxs-box'></i>
                                    <p>Sản phẩm đang bán</p>
                               </a>
                          </li>
                          <li class="link">
-                              <a href="admin/default/category" target="_self">
+                              <a href="admin/category" target="_self">
                                    <i class='bx bxs-category'></i>
                                    <p>Danh mục sản phẩm</p>
                               </a>
@@ -79,7 +79,16 @@
           </div>
      </div>
 
-
+     <!-- Modal -->
+     <div id="modal">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <span onclick="closeModal()" id="close-modal">&times;</span>
+                    <h3>Thông báo</h3>
+               </div>
+               <div class="modal-body"></div>
+          </div>
+     </div>
      <script src="public/js/adminView.js"></script>
      <?php echo '<script src="public/js/blocks/adminView/' . $page . '.js"></script>'; ?>
 </body>

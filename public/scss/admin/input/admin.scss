@@ -1,0 +1,176 @@
+@import "./utils.scss";
+
+body::-webkit-scrollbar-track {
+     background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar {
+     width: 10px;
+
+     background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+     background-color: $primary-color;
+}
+
+.wrapper {
+     display: grid;
+
+     grid-template-columns: 14% 86%;
+}
+
+.sidebar {
+     position: sticky;
+     top: 0;
+     left: 0;
+
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+
+     width: 100%;
+     height: 100vh;
+
+     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+     .information {
+          padding: 50px 30px;
+
+          .logo {
+               display: block;
+
+               width: 90%;
+          }
+     }
+
+     @mixin menu-item {
+          position: relative;
+
+          display: flex;
+          align-items: center;
+
+          width: 100%;
+
+          padding: 15px 30px 15px 30px;
+
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-decoration: none;
+
+          color: $text-color;
+
+          i {
+               display: block;
+
+               margin-right: 8px;
+
+               font-size: 1.3rem;
+          }
+
+          &:hover {
+               color: $black-color;
+
+               background-color: rgba(245, 246, 250, 0.8);
+
+               &:before {
+                    content: "";
+
+                    position: absolute;
+                    left: 0;
+
+                    width: 8px;
+                    height: 50%;
+
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+
+                    background-color: $primary-color;
+               }
+          }
+     }
+
+     .menu {
+          flex-basis: 100%;
+
+          .links-menu {
+               list-style-type: none;
+
+               .link {
+                    margin-bottom: 20px;
+
+                    a {
+                         @include menu-item;
+                    }
+               }
+          }
+     }
+
+     .controller {
+          margin-bottom: 30px;
+
+          .logout {
+               @include menu-item;
+          }
+     }
+}
+
+.content {
+     padding: 30px;
+
+     background-color: $body-color;
+}
+
+#modal {
+     position: fixed;
+     top: 0;
+     left: 0;
+
+     display: none;
+
+     width: 100%;
+     height: 100%;
+
+     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+     max-width: 800px;
+
+     margin: 5% auto;
+
+     padding: 20px;
+
+     border-radius: 10px;
+
+     background-color: #fff;
+
+     box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.02), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.03),
+          100px 100px 80px rgba(0, 0, 0, 0.05);
+
+     animation: scale 0.5s ease;
+}
+
+.modal-body {
+     margin-top: 5px;
+}
+
+#close-modal {
+     float: right;
+
+     font-size: 1.2rem;
+     font-weight: bold;
+
+     cursor: pointer;
+}
+
+/* Modal scale animation */
+@keyframes scale {
+     from {
+          transform: scale(0);
+     }
+
+     to {
+          transform: scale(1);
+     }
+}

@@ -46,7 +46,7 @@ loginForm.addEventListener("submit", (event) => {
   let loginButton = document.getElementById("login-button");
 
   loginButton.classList.add("disabled");
-  loginButton.innerHTML = `<div id="login-loader"></div>`;
+  loginButton.innerHTML = `<div id="loader"></div>`;
 
   let postData = new URLSearchParams();
   postData.append("username", loginForm[0].value.trim());
