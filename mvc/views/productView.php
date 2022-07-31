@@ -40,12 +40,13 @@
                             <div class="flex justify-between">
                                 <p class="text-[18px] leading-[48px] text-title-color">Showing 1-12 of 41 results</p>
                                 <form action="" method="get" class="mb-[30px]">
-                                    <select name="orderby" class="orderby" id="" aria-label="Shop Order">
-                                        <option value="menu_order" selected="selected">Mặc định</option>
-                                        <option value="rating">Sắp xếp theo mức độ phổ biến</option>
-                                        <option value="date">Sắp xếp theo mới nhất</option>
-                                        <option value="price">Sắp xếp theo giá: thấp đến cao</option>
-                                        <option value="price-desc">Sắp xếp theo giá: cao đến thấp</option>
+                                    <select name="orderby" class="orderby" id="" aria-label="Shop Order" onchange="this.form.submit()">
+                                        <?php $orderby = $_GET['orderby']??'default';   ?>
+                                        <option value="menu_order" <?php echo $select = ($orderby=="menu_order") ? 'selected' : '' ?>  >Mặc định</option>
+                                        <option value="rating" <?php echo $select = ($orderby=="rating") ? 'selected' : '' ?> >Sắp xếp theo mức độ phổ biến</option>
+                                        <option value="date" <?php echo $select = ($orderby=="date") ? 'selected' : '' ?>  >Sắp xếp theo mới nhất</option>
+                                        <option value="price" <?php echo $select = ($orderby=="price") ? 'selected' : '' ?> >Sắp xếp theo giá: thấp đến cao</option>
+                                        <option value="price-desc" <?php echo $select = ($orderby=="price-desc") ? 'selected' : '' ?> >Sắp xếp theo giá: cao đến thấp</option>
                                     </select>
                                 </form>
                             </div>
@@ -123,7 +124,11 @@
                                                 </li>
                                             <?php } else { ?>
                                                 <li class="inline-block">
-                                                    <a href="product&page=<?php echo $i ?>" target="_blank" class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
+                                                    <a href="
+                                                            product&page=<?php echo $i ?>?orderby=<?php echo $orderby ?>
+                                                        "
+                                                    target="_blank" 
+                                                    class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
                                                         <?php echo $i ?>
                                                     </a>
                                                 </li>
