@@ -3,25 +3,30 @@
 class productModel extends Connect
 {
      public $showProduct = 6;
-     public $page = 1;
+   
+    
 
      public function getPage()
-     {
+     {    
+          $page = 1;
           if (isset($_GET['page'])) {
-               $this->page = $_GET['page'];
-               settype($this->page, 'int');
+               $page = $_GET['page'];
+               settype($page, 'int');
           }
-          return $this->page;
+          return  $page;
      }
 
      public function showProduct()
      {
-          $from = ($this->page - 1) * $this->showProduct;
-          $sql = "SELECT *,products.name AS productName  ,products.thumbnail as productThumbnail
+          $page = $this->getPage();
+          $from = ($page - 1) * $this->showProduct;
+          $sql = "SELECT *,products.name AS productName  ,products.thumbnail as productThumbnail,products.id as productId
                     FROM products
                     INNER JOIN categories 
                     ON products.category_id = categories.id
                     LIMIT $from,$this->showProduct ";
+                    $query=mysqli_query($this->dbConnect, $sql);
+                    $arr = mysqli_fetch_all($query,MYSQLI_ASSOC);
           return  mysqli_query($this->dbConnect, $sql);
      }
 
@@ -40,8 +45,6 @@ class productModel extends Connect
 
      public function pagesProduct()
      {
-
-
 
           if (isset($_GET['keyword']) && !$_GET['keyword'] == '') {
                $total_products = mysqli_num_rows($this->search());
@@ -65,7 +68,7 @@ class productModel extends Connect
           } else {
                $keyword = "1";
           }
-          $sql = "SELECT *,products.name AS productName  ,products.thumbnail as productThumbnail
+          $sql = "SELECT *,products.name AS productName  ,products.thumbnail as productThumbnail,products.id as productId
           FROM products
           INNER JOIN categories 
           ON products.category_id = categories.id
