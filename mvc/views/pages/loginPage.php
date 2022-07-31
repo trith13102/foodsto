@@ -1,19 +1,22 @@
-<form onsubmit="return validate(this);" method="POST" target="_self" action="login">
+<form onsubmit="return validate(this)" method="POST" target="_self" action="./login">
     <div class="flex flex-row items-center justify-center lg:justify-start">
         <h1 class="text-title-color font-bold text-[38px] mb-4">Đăng nhập</h1>
     </div>
 
 
     <!-- Email input -->
-    <div class="mb-6">
+    <div class="mb-6 ">
         <label for="name" class="block leading-loose mb-2.25">Email<span class="text-red-700">*</span></label>
-        <input onfocus="removeError(this)" name="email" id="name" type="text" class="rounded-md h-11 transition-colors duration-500 focus:border focus:border-primary-color w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
+        <input onclick="removeError(this)" name="email" id="name" type="text" class=" rounded-md h-11 transition-colors duration-500 focus:border focus:border-primary-color w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
+        <div id="" class="text-warning-color text-[16px] mt-2"></div>
     </div>
 
     <!-- Password input -->
     <div class="mb-6">
         <label for="password" class="block leading-loose mb-2.25">Mật khẩu<span class="text-red-700">*</span></label>
-        <input onfocus="removeError(this)" name="password" id="password" type="password" class="rounded-md h-11 transition-colors duration-500 focus:border focus:border-primary-color w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
+        <input onclick="removeError(this)" name="password" id="password" type="password" class="rounded-md h-11 transition-colors duration-500 focus:border focus:border-primary-color w-full leading-loose outline-none bg-light-green-color border-b border-b-primary-color px-4">
+        <div id="error_log" class="text-warning-color text-[16px] mt-2"></div>
+
     </div>
 
     <div class="flex justify-between items-center mb-6">
@@ -25,7 +28,7 @@
     </div>
 
     <div class="text-center lg:text-left">
-        <button name="btn_login" type="submit" class="inline-block px-10 py-5 bg-green-500 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">
+        <button  name="btn_login"  type="submit" class="inline-block px-10 py-5 bg-green-500 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">
             Đăng nhập
         </button>
         <p class="text-sm font-semibold mt-2 pt-1 mb-0">
@@ -35,17 +38,25 @@
     </div>
 </form>
 
+<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
 
-<!-- <script>
-    function validate(node) {
-        var flag = false;
-        for (let i = 0; i < node.length; i++) {
-            if (validator.isEmpty(node[i])) {
-                node[i].classlist.remove('bg-light-green-color');
-                node[i].classlist.add('bg-light-red-color');
-            }
-        }
-        // console.log(flag);
-        return false;
+
+<?php
+if (isset($data['login_result'])) {
+    echo "<script>console.log('" . $data['login_result'] . "') </script>";
+    if ($data['login_result'] == 'true') {
+?>
+        <script>
+            document.getElementById('home_link').click();
+        </script>
+    <?php
+    } else {
+    ?>
+        <script>
+            document.getElementById('error_log').style.display = "block";
+            document.getElementById('error_log').value = "Bạn nhập sai tài khoản hoặc mật khẩu";
+        </script>
+<?php
     }
-</script> -->
+}
+?>
