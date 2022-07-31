@@ -13,7 +13,9 @@ class checkout extends Controller
             if ($status) {
                 $this->view('checkoutView', [
                     'page' => 'checkoutSuccess',
-                    'result' => $model->getOrder()
+                    'result' => $model->getOrder(),
+                    // send mail
+                    'email' => $model->sendMail()
                 ]);
             }
         } else if (sizeof($_SESSION['cart']) > 0 && isset($_SESSION['email'])) {

@@ -70,4 +70,24 @@ class checkoutModel extends Connect
 
         return $list;
     }
+
+    // send mail
+
+    public function sendMail() {
+        $data = $this->getOrder();
+        $email = $data[0]['email_customer'] ?? null;
+        $sql = "SELECT * FROM account WHERE email= '$email' LIMIT 1";
+        $query = mysqli_query($this->dbConnect, $sql);
+        $result = false;
+        if(mysqli_num_rows($query)>0){
+            require 'mail/email.php';
+            $mail = new Mailer();
+            $template = "mail/templates/template.php";
+            $mail->order($email,$template);
+            $result = true;
+
+        }
+        return $result;
+
+    }
 }

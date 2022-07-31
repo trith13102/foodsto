@@ -12,20 +12,17 @@ class productModel extends Connect
                settype($this->page, 'int');
           }
           return $this->page;
-          
      }
 
      public function showProduct()
      {
           $from = ($this->page - 1) * $this->showProduct;
-          $sql = "SELECT *,categories.name as categoryName,categories.thumbnail as categoryThumbnail
-               FROM categories
-               INNER JOIN products 
-               ON products.category_id = categories.id
-               LIMIT $from,$this->showProduct ";
-          $query = mysqli_query($this->dbConnect, $sql);
-          $arr = mysqli_fetch_all($query, MYSQLI_ASSOC);
-          return $arr;
+          $sql = "SELECT *,products.name AS productName  ,products.thumbnail as productThumbnail
+                    FROM products
+                    INNER JOIN categories 
+                    ON products.category_id = categories.id
+                    LIMIT $from,$this->showProduct ";
+          return  mysqli_query($this->dbConnect, $sql);
      }
 
      public function popularProducts()
@@ -39,32 +36,40 @@ class productModel extends Connect
           return mysqli_query($this->dbConnect, $sql);
      }
 
-     // Phân trang
+     // Pages
 
      public function pagesProduct()
      {
-          $sql = "SELECT *,categories.name as categoryName,categories.thumbnail as categoryThumbnail
+
+
+
+          if (isset($_GET['keyword']) && !$_GET['keyword'] == '') {
+               $total_products = mysqli_num_rows($this->search());
+          } else {
+               $sql = "SELECT *,categories.name as categoryName,categories.thumbnail as categoryThumbnail
                FROM categories
                INNER JOIN products 
                ON products.category_id = categories.id ";
-          $query = mysqli_query($this->dbConnect, $sql);
-          $total_products = mysqli_num_rows($query);
+               $query = mysqli_query($this->dbConnect, $sql);
+               $total_products = mysqli_num_rows($query);
+          }
           $show_pages = ceil($total_products / $this->showProduct);
           return $show_pages;
      }
 
      // Search
-     public function search(){
-          if(isset($_GET['keyword'])){
+     public function search()
+     {
+          if (isset($_GET['keyword'])) {
                $keyword = $_GET['keyword'];
-          }else {
-               $keyword="1";
+          } else {
+               $keyword = "1";
           }
           $sql = "SELECT *,products.name AS productName  ,products.thumbnail as productThumbnail
           FROM products
           INNER JOIN categories 
           ON products.category_id = categories.id
-          WHERE products.name LIKE '%".$keyword."%' ";
+          WHERE products.name LIKE '%" . $keyword . "%' ";
           return mysqli_query($this->dbConnect, $sql);
      }
 }
