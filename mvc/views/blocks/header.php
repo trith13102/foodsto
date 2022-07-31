@@ -52,7 +52,7 @@
                         </li>
                     <?php   } else {
                     ?>
-
+                 
                         <li class="menu-item">
 
                             <a class="item_title angle-down" href="" target="_self"> <img src="user_logo.jpg" style="width: 30px; height: 30px; display: inline-block; margin-right: 8px; border-radius: 50%;" alt=""></a>

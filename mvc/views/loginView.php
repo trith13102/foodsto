@@ -69,24 +69,27 @@
         }
     </script>
 
+
     <?php
     if (isset($data['result'])) {
 
-        echo "<script>console.log('" . $data['result'] . "')
-            </script>";
         if ($data['result'] == 'true') {
     ?>
             <script>
                 document.getElementById('home_link').click();
-
-                // document.getElementById('home_link').click();
             </script>
+        <?php
+        } else {
+        ?>
+            <script>
+                // document.querySelector('input').classlist.add = "error";
+                document.getElementById('error_log').style.display = "block";
+                document.getElementById('error_log').innerHTML = "Bạn nhập sai tài khoản hoặc mật khẩu";
+            </script>   
     <?php
         }
     }
-
     ?>
-
 
 </body>
 

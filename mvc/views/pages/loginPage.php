@@ -28,7 +28,7 @@
     </div>
 
     <div class="text-center lg:text-left">
-        <button  name="btn_login"  type="submit" class="inline-block px-10 py-5 bg-green-500 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">
+        <button name="btn_login" type="submit" class="inline-block px-10 py-5 bg-green-500 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">
             Đăng nhập
         </button>
         <p class="text-sm font-semibold mt-2 pt-1 mb-0">
@@ -41,22 +41,3 @@
 <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
 
 
-<?php
-if (isset($data['login_result'])) {
-    echo "<script>console.log('" . $data['login_result'] . "') </script>";
-    if ($data['login_result'] == 'true') {
-?>
-        <script>
-            document.getElementById('home_link').click();
-        </script>
-    <?php
-    } else {
-    ?>
-        <script>
-            document.getElementById('error_log').style.display = "block";
-            document.getElementById('error_log').value = "Bạn nhập sai tài khoản hoặc mật khẩu";
-        </script>
-<?php
-    }
-}
-?>
