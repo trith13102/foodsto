@@ -69,7 +69,7 @@ class Login extends Controller
 
     public function lostPass()
     {
-        if (isset($_POST['lost_pass'])&&!$_POST['lost_pass']=="") {
+        if (isset($_POST['lost_pass']) && !$_POST['lost_pass'] == "") {
             $this->view(
                 "loginView",
                 [
