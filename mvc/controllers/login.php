@@ -76,8 +76,4 @@ class Login extends Controller
             ]
         );
     }
-
-    public function loginView() {
-        
-    }
 }

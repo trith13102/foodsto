@@ -12,17 +12,16 @@ class home extends Controller
             'vegetables' => $model->getProductsByCategory(4),
             'salads' => $model->getProductsByCategory(64),
             'products' => $model->getProducts(),
+            'productSale' => $model->getProductSale(),
         ]);
     }
 
-    // public function crud($method = null)
-    // {
-    //     header('Content-Type: application/json; charset=utf-8');
+    public function get_product_by_id($id = null)
+    {
+        // header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
 
-    //     $model = $this->model('homeModel');
-
-    //     if (!$method == null && method_exists($model, $method)) {
-    //         $model->$method();
-    //     } else die("FAIL");
-    // }
+        $model = $this->model('homeModel');
+        $model->get_product_by_id($id);
+    }
 }
