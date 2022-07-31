@@ -69,15 +69,25 @@ class Login extends Controller
 
     public function lostPass()
     {
-        $this->view(
-            "loginView",
-            [
-                "page" => "lostPassPage"
-            ]
-        );
+        if (isset($_POST['lost_pass'])&&!$_POST['lost_pass']=="") {
+            $this->view(
+                "loginView",
+                [
+                    "page" => "lostPassPage",
+                    "lostPass" => $this->userModel->forgotPass()
+                ]
+            );
+        } else {
+            $this->view(
+                "loginView",
+                [
+                    "page" => "lostPassPage"
+                ]
+            );
+        }
     }
 
-    public function loginView() {
-        
+    public function loginView()
+    {
     }
 }

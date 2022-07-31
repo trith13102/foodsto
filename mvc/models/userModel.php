@@ -57,4 +57,27 @@ class UserModel extends Connect
          $_SESSION['address'] =  $user['default_shipping_address'];
       }
    }
+
+   // Lost Pass
+   public function forgotPass(){
+      $result = false;
+      if(isset($_POST['lost_pass'])){
+         $email = trim($_POST['lost_pass']);
+         $sql = "SELECT * FROM account WHERE email= '$email'";
+         $query = mysqli_query($this->dbConnect,$sql);
+         if (mysqli_num_rows($query) > 0) {
+            $new_pass = substr(md5(rand(0, 99999)), 0, 8);
+            $password = password_hash($new_pass, PASSWORD_DEFAULT);
+            $sql = "UPDATE account SET password = '$password' WHERE email = '$email'";
+            mysqli_query($this->dbConnect, $sql);
+            require 'mail/email.php';
+            $mail = new Mailer();
+            $mail->lostPass($email,$new_pass);
+            $result  = true;
+         }
+         
+      }
+
+      return $result;
+   }
 }
