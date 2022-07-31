@@ -1,1 +1,151 @@
 @import "./utils.scss";
+
+body {
+     font-family: $primary-font;
+}
+
+.wrapper {
+     display: flex;
+     align-items: flex-start;
+     justify-content: center;
+
+     height: 100vh;
+
+     padding: 150px 0;
+
+     .form-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          padding: 30px 30px 20px 30px;
+
+          border-radius: 12px;
+
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+          .information {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+
+               .logo {
+                    width: 20%;
+               }
+
+               .title {
+                    margin-top: 20px;
+               }
+          }
+
+          .form {
+               width: 100%;
+
+               padding-top: 40px;
+
+               .form-group {
+                    display: flex;
+                    flex-direction: column;
+
+                    width: 100%;
+
+                    padding-bottom: 25px;
+
+                    label {
+                         padding-bottom: 8px;
+
+                         font-weight: 600;
+                    }
+
+                    input {
+                         padding: 10px 15px;
+
+                         border: 2px solid #dfe6e9;
+                         border-radius: 6px;
+
+                         font-size: 1rem;
+
+                         &:focus {
+                              outline: none;
+
+                              border-color: $primary-color;
+                         }
+                    }
+
+                    input.error {
+                         border-color: $text-warning-color;
+                    }
+
+                    p {
+                         padding-top: 5px;
+
+                         color: $text-warning-color;
+                    }
+
+                    p.hidden {
+                         display: none;
+                    }
+               }
+
+               .controller {
+               width: 100%;
+
+               padding-bottom: 20px;
+
+               button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 50%;
+
+                    margin: 0 auto;
+
+                    padding: 10px;
+
+                    border: 0;
+                    border-radius: 6px;
+
+                    font-size: 1rem;
+
+                    color: $white-color;
+
+                    background-color: $primary-color;
+
+                    &:hover {
+                         opacity: 0.8;
+
+                         cursor: pointer;
+                    }
+
+                    #login-loader {
+                         width: 20px;
+                         height: 20px;
+
+                         border: 3px solid hsla(228, 22%, 95%, 0.2);
+                         border-top-color: hsla(228, 22%, 95%, 0.8);
+                         border-radius: 50%;
+
+                         animation: spin 0.8s linear infinite;
+                    }
+
+                    @keyframes spin {
+                         to {
+                              transform: rotate(360deg);
+                         }
+                    }
+               }
+
+               button.disabled {
+                    opacity: 0.5;
+
+                    &:hover {
+                         pointer-events: none;
+                    }
+               }
+          }
+          }
+
+          
+     }
+}

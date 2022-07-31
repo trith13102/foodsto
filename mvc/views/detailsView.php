@@ -1,6 +1,6 @@
 <?php
-    $row = $data["product"];
-    $list = $data["category"];
+$row = $data["product"];
+$list = $data["category"];
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +42,24 @@
 
     <main class="font-primary-font relative">
         <div class="absolute z-10 left-auto -top-15 h-[13.25rem] w-[14.2rem] -right-0 bg-[url('https://wordpress.iqonic.design/foodsto/wp-content/themes/foodsto/assets/images/backend/pattern-leaf-top.png')] "></div>
-        <!--  Images and sub info-->
-        <div class="container px-4 mx-auto">
-            <section class="product flex pt-30 justify-between">
+        <div class="container px-4 mx-auto pt-30">
+            <!-- Pop Up -->
+            <?php 
+                if(isset($data['infoProduct'])) {
+                    echo '<div class="justify-between text-body-text bg-light-green-color rounded-md py-4 px-8 mb-7.5 text-base inline-flex items-center w-full" role="alert">
+                    <div class="flex items-center">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle" class="w-4 h-4 mr-2 text-primary-color" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                        </svg>
+                        <p class="pl-2">'.$data['infoProduct'].' x "'.$row['name'].'" đã được thêm vào giỏ hàng của bạn.</p>
+                    </div>
+                    <a href="cart" class="text-sm bg-primary-color rounded-md py-2.5 px-7.5 hover:bg-secondary-color text-white transition-colors duration-500">XEM GIỎ HÀNG</a>
+                </div>';
+                }
+            ?>
+            <section class="product flex justify-between">
+            <!--  Images and sub info-->
+
                 <div class="product__image w-[42%]">
                     <div class="overflow-hidden mb-7.5 rounded-md">
                         <div class="product__image--show flex transition-transform duration-700">
@@ -74,8 +89,8 @@
                         </span>
                         <a href="" class="hover:text-secondary-color transition-colors ml-4">(2 đánh giá của khách hàng)</a>
                     </div>
-                    <p class="text-primary-color text-4xl font-medium leading-relaxed"><?php echo number_format($row['price']). ' VNĐ';?></p>
-                    <form action="cart?add&id=<?php echo $row['id']?>" target="_self" method="POST" class="flex mb-4">
+                    <p class="text-primary-color text-4xl font-medium leading-relaxed"><?php echo number_format($row['price']) . ' VNĐ'; ?></p>
+                    <form target="_self" method="POST" class="flex mb-4">
                         <span class="flex mr-4">
                             <button class="button-subtract bg-primary-color text-white text-center rounded-md w-11 h-11 border border-primary-color" type="button">
                                 <i class="fa-solid fa-minus"></i>
@@ -215,30 +230,30 @@
                 <!-- Slider auto product -->
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <?php 
-                            foreach($list as $raw) {
-                                echo '<div class="swiper-slide rounded-md">
+                        <?php
+                        foreach ($list as $raw) {
+                            echo '<div class="swiper-slide rounded-md">
                                 <div class="p-4">
                                     <div class="px-2.25 shadow-product pt-2.25">
-                                        <a href="details?id='.$raw['id'].'" class="w-full group">
+                                        <a href="details?id=' . $raw['id'] . '" class="w-full group">
                                             <div class=" w-full overflow-hidden">
-                                                <img class="group-hover:scale-105 w-full transition-transform duration-500" src="'.$raw['thumbnail'].'">
+                                                <img class="group-hover:scale-105 w-full transition-transform duration-500" src="' . $raw['thumbnail'] . '">
                                             </div>
                                             <div class="product__content pt-4 px-1">
-                                                <p class="text-sm">'.$raw['name_category'].'</p>
-                                                <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">'.$raw['name'].'</h1>
+                                                <p class="text-sm">' . $raw['name_category'] . '</p>
+                                                <h1 class="text-title-color hover:text-primary-color leading-normal transition-colors duration-500 text-[22px] font-semibold">' . $raw['name'] . '</h1>
                                                 <div class="flex justify-between items-center mt-2 mb-2.25">
-                                                    <p class="text-primary-color font-semibold text-lg">'.number_format($raw['price']).' VNĐ</p>
+                                                    <p class="text-primary-color font-semibold text-lg">' . number_format($raw['price']) . ' VNĐ</p>
                                                     <span class="flex">';
-                                                        for ($i = 0; $i < 5; ++$i) {
-                                                            echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-                                                        }
-                                                    echo '</span>
+                            for ($i = 0; $i < 5; ++$i) {
+                                echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+                            }
+                            echo '</span>
                                                 </div>
                                             </div>
                                         </a>
                                         <div class="bars-button flex justify-between pb-4">
-                                            <a href="cart?add&id='.$raw['id'].'" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
+                                            <a href="cart?add&id=' . $raw['id'] . '" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">Thêm vào giỏ<i class="pl-2 fas fa-long-arrow-alt-right"></i></a>
                                             <ul class="flex gap-x-1">
                                                 <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-heart"></i></a></li>
                                                 <li><a href="" class="block w-11 h-11 leading-[45px] hover:shadow-md text-center rounded-md border hover:bg-secondary-color text-secondary-color hover:text-white transition-all duration-700 hover:border-secondary-color border-secondary-color"><i class="fa-regular fa-eye"></i></a></li>
@@ -247,7 +262,7 @@
                                     </div>
                                 </div>
                             </div>';
-                            }
+                        }
                         ?>
                     </div>
                 </div>

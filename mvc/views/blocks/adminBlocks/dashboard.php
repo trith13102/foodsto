@@ -1,1 +1,3 @@
-<h1>Đây là nội dung</h1>
+<link rel="stylesheet" href="public/scss/admin/dashboard.css">
+
+<h2>Đây là trang số liệu</h2>

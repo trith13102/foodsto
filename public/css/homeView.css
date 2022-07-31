@@ -982,19 +982,71 @@ a.add-to-wishlist:hover,
   cursor: default;
 }
 
-#modal {
+.modal-wrapper{
+  height: 100%;
+}
+
+.modal {
   width: 960px;
+  height: 460px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-img{
+  width: 460px;
 }
 
 .modal-img img {
   width: 460px !important;
 }
 
-.fa-solid.fa-xmark {
-  top: 20px;
-  right: 20px;
-  color: gray;
+.modal h2{
+  font-size: 2.3em;
+  font-family: var(--primary-font);
 }
+
+.modal ins{
+  font-size: 0.9em;
+}
+
+.fa-solid.fa-xmark {
+  position: relative;
+  bottom: 205px;
+  right: -935px;
+  color: gray;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.splide {
+  visibility:unset !important;
+  height: 460px;
+}
+
+.splide__arrow{
+  background: none !important;
+}
+
+.splide__arrow svg{
+  fill: var(--primary-color) !important;
+}
+
+#loader {
+  border: 3px solid hsla(185, 100%, 62%, 0.2);
+  border-top-color: #3cefff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* modal-check */
 
@@ -1018,3 +1070,7 @@ a.add-to-wishlist:hover,
   margin: 1em 0 0;
   color:  #595959;
 }
+
+/* .splide__list{
+  width: 50%;
+} */
