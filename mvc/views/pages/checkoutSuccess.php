@@ -1,4 +1,4 @@
-<?php $row = $data['result'] ?? null;?>
+<?php $row = $data['result'] ?? null; ?>
 
 <main class="py-30 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto font-primary-font text-body-text">
 
@@ -58,7 +58,7 @@
           <div class="flex justify-between items-start w-full">
             <div class="flex justify-center items-center space-x-4">
               <div class="w-8 h-8">
-                <img class="w-full h-full" alt="logo" src="https://i.ibb.co/L8KSdNQ/image-3.png" />
+                <img class="w-full h-full" alt="logo" src="https://img.icons8.com/external-bearicons-flat-bearicons/344/external-Express-post-office-bearicons-flat-bearicons.png" />
               </div>
               <div class="flex flex-col justify-start items-center">
                 <p class="text-xs leading-6 font-semibold">FoodSto Express<br /><span class="font-normal">Giao hàng trong 24h</span></p>
@@ -77,7 +77,7 @@
       <div class="flex flex-col md:flex-row xl:flex-col justify-start items-stretch h-full w-full md:space-x-6 lg:space-x-8 xl:space-x-0">
         <div class="flex flex-col justify-start items-start flex-shrink-0">
           <div class="flex justify-center w-full md:justify-start items-center space-x-4 py-8 border-bborder-gray-200">
-            <img class="rounded" src="https://i.ibb.co/5TSg7f6/Rectangle-18.png" alt="avatar" />
+            <img class="rounded w-14 h-auto" src="https://img.icons8.com/nolan/344/40C057/user.png" alt="avatar" />
             <div class="flex justify-start items-start flex-col space-y-2">
               <p class="text-base font-semibold leading-4 text-left"><?php echo $row[0]['name_customer']; ?></p>
             </div>
