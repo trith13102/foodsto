@@ -6,12 +6,17 @@
          {
              $model = $this->model('productModel');
 
-             $this->view('productView', [
-                'getPage' =>$model->getPage(),
-                'arrProducts'=>$model->showProduct(),
+             if (isset($_GET['keyword']) && !$_GET['keyword'] == ''){
+                $product = $model->search();
+            } else {
+                $product = $model->showProduct();
+            }
+
+            $this->view('productView',[
                 'popular' => $model->popularProducts(),
+                'getPage' =>$model->getPage(),
+                'arrProducts'=> $product,
                 'numberPages' => $model->pagesProduct(),
-                'keyword' => $model->search()
             ]);
 
          }

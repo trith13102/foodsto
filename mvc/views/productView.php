@@ -51,147 +51,69 @@
                             </div>
                             <!-- List-Product -->
                             <div class=" mx-[-15px] flex flex-wrap">
-                                <?php if (isset($_GET['keyword'])&&!$_GET['keyword']=="") {
-                                    while ($rows = mysqli_fetch_array($data['keyword'])) {
-                                ?>
-                                        <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                            <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                                <div>
-                                                    <img class="w-full rounded-[5px]" src="<?php echo $rows['productThumbnail'] ?>" alt="">
-                                                </div>
-                                                <div class="py-[15px] px-[5px] text-left">
-                                                    <div class="block items-center">
-                                                        <span class="text-[14px]"><?php echo $rows['name']; ?></span>
+                                <?php while($row = mysqli_fetch_array($data['arrProducts'])){ ?>
+                                <div class="w-[33.33%] px-[15px] mb-[30px]">
+                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
+                                        <div>
+                                            <img class="w-full rounded-[5px]" src="<?php echo $row ['productThumbnail'] ?>" alt="">
+                                        </div>
+                                        <div class="py-[15px] px-[5px] text-left">
+                                            <div class="block items-center">
+                                                <span class="text-[14px]"><?php echo $row ['name']; ?></span>
+                                            </div>
+                                            <div class="text-left">
+                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
+                                                    <a href="" class="hover:text-primary-color transition-colors duration-700"><?php echo $row ['productName'] ?></a>
+                                                </h5>
+                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
+                                                    <div class="text-primary-color">
+                                                        <span>$ </span>
+                                                        <span><?php echo number_format($row ['price']); ?></span>
                                                     </div>
-                                                    <div class="text-left">
-                                                        <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                            <a href="" class="hover:text-primary-color transition-colors duration-700"><?php echo $rows['productName'] ?></a>
-                                                        </h5>
-                                                        <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                            <div class="text-primary-color">
-                                                                <span>$ </span>
-                                                                <span><?php echo number_format($rows['price']); ?></span>
-                                                            </div>
-                                                            <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                                <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                                    <ul>
-                                                                        <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                        <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                        <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                        <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                        <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                    </ul>
-                                                                    <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                                </div>
-                                                            </div>
+                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
+                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
+                                                            <ul>
+                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                            </ul>
+                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
                                                         </div>
-                                                    </div>
-                                                    <div class="relative">
-                                                        <ul class="flex">
-                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                                <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                                    Thêm vào giỏ hàng
-                                                                </a>
-                                                            </li>
-                                                            <li class="inline-block">
-                                                                <span class="feedback">
-                                                                    <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                        <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                                    </a>
-                                                                </span>
-                                                            </li>
-                                                            <li class="inline-block ml-[5px]">
-                                                                <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    <?php }
-                                } else { ?>
-                                    <?php foreach ($data['arrProducts'] as $product) { ?>
-                                        <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                            <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                                <div>
-                                                    <img class="w-full rounded-[5px]" src="<?php echo $product['thumbnail'] ?>" alt="">
-                                                </div>
-                                                <div class="py-[15px] px-[5px] text-left">
-                                                    <div class="block items-center">
-                                                        <span class="text-[14px]"><?php echo $product['categoryName']; ?></span>
-                                                    </div>
-                                                    <div class="text-left">
-                                                        <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                            <a href="" class="hover:text-primary-color transition-colors duration-700"><?php echo $product['name'] ?></a>
-                                                        </h5>
-                                                        <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                            <div class="text-primary-color">
-                                                                <span>$ </span>
-                                                                <span><?php echo number_format($product['price']); ?></span>
-                                                            </div>
-                                                            <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                                <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                                    <ul>
-                                                                        <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                        <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                        <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                        <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                        <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                    </ul>
-                                                                    <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="relative">
-                                                        <ul class="flex">
-                                                            <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                                <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                                    Thêm vào giỏ hàng
-                                                                </a>
-                                                            </li>
-                                                            <li class="inline-block">
-                                                                <span class="feedback">
-                                                                    <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                        <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
-                                                                    </a>
-                                                                </span>
-                                                            </li>
-                                                            <li class="inline-block ml-[5px]">
-                                                                <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                            <div class="relative">
+                                                <ul class="flex">
+                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                            Thêm vào giỏ hàng
+                                                        </a>
+                                                    </li>
+                                                    <li class="inline-block">
+                                                        <span class="feedback">
+                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <li class="inline-block ml-[5px]">
+                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
-                                <?php }
-                                } ?>
-
+                                    </div>
+                                </div>
+                                <?php } ?>
 
 
                             </div>
                             <!-- Number-Pages  -->
                             <div class="pagination text-center">
                                 <ul class="flex justify-center">
-                                    <?php if (isset($_GET['keyword'])&&!$_GET['keyword']=='') {
-                                        for ($i = 1; $i <= ceil(mysqli_num_rows($data['keyword'])/6); $i++) {
-                                    ?>
-                                            <?php if ($i == $data['getPage']) { ?>
-                                                <li class="inline-block">
-                                                    <span aria-current="page" class="pages-number block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-white-color bg-primary-color border-primary-color">
-                                                        <?php echo $i ?>
-                                                    </span>
-                                                </li>
-                                            <?php } else { ?>
-                                                <li class="inline-block">
-                                                    <a href="product&page=<?php echo $i ?>" target="_blank" class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
-                                                        <?php echo $i ?>
-                                                    </a>
-                                                </li>
-                                        <?php }
-                                        }
-                                    } else { ?>
+                                    
                                         <?php for ($i = 1; $i <= $data['numberPages']; $i++) {  ?>
                                             <?php if ($i == $data['getPage']) { ?>
                                                 <li class="inline-block">
@@ -205,10 +127,7 @@
                                                         <?php echo $i ?>
                                                     </a>
                                                 </li>
-
-                                    <?php }
-                                        }
-                                    } ?>
+                                        <?php } }?>
 
                                 </ul>
                             </div>
