@@ -52,13 +52,9 @@
                 </a>
             </div>
             <div class="banner-img">
-                <img class="bg-img"
-                    src="https://res.cloudinary.com/foodstocloud/image/upload/v1657402689/page_images/shap_vdk0el.png"
-                    alt="">
+                <img class="bg-img" src="https://res.cloudinary.com/foodstocloud/image/upload/v1657402689/page_images/shap_vdk0el.png" alt="">
 
-                <img class="main-img"
-                    src="https://res.cloudinary.com/foodstocloud/image/upload/v1657402691/page_images/man_f07ozl.png"
-                    alt="">
+                <img class="main-img" src="https://res.cloudinary.com/foodstocloud/image/upload/v1657402691/page_images/man_f07ozl.png" alt="">
 
             </div>
         </div>
@@ -70,8 +66,7 @@
             <div class="title-bar__list">
                 <div class="title-bar__item">
                     <div class="title-bar__img">
-                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1656752379/icon_images/tt-home-1_rlyid0.png"
-                            alt="">
+                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1656752379/icon_images/tt-home-1_rlyid0.png" alt="">
                     </div>
                     <div class="in-item">
                         <h5>Nông sản</h5>
@@ -80,8 +75,7 @@
                 </div>
                 <div class="title-bar__item">
                     <div class="title-bar__img">
-                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1656752379/icon_images/tt-home-2_epec9h.png"
-                            alt="">
+                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1656752379/icon_images/tt-home-2_epec9h.png" alt="">
                     </div>
                     <div class="in-item">
                         <h5>Salads</h5>
@@ -90,8 +84,7 @@
                 </div>
                 <div class="title-bar__item">
                     <div class="title-bar__img">
-                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1656752380/icon_images/tt-home-3_rqihgk.png"
-                            alt="">
+                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1656752380/icon_images/tt-home-3_rqihgk.png" alt="">
                     </div>
                     <div class="in-item">
                         <h5>Giỏ hàng</h5>
@@ -100,8 +93,7 @@
                 </div>
                 <div class="title-bar__item">
                     <div class="title-bar__img">
-                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1656752380/icon_images/tt-home-4_ano0b4.png"
-                            alt="">
+                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1656752380/icon_images/tt-home-4_ano0b4.png" alt="">
                     </div>
                     <div class="in-item">
                         <h5>Hỗ trợ</h5>
@@ -206,21 +198,22 @@
 
                 <?php
                 $productSale = isset($data['productSale']) ? $data['productSale'] : '';
+                
                 foreach ($productSale as $sale) { ?>
-
-                <div class="tabs__content h-product-list" id="fruit">
-                    <div class="h-product-main">
-                        <?php
-                        $fruits = isset($data['fruits']) ? $data['fruits'] : '';
-                        foreach ($fruits as $product) {
-                            echo
-                            '
+                    
+                    <div class="tabs__content h-product-list" id="fruit">
+                        <div class="h-product-main">
+                            <?php
+                            $fruits = isset($data['fruits']) ? $data['fruits'] : '';
+                            foreach ($fruits as $product) {
+                                echo
+                                '
                             <div class="h-product-item">
                                 <div class="inner-h-product">';
-                            if ($sale['product_id'] == $product['id']) {
-                                echo '<span class="onSale">Sale!</span>';
-                            }
-                            echo '<a target="_self" href="details?id=' . $product['id'] . '">
+                                if ($sale['product_id'] == $product['id']) {
+                                    echo '<span class="onSale">Sale!</span>';
+                                }
+                                echo '<a target="_self" href="details?id=' . $product['id'] . '">
                                     <div class="h-product-img">
                                         <img src="' . $product['thumbnail'] . '" alt="">
                                     </div>
@@ -238,16 +231,16 @@
                                                 </div>
                                                 <div class="h-ratings">
                                                     <ul> ';
-                                                        for ($i = 0; $i < 5; ++$i) {
-                                                            echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-                                                        }
-                                                        echo '
+                                for ($i = 0; $i < 5; ++$i) {
+                                    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+                                }
+                                echo '
                                                     </ul>
                                                     <span class="h-review">(4)</span>
                                                 </div>
                                             </div>
                                             <div class="bars-button flex justify-between pb-4">
-                                                <a href="cart?add&id='.$product['id'].'" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">
+                                                <a href="cart?add&id=' . $product['id'] . '" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">
                                                     Thêm vào giỏ
                                                     <i class="pl-2 fas fa-long-arrow-alt-right"></i>
                                                 </a>
@@ -271,18 +264,18 @@
                                 </div>
                             </div>
                         ';
-                        } ?>
+                            } ?>
+                        </div>
                     </div>
-                </div>
 
-                <div class="tabs__content h-product-list" id="vegetable">
-                    <div class="h-product-main">
+                    <div class="tabs__content h-product-list" id="vegetable">
+                        <div class="h-product-main">
 
-                        <?php
-                        $vegetables = isset($data['vegetables']) ? $data['vegetables'] : '';
-                        foreach ($vegetables as $product) {
-                            echo
-                            '
+                            <?php
+                            $vegetables = isset($data['vegetables']) ? $data['vegetables'] : '';
+                            foreach ($vegetables as $product) {
+                                echo
+                                '
                             <div class="h-product-item">
                                 <div class="inner-h-product">
                                     <div class="h-product-img">
@@ -302,16 +295,16 @@
                                             </div>
                                             <div class="h-ratings">
                                                 <ul> ';
-                                                    for ($i = 0; $i < 5; ++$i) {
-                                                        echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-                                                    }
-                                                    echo '
+                                for ($i = 0; $i < 5; ++$i) {
+                                    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+                                }
+                                echo '
                                                 </ul>
                                                 <span class="h-review">(4)</span>
                                             </div>
                                         </div>
                                         <div class="bars-button flex justify-between pb-4">
-                                            <a href="cart?add&id='.$product['id'].'" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">
+                                            <a href="cart?add&id=' . $product['id'] . '" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">
                                                 Thêm vào giỏ
                                                 <i class="pl-2 fas fa-long-arrow-alt-right"></i>
                                             </a>
@@ -336,20 +329,20 @@
                         </div>
 
                         ';
-                        } ?>
+                            } ?>
 
 
+                        </div>
                     </div>
-                </div>
 
-                <div class="tabs__content h-product-list" id="salads">
-                    <div class="h-product-main">
+                    <div class="tabs__content h-product-list" id="salads">
+                        <div class="h-product-main">
 
-                        <?php
-                        $salads = isset($data['salads']) ? $data['salads'] : '';
-                        foreach ($salads as $product) {
-                            echo
-                            '
+                            <?php
+                            $salads = isset($data['salads']) ? $data['salads'] : '';
+                            foreach ($salads as $product) {
+                                echo
+                                '
                             <div class="h-product-item">
                                 <div class="inner-h-product">
                                     <div class="h-product-img">
@@ -369,16 +362,16 @@
                                             </div>
                                             <div class="h-ratings">
                                                 <ul> ';
-                                                    for ($i = 0; $i < 5; ++$i) {
-                                                        echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
-                                                    }
-                                                    echo '
+                                for ($i = 0; $i < 5; ++$i) {
+                                    echo '<i class="text-xs fa-solid fa-star text-secondary-color"></i>';
+                                }
+                                echo '
                                                 </ul>
                                                 <span class="h-review">(4)</span>
                                             </div>
                                         </div>
                                         <div class="bars-button flex justify-between pb-4">
-                                            <a href="cart?add&id='.$product['id'].'" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">
+                                            <a href="cart?add&id=' . $product['id'] . '" target="_self" class="uppercase text-white duration-500 bg-secondary-color hover:shadow-md hover:text-white hover:bg-primary-color transition-colors px-4 py-3 text-sm font-medium rounded-md shadow tracking-wider">
                                                 Thêm vào giỏ
                                                 <i class="pl-2 fas fa-long-arrow-alt-right"></i>
                                             </a>
@@ -403,11 +396,11 @@
                         </div>
 
                         ';
-                        } ?>
+                            } ?>
 
 
+                        </div>
                     </div>
-                </div>
                 <?php } ?>
             </div>
         </section>
@@ -585,8 +578,7 @@
                                 <div class="h-item__name">
                                     <h5>Shirley Edwards</h5>
                                     <div class="h-item__user-img">
-                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png"
-                                            alt="">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -603,8 +595,7 @@
                                 <div class="h-item__name">
                                     <h5>Shirley Edwards</h5>
                                     <div class="h-item__user-img">
-                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png"
-                                            alt="">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -621,8 +612,7 @@
                                 <div class="h-item__name">
                                     <h5>Shirley Edwards</h5>
                                     <div class="h-item__user-img">
-                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png"
-                                            alt="">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -639,8 +629,7 @@
                                 <div class="h-item__name">
                                     <h5>Shirley Edwards</h5>
                                     <div class="h-item__user-img">
-                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png"
-                                            alt="">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -657,8 +646,7 @@
                                 <div class="h-item__name">
                                     <h5>Shirley Edwards</h5>
                                     <div class="h-item__user-img">
-                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png"
-                                            alt="">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -675,8 +663,7 @@
                                 <div class="h-item__name">
                                     <h5>Shirley Edwards</h5>
                                     <div class="h-item__user-img">
-                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png"
-                                            alt="">
+                                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657397548/page_images/6-5_n3atlb.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -700,8 +687,7 @@
             <div class="h-blog__list">
                 <div class="h-blog__item">
                     <div class="h-blog__img">
-                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657400227/page_images/main-blog1-4_k3y0m0.png"
-                            alt="">
+                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657400227/page_images/main-blog1-4_k3y0m0.png" alt="">
                     </div>
                     <div class="h-blog__container">
                         <div class="h-blog__day">20/12/2021</div>
@@ -734,8 +720,7 @@
                 </div>
                 <div class="h-blog__item">
                     <div class="h-blog__img">
-                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657400226/page_images/main-blog2-4_gqzx8v.png"
-                            alt="">
+                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657400226/page_images/main-blog2-4_gqzx8v.png" alt="">
                     </div>
                     <div class="h-blog__container">
                         <div class="h-blog__day">20/12/2021</div>
@@ -768,8 +753,7 @@
                 </div>
                 <div class="h-blog__item">
                     <div class="h-blog__img">
-                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657400247/page_images/main-blog3-4_tb8ook.png"
-                            alt="">
+                        <img src="https://res.cloudinary.com/foodstocloud/image/upload/v1657400247/page_images/main-blog3-4_tb8ook.png" alt="">
                     </div>
                     <div class="h-blog__container">
                         <div class="h-blog__day">20/12/2021</div>
@@ -807,8 +791,7 @@
 
 
     <?php require_once 'mvc/views/blocks/footer.php'; ?>
-    <div id="modal-container" class="hidden relative z-50" aria-labelledby="modal-title" role="dialog"
-        aria-modal="true">
+    <div id="modal-container" class="hidden relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
         <div class=" fixed z-50 inset-0 overflow-y-auto">
@@ -830,8 +813,7 @@
 
         <div class="fixed z-10 inset-0 overflow-y-auto">
             <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
-                <div
-                    class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
+                <div class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div class="sm:flex flex-col items-center justify-center">
                             <i class="fa-solid fa-check"></i>
@@ -839,11 +821,9 @@
                         </div>
                     </div>
                     <div class="bg-gray-50 px-11 mb-5 justify-center items-center py-3 sm:px-6 sm:flex">
-                        <button type="button"
-                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-8 py-3 bg-secondary-color font-medium text-white hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-amber-300 sm:w-auto text-[17px]">Thanh
+                        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-8 py-3 bg-secondary-color font-medium text-white hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-amber-300 sm:w-auto text-[17px]">Thanh
                             toán</button>
-                        <button type="button"
-                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-8 py-3 bg-primary-color font-medium text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-emerald-400 sm:ml-3 sm:w-auto text-[17px]">Tiếp
+                        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-8 py-3 bg-primary-color font-medium text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-emerald-400 sm:ml-3 sm:w-auto text-[17px]">Tiếp
                             tục mua hàng</button>
                     </div>
                 </div>

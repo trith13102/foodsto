@@ -123,4 +123,120 @@ table tbody tr:nth-of-type(even) {
   background-color: rgba(236, 240, 241, 0.3411764706);
 }
 
+#modal .modal-content .add-product .form-input {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+#modal .modal-content .add-product .form-input label {
+  padding-bottom: 8px;
+}
+#modal .modal-content .add-product .form-input input,
+#modal .modal-content .add-product .form-input textarea {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+}
+#modal .modal-content .add-product .form-input input:focus,
+#modal .modal-content .add-product .form-input textarea:focus {
+  outline: none;
+}
+#modal .modal-content .add-product .form-input select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+}
+#modal .modal-content .add-product .form-input select:focus {
+  outline: none;
+}
+#modal .modal-content .add-product .controller button[type=submit] {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #2f3640;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+#modal .modal-content .add-product .controller button[type=submit]:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+#modal .modal-content .add-product .controller .id {
+  display: none;
+}
+
+#modal .modal-content {
+  width: 600px;
+}
+#modal .modal-content .delete-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+#modal .modal-content .delete-product .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#modal .modal-content .delete-product button[type=button] {
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #2f3640;
+  transition: all 0.3s ease-in-out;
+}
+#modal .modal-content .delete-product button[type=button]:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#modal .modal-content .edit-product .form-input {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+#modal .modal-content .edit-product .form-input label {
+  padding-bottom: 8px;
+}
+#modal .modal-content .edit-product .form-input input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+}
+#modal .modal-content .edit-product .form-input input:focus {
+  outline: none;
+}
+#modal .modal-content .edit-product .form-input select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+}
+#modal .modal-content .edit-product .form-input select:focus {
+  outline: none;
+}
+#modal .modal-content .edit-product .controller button[type=submit] {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #2f3640;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+#modal .modal-content .edit-product .controller button[type=submit]:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+#modal .modal-content .edit-product .controller .id {
+  display: none;
+}
+
 /*# sourceMappingURL=product.css.map */

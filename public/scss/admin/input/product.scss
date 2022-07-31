@@ -117,3 +117,140 @@ table {
           }
      }
 }
+
+#modal {
+     // display: block;
+
+     .modal-content {
+          .add-product {
+               .form-input {
+                    display: flex;
+                    flex-direction: column;
+
+                    margin: 20px 0;
+
+                    label {
+                         padding-bottom: 8px;
+                    }
+
+                    input,
+                    textarea {
+                         padding: 8px 10px;
+
+                         border-radius: 6px;
+                         border: 1px solid $black-color;
+
+                         &:focus {
+                              outline: none;
+                         }
+                    }
+
+                    select {
+                         padding: 8px 10px;
+
+                         border-radius: 6px;
+                         border: 1px solid $black-color;
+
+                         &:focus {
+                              outline: none;
+                         }
+                    }
+               }
+
+               .controller {
+                    button[type="submit"] {
+                         @include buttonGenerator(100px, 30px, #2f3640, $white-color);
+
+                         display: block;
+
+                         margin: 0 auto;
+                    }
+
+                    .id {
+                         display: none;
+                    }
+               }
+          }
+     }
+}
+
+#modal {
+     // display: block;
+
+     .modal-content {
+          width: 600px;
+
+          .delete-product {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+
+               padding: 50px;
+
+               .title {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+               }
+               button[type="button"] {
+                    margin-top: 20px;
+
+                    @include buttonGenerator(100px, 30px, #2f3640, $white-color);
+               }
+          }
+     }
+}
+
+#modal {
+     // display: block;
+
+     .modal-content {
+          .edit-product {
+               .form-input {
+                    display: flex;
+                    flex-direction: column;
+
+                    margin: 20px 0;
+
+                    label {
+                         padding-bottom: 8px;
+                    }
+
+                    input {
+                         padding: 8px 10px;
+
+                         border-radius: 6px;
+                         border: 1px solid $black-color;
+
+                         &:focus {
+                              outline: none;
+                         }
+                    }
+
+                    select {
+                         padding: 8px 10px;
+
+                         border-radius: 6px;
+                         border: 1px solid $black-color;
+
+                         &:focus {
+                              outline: none;
+                         }
+                    }
+               }
+
+               .controller {
+                    button[type="submit"] {
+                         @include buttonGenerator(100px, 30px, #2f3640, $white-color);
+
+                         display: block;
+
+                         margin: 0 auto;
+                    }
+
+                    .id {
+                         display: none;
+                    }
+               }
+          }
+     }
+}

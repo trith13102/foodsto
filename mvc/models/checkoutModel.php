@@ -18,7 +18,7 @@ class checkoutModel extends Connect
         $status = false;
 
         $sql = "INSERT INTO orders (customer_id, amount, shipping_address, order_address, order_email, order_date, order_status, full_name, phone_number, note)
-                VALUES ('$id', '$amount', '$defaultAddress', '$address', '$email', '$time', '0', '$name', '$phone', '$note')";
+                VALUES ('$id', '$amount', '$defaultAddress', '$address', '$email', '$time', '1', '$name', '$phone', '$note')";
         if($this->dbConnect->query($sql)) 
         {
             $id_order = $this->dbConnect->insert_id;

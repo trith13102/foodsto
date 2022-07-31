@@ -7,10 +7,12 @@ class home extends Controller
 
         $model = $this->model('homeModel');
 
+
+
         $this->view("homeView", [
-            'fruits' => $model->getProductsByCategory(14),
-            'vegetables' => $model->getProductsByCategory(4),
-            'salads' => $model->getProductsByCategory(64),
+            'fruits' => $model->getProductsByCategory("14"),
+            'vegetables' => $model->getProductsByCategory("4"),
+            'salads' => $model->getProductsByCategory("64"),
             'products' => $model->getProducts(),
             'productSale' => $model->getProductSale(),
         ]);
