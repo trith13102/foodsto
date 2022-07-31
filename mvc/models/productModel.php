@@ -9,9 +9,11 @@ class productModel extends Connect
      public function getPage()
      {
           $page = 1;
-          if (isset($_GET['page'])) {
+          if (isset($_GET['page'])&&is_numeric($_GET['page'])) {
                $page = $_GET['page'];
                settype($page, 'int');
+          }else {
+               $page = 1;
           }
           return  $page;
      }
