@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+/* ===== Fonts ===== */
+/* ===== Colors ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid hsla(228deg, 22%, 95%, 0.2);
+  border-top-color: hsla(228deg, 22%, 95%, 0.8);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 50px;
+}
+.loader-wrapper #loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #3bb77e;
+  border-top-color: hsla(228deg, 22%, 95%, 0.8);
+}
+
+.section-wrapper {
+  margin-top: 20px;
+  padding: 20px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.table-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px 40px 30px;
+}
+.table-search .add button {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #2f3640;
+  transition: all 0.3s ease-in-out;
+}
+.table-search .add button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.table-search .search-input {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  border: 2px solid #2f3640;
+}
+.table-search .search-input input {
+  margin-right: 5px;
+  padding: 4px;
+  border: 0;
+}
+.table-search .search-input input:focus {
+  outline: none;
+}
+.table-search .search-input i {
+  margin-right: 5px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border: none;
+  border-spacing: 0;
+}
+table thead tr {
+  color: #fff;
+  background-color: #2d3436;
+}
+table thead tr th {
+  padding: 10px 25px;
+  text-align: left;
+}
+table tbody tr td {
+  padding: 15px 25px;
+}
+table tbody tr td .not-found {
+  text-align: center;
+  color: #707070;
+}
+table tbody tr button[type=button] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #2f3640;
+  transition: all 0.3s ease-in-out;
+}
+table tbody tr button[type=button]:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+table tbody tr:hover {
+  background-color: #ecf0f1;
+}
+table tbody tr:nth-of-type(even) {
+  background-color: rgba(236, 240, 241, 0.3411764706);
+}
+
+/*# sourceMappingURL=product.css.map */

@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+/* ===== Fonts ===== */
+/* ===== Colors ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid hsla(228deg, 22%, 95%, 0.2);
+  border-top-color: hsla(228deg, 22%, 95%, 0.8);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 50px;
+}
+.loader-wrapper #loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #3bb77e;
+  border-top-color: hsla(228deg, 22%, 95%, 0.8);
+}
+
+.status-loader-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.status-loader-wrapper #loader {
+  width: 25px;
+  height: 25px;
+  border: 3px solid #3bb77e;
+  border-top-color: hsla(228deg, 22%, 95%, 0.8);
+}
+
+.section-wrapper {
+  margin-top: 20px;
+  padding: 20px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border: none;
+  border-spacing: 0;
+}
+table thead tr {
+  color: #fff;
+  background-color: #2d3436;
+}
+table thead tr th {
+  padding: 10px 25px;
+  text-align: left;
+}
+table tbody tr td {
+  padding: 15px 25px;
+}
+table tbody tr td select {
+  padding: 5px;
+  border-radius: 5px;
+}
+table tbody tr td select:focus {
+  outline: none;
+}
+table tbody tr .failure {
+  font-weight: 600;
+  color: #ea2027;
+}
+table tbody tr .pending {
+  font-weight: 600;
+  color: #f1c40f;
+}
+table tbody tr .picking {
+  font-weight: 600;
+  color: #fa8231;
+}
+table tbody tr .shipping {
+  font-weight: 600;
+  color: #3867d6;
+}
+table tbody tr .success {
+  font-weight: 600;
+  color: #2ecc71;
+}
+table tbody tr button[type=button] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #2f3640;
+  transition: all 0.3s ease-in-out;
+}
+table tbody tr button[type=button]:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+table tbody tr:hover {
+  background-color: #ecf0f1;
+}
+table tbody tr:nth-of-type(even) {
+  background-color: rgba(236, 240, 241, 0.3411764706);
+}
+
+/*# sourceMappingURL=order.css.map */

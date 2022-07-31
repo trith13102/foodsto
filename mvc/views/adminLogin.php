@@ -10,7 +10,7 @@
      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
      <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-     <link rel="stylesheet" href="public/scss/admin/adminLogin.css">
+     <link rel="stylesheet" href="public/scss/admin/output/adminLogin.css">
      <title>FoodSto Management System</title>
 </head>
 
