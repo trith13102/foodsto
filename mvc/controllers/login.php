@@ -25,7 +25,7 @@ class Login extends Controller
                 "loginView",
                 [
                     "page" => "loginPage",
-                    "login_result" => $result
+                    "result" => $result
                 ]
             );
         } else {

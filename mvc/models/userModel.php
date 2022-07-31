@@ -9,11 +9,12 @@ class UserModel extends Connect
       if (mysqli_query($this->dbConnect, $qr)) {
          $result = true;
 
-         $this->CheckUserValid($email, $password);
+         return $this->CheckUserValid($email, $password);
       }
       return json_encode($result);
    }
 
+   
    public function CheckUserValid($email, $password)
    {
       $qr = "SELECT * From account WHERE email='$email'LIMIT 1";
@@ -27,8 +28,8 @@ class UserModel extends Connect
             $result = true;
             $this->UserLogin($row_data);
          }
-         return json_encode($result);
       }
+      return json_encode($result);
    }
 
    public function UserLogin($user){
