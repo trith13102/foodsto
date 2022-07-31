@@ -40,8 +40,8 @@
                             <div class="flex justify-between">
                                 <p class="text-[18px] leading-[48px] text-title-color">Showing 1-12 of 41 results</p>
                                 <form action="" method="get" class="mb-[30px]">
-                                    <select name="orderby" class="orderby" id="" aria-label="Shop Order">
-                                        <option value="menu_order" selected="selected">Mặc định</option>
+                                    <select name="orderby" class="orderby" id="" aria-label="Shop Order" onchange="this.form.submit()">
+                                        <option value="menu_order" >Mặc định</option>
                                         <option value="rating">Sắp xếp theo mức độ phổ biến</option>
                                         <option value="date">Sắp xếp theo mới nhất</option>
                                         <option value="price">Sắp xếp theo giá: thấp đến cao</option>
@@ -123,7 +123,12 @@
                                                 </li>
                                             <?php } else { ?>
                                                 <li class="inline-block">
-                                                    <a href="product&page=<?php echo $i ?>" target="_blank" class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
+                                                    <a href="
+                                                        <?php $orderby = $_GET['orderby']??'default';   ?>
+                                                            product&page=<?php echo $i ?>?orderby=<?php echo $orderby ?>
+                                                        "
+                                                    target="_blank" 
+                                                    class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
                                                         <?php echo $i ?>
                                                     </a>
                                                 </li>
