@@ -1,4 +1,4 @@
-<form class="py-2 my-10">
+<form class="py-2 my-10"  action="login/lostPass">
     <div class="flex flex-row items-center justify-center lg:justify-start">
         <h1 class="text-lg mb-7 mr-4">Quên mật khẩu? Hãy nhập Email, chúng tôi sẽ gửi bạn đường link để bạn đặt lại mật khẩu mới.
         </h1>

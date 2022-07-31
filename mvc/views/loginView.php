@@ -45,17 +45,17 @@
 
 
     <section class="mb-10 mt-20 font-primary-font">
-        
+
         <div class="px-2 text-gray-800 ">
             <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6 ">
                 <div class="xl:ml-20 xl:w-9/12 lg:w-10/12 md:w-10/12 mb-12 md:mb-0 shadow-product p-10">
 
-                        <?php
-                        require_once "./mvc/views/pages/" . $data["page"] . ".php";
-                        ?>
-                    </div>
+                    <?php
+                    require_once "./mvc/views/pages/" . $data["page"] . ".php";
+                    ?>
                 </div>
             </div>
+        </div>
     </section>
 
 
@@ -72,17 +72,19 @@
     <?php
     if (isset($data['result'])) {
 
-        echo "<script>console.log('".$data['result']."')
-            </script>" ;
+        echo "<script>console.log('" . $data['result'] . "')
+            </script>";
         if ($data['result'] == 'true') {
     ?>
             <script>
-               
+                document.getElementById('home_link').click();
+
                 // document.getElementById('home_link').click();
             </script>
     <?php
-        }  
+        }
     }
+
     ?>
 
 
