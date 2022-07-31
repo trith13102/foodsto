@@ -1,5 +1,6 @@
 <?php
 
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 class adminModel extends Connect
 {
      public function check_account()
@@ -214,7 +215,7 @@ class adminModel extends Connect
           $id = isset($_POST['id']) ? $_POST['id'] : die();
           $discount = isset($_POST['discount']) ? $_POST['discount'] : die();
 
-          $query = 'INSERT INTO sale_events (product_id, discount) VALUES("' . $id . '", "' . $discount . '")';
+          $query = 'INSERT INTO sale_events(product_id, discount) VALUES("' . $id . '", "' . $discount . '")';
 
           if ($this->dbConnect->query($query)) {
                echo json_encode(array("message" => "SUCCESS"));
@@ -224,13 +225,108 @@ class adminModel extends Connect
      }
 
      //   Products
+     private function skuGenerator()
+     {
+          $date = date("Y-m-d h:i:sa");
+
+          return "PRODUCT" . md5($date);
+     }
+
+     public function get_product()
+     {
+          $id = isset($_POST['id']) ? $_POST['id'] : die();
+
+          $query = 'SELECT * FROM products WHERE id="' . $id . '"';
+
+          $product = mysqli_fetch_all($this->dbConnect->query($query));
+
+          echo json_encode($product[0]);
+     }
+
      public function get_products()
      {
-          $query = 'SELECT products.thumbnail, products.id, products.name, categories.name, products.sku, products.price, products.weight, products.descriptions, products.create_date, products.stock FROM products
+          $query = 'SELECT products.thumbnail, products.id, products.name, categories.name, products.sku, products.price, products.weight, products.descriptions, DATE(products.create_date), products.stock FROM products
           INNER JOIN categories ON products.category_id = categories.id ORDER BY products.id DESC';
 
           $products = mysqli_fetch_all($this->dbConnect->query($query));
 
           echo json_encode($products);
+     }
+
+     public function add_product()
+     {
+          $category_id = isset($_POST['category_id']) ? $_POST['category_id'] : die();
+          $sku = $this->skuGenerator();
+          $name = isset($_POST['name']) ? $_POST['name'] : die();
+          $price = isset($_POST['price']) ? $_POST['price'] : die();
+          $weight = isset($_POST['weight']) ? $_POST['weight'] : die();
+          $description = isset($_POST['description']) ? $_POST['description'] : die();
+          $thumbnail = isset($_FILES["thumbnail"]) ? $this->uploadImage($_FILES["thumbnail"]['tmp_name'], "product_images/thumbnail") : die();
+          $create_date = date("Y-m-d H:i:s");
+          $stock = isset($_POST['stock']) ? $_POST['stock'] : die();
+
+          $query = 'INSERT INTO products(category_id, sku, name, price, weight, descriptions, thumbnail, create_date, stock)
+          VALUES ("' . $category_id . '", "' . $sku . '", "' . $name . '", "' . $price . '", "' . $weight . '", "' . $description . '",
+          "' . $thumbnail . '", "' . $create_date . '", "' . $stock . '")';
+
+          if ($this->dbConnect->query($query)) {
+               echo json_encode(array("message" => "SUCCESS"));
+          } else {
+               echo json_encode(array("message" => "FAILURE"));
+          }
+     }
+
+     public function update_product()
+     {
+          $id = isset($_POST['id']) ? $_POST['id'] : die();
+          $category_id = isset($_POST['category_id']) ? $_POST['category_id'] : die();
+          $name = isset($_POST['name']) ? $_POST['name'] : die();
+          $price = isset($_POST['price']) ? $_POST['price'] : die();
+          $weight = isset($_POST['weight']) ? $_POST['weight'] : die();
+          $description = isset($_POST['description']) ? $_POST['description'] : die();
+          $stock = isset($_POST['stock']) ? $_POST['stock'] : die();
+
+
+          if (isset($_FILES["thumbnail"])) {
+               $thumbnail = $this->uploadImage($_FILES["thumbnail"]['tmp_name'], "product_images/thumbnail");
+               $query = 'UPDATE products SET category_id="' . $category_id . '", name="' . $name . '", price="' . $price . '", weight="' . $weight . '", descriptions="' . $description . '", stock="' . $stock . '", thumbnail="' . $thumbnail . '" WHERE id ="' . $id . '"';
+
+               if ($this->dbConnect->query($query)) {
+                    echo json_encode(array("message" => "SUCCESS"));
+               } else {
+                    echo json_encode(array("message" => "FAILURE"));
+               }
+          } else {
+
+               $query = 'UPDATE products SET category_id="' . $category_id . '", name="' . $name . '", price="' . $price . '", weight="' . $weight . '", descriptions="' . $description . '", stock="' . $stock . '" WHERE id ="' . $id . '"';
+
+               if ($this->dbConnect->query($query)) {
+                    echo json_encode(array("message" => "SUCCESS"));
+               } else {
+                    echo json_encode(array("message" => "FAILURE"));
+               }
+          }
+     }
+
+     public function delete_product()
+     {
+          $id = isset($_POST['id']) ? $_POST['id'] : die();
+          $query = 'DELETE FROM products WHERE id = "' . $id . '"';
+
+          if ($this->dbConnect->query($query)) {
+               echo json_encode(array("message" => "SUCCESS"));
+          } else {
+               echo json_encode(array("message" => "FAILURE"));
+          }
+     }
+
+
+     //   Category
+     public function get_categories()
+     {
+          $query = "SELECT * FROM categories";
+          $categories = mysqli_fetch_all($this->dbConnect->query($query));
+
+          echo json_encode($categories);
      }
 }

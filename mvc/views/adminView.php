@@ -56,12 +56,12 @@
                                    <p>Sản phẩm đang bán</p>
                               </a>
                          </li>
-                         <li class="link">
+                         <!-- <li class="link">
                               <a href="admin/category" target="_self">
                                    <i class='bx bxs-category'></i>
                                    <p>Danh mục sản phẩm</p>
                               </a>
-                         </li>
+                         </li> -->
                     </ul>
                </div>
                <div class="controller">
