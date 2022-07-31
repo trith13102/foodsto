@@ -13,10 +13,11 @@
             }
 
             $this->view('productView',[
+                'arrProducts'=>$product,
                 'popular' => $model->popularProducts(),
                 'getPage' =>$model->getPage(),
-                'arrProducts'=> $product,
                 'numberPages' => $model->pagesProduct(),
+                
             ]);
 
          }

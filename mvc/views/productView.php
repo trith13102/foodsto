@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="text-left">
                                                 <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="" class="hover:text-primary-color transition-colors duration-700"><?php echo $row ['productName'] ?></a>
+                                                    <a href="details?id=<?php echo $row['productId'] ?>" class="hover:text-primary-color transition-colors duration-700"><?php echo $row ['productName'] ?></a>
                                                 </h5>
                                                 <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
                                                     <div class="text-primary-color">
@@ -87,7 +87,7 @@
                                             <div class="relative">
                                                 <ul class="flex">
                                                     <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                        <a href="cart?add&id=<?php echo $row['productId'] ?>" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
                                                             Thêm vào giỏ hàng
                                                         </a>
                                                     </li>
