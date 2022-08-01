@@ -19,13 +19,13 @@ class Mailer
             $mail->CharSet  = "utf-8";
             $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'phuckmps19413@fpt.edu.vn';                 // SMTP username
-            $mail->Password = 'raqlgqphmfagijko';                           // SMTP password
+            $mail->Username = 'foodstostore@gmail.com';                 // SMTP username
+            $mail->Password = 'anxgmdylhzpdjiah';                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
 
             //Recipients
-            $mail->setFrom('phuckmps19413@fpt.edu.vn', 'FoodSto');
+            $mail->setFrom('foodstostore@gmail.com', 'FoodSto');
             $mail->addAddress($email);     // Add a recipient
             // $mail->addAddress('ellen@example.com');               // Name is optional
             // $mail->addReplyTo('info@example.com', 'Information');
@@ -48,7 +48,7 @@ class Mailer
         }
     }
 
-    function order($email,$template)
+    function order($email, $template)
     {
         $mail = new PHPMailer(true);
         // Passing `true` enables exceptions
@@ -59,13 +59,13 @@ class Mailer
             $mail->CharSet  = "utf-8";
             $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'phuckmps19413@fpt.edu.vn';                 // SMTP username
-            $mail->Password = 'raqlgqphmfagijko';                           // SMTP password
+            $mail->Username = 'foodstostore@gmail.com';                 // SMTP username
+            $mail->Password = 'anxgmdylhzpdjiah';                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
 
             //Recipients
-            $mail->setFrom('phuckmps19413@fpt.edu.vn', 'FoodSto');
+            $mail->setFrom('foodstostore@gmail.com', 'FoodSto');
             $mail->addAddress($email);     // Add a recipient
             // $mail->addAddress('ellen@example.com');               // Name is optional
             // $mail->addReplyTo('info@example.com', 'Information');

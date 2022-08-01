@@ -37,76 +37,76 @@
                 <div class="list-product w-[75%] flex">
                     <div class="pr-[20px] pl-[15px] flex flex-wrap w-full">
                         <div class="w-full">
-                            <div class="flex justify-between">
-                                <p class="text-[18px] leading-[48px] text-title-color">Showing 1-12 of 41 results</p>
-                                <form action="" method="get" class="mb-[30px]">
+                            <div class="flex justify-end">
+                                <!-- <p class="text-[18px] leading-[48px] text-title-color">Showing 1-12 of 41 results</p> -->
+                                <form target="_self" action="" method="get" class="mb-[30px]">
                                     <select name="orderby" class="orderby" id="" aria-label="Shop Order" onchange="this.form.submit()">
-                                        <?php $orderby = $_GET['orderby']??'default';   ?>
-                                        <option value="menu_order" <?php echo $select = ($orderby=="menu_order") ? 'selected' : '' ?>  >Mặc định</option>
-                                        <option value="rating" <?php echo $select = ($orderby=="rating") ? 'selected' : '' ?> >Sắp xếp theo mức độ phổ biến</option>
-                                        <option value="date" <?php echo $select = ($orderby=="date") ? 'selected' : '' ?>  >Sắp xếp theo mới nhất</option>
-                                        <option value="price" <?php echo $select = ($orderby=="price") ? 'selected' : '' ?> >Sắp xếp theo giá: thấp đến cao</option>
-                                        <option value="price-desc" <?php echo $select = ($orderby=="price-desc") ? 'selected' : '' ?> >Sắp xếp theo giá: cao đến thấp</option>
+                                        <?php $orderby = $_GET['orderby'] ?? 'default';   ?>
+                                        <option value="menu_order" <?php echo $select = ($orderby == "menu_order") ? 'selected' : '' ?>>Mặc định</option>
+                                        <option value="rating" <?php echo $select = ($orderby == "rating") ? 'selected' : '' ?>>Sắp xếp theo mức độ phổ biến</option>
+                                        <option value="date" <?php echo $select = ($orderby == "date") ? 'selected' : '' ?>>Sắp xếp theo mới nhất</option>
+                                        <option value="price" <?php echo $select = ($orderby == "price") ? 'selected' : '' ?>>Sắp xếp theo giá: thấp đến cao</option>
+                                        <option value="price-desc" <?php echo $select = ($orderby == "price-desc") ? 'selected' : '' ?>>Sắp xếp theo giá: cao đến thấp</option>
                                     </select>
                                 </form>
                             </div>
                             <!-- List-Product -->
                             <div class=" mx-[-15px] flex flex-wrap">
-                                <?php while($row = mysqli_fetch_array($data['arrProducts'])){ ?>
-                                <div class="w-[33.33%] px-[15px] mb-[30px]">
-                                    <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
-                                        <div>
-                                            <img class="w-full rounded-[5px]" src="<?php echo $row ['productThumbnail'] ?>" alt="">
-                                        </div>
-                                        <div class="py-[15px] px-[5px] text-left">
-                                            <div class="block items-center">
-                                                <span class="text-[14px]"><?php echo $row ['name']; ?></span>
+                                <?php while ($row = mysqli_fetch_array($data['arrProducts'])) { ?>
+                                    <div class="w-[33.33%] px-[15px] mb-[30px]">
+                                        <div class="pt-[10px] pb-[10px] px-[10px] inline-block relative w-full shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)] bg-white-color rounded-[5px]">
+                                            <div>
+                                                <img class="w-full rounded-[5px]" src="<?php echo $row['productThumbnail'] ?>" alt="">
                                             </div>
-                                            <div class="text-left">
-                                                <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
-                                                    <a href="details?id=<?php echo $row['productId'] ?>" class="hover:text-primary-color transition-colors duration-700"><?php echo $row ['productName'] ?></a>
-                                                </h5>
-                                                <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
-                                                    <div class="text-primary-color">
-                                                        <span>$ </span>
-                                                        <span><?php echo number_format($row ['price']); ?></span>
-                                                    </div>
-                                                    <div class="iq-woo-product-price-rating-holder flex justify-between">
-                                                        <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
-                                                            <ul>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                                <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
-                                                            </ul>
-                                                            <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
+                                            <div class="py-[15px] px-[5px] text-left">
+                                                <div class="block items-center">
+                                                    <span class="text-[14px]"><?php echo $row['name']; ?></span>
+                                                </div>
+                                                <div class="text-left">
+                                                    <h5 class="self-center text-[1.37em] font-[600] leading-[1.3] tracking-[-0.02em]">
+                                                        <a href="details?id=<?php echo $row['productId'] ?>" class="hover:text-primary-color transition-colors duration-700" target="_self"><?php echo $row['productName'] ?></a>
+                                                    </h5>
+                                                    <div class="my-[10px] text-[18px] flex justify-between items-center font-[600]">
+                                                        <div class="text-primary-color">
+                                                            <span><?php echo number_format($row['price']); ?></span>
+                                                            <span>VND</span>
+                                                        </div>
+                                                        <div class="iq-woo-product-price-rating-holder flex justify-between">
+                                                            <div class="iq-woo-ratings text-secondary-color text-[14px] flex">
+                                                                <ul>
+                                                                    <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                    <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                    <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                    <li class="inline-block mr-[2px]"><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                    <li class="inline-block "><i class="fas fa-star text-[12px] font-[900]"></i></li>
+                                                                </ul>
+                                                                <span class="iq-review inline-block ml-[5px] text-body-text">(2)</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="relative">
-                                                <ul class="flex">
-                                                    <li class="mr-auto transition-all duration-500 mb-[10px]">
-                                                        <a href="cart?add&id=<?php echo $row['productId'] ?>" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
-                                                            Thêm vào giỏ hàng
-                                                        </a>
-                                                    </li>
-                                                    <li class="inline-block">
-                                                        <span class="feedback">
-                                                            <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
-                                                                <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                <div class="relative">
+                                                    <ul class="flex">
+                                                        <li class="mr-auto transition-all duration-500 mb-[10px]">
+                                                            <a href="cart?add&id=<?php echo $row['productId'] ?>" class="flex hover:bg-primary-color hover:border-primary-color py-[14px] px-[15px]  text-white-color text-[14px] font-[600] capitalize bg-secondary-color border-solid border border-secondary-color rounded-[5px] text-center transition-all duration-500">
+                                                                Thêm vào giỏ hàng
                                                             </a>
-                                                        </span>
-                                                    </li>
-                                                    <li class="inline-block ml-[5px]">
-                                                        <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
-                                                    </li>
-                                                </ul>
+                                                        </li>
+                                                        <li class="inline-block">
+                                                            <span class="feedback">
+                                                                <a href="" target="_blank" class="group hover:bg-secondary-color inline-flex items-center justify-center rounded-[5px] w-[45px] h-[45px] text-center border-solid  border border-secondary-color transition-all duration-500">
+                                                                    <i class="fas fa-heart text-secondary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="inline-block ml-[5px]">
+                                                            <button class="hover:bg-secondary-color hover:text-white text-secondary-color fa fa-eye w-[45px] h-[45px] border-solid rounded-[5px]  border border-secondary-color transition-all duration-500"></button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php } ?>
 
 
@@ -114,25 +114,24 @@
                             <!-- Number-Pages  -->
                             <div class="pagination text-center">
                                 <ul class="flex justify-center">
-                                    
-                                        <?php for ($i = 1; $i <= $data['numberPages']; $i++) {  ?>
-                                            <?php if ($i == $data['getPage']) { ?>
-                                                <li class="inline-block">
-                                                    <span aria-current="page" class="pages-number block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-white-color bg-primary-color border-primary-color">
-                                                        <?php echo $i ?>
-                                                    </span>
-                                                </li>
-                                            <?php } else { ?>
-                                                <li class="inline-block">
-                                                    <a href="
+
+                                    <?php for ($i = 1; $i <= $data['numberPages']; $i++) {  ?>
+                                        <?php if ($i == $data['getPage']) { ?>
+                                            <li class="inline-block">
+                                                <span aria-current="page" class="pages-number block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-white-color bg-primary-color border-primary-color">
+                                                    <?php echo $i ?>
+                                                </span>
+                                            </li>
+                                        <?php } else { ?>
+                                            <li class="inline-block">
+                                                <a href="
                                                             product&page=<?php echo $i ?>?orderby=<?php echo $orderby ?>
-                                                        "
-                                                    target="_blank" 
-                                                    class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
-                                                        <?php echo $i ?>
-                                                    </a>
-                                                </li>
-                                        <?php } }?>
+                                                        " target="_blank" class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
+                                                    <?php echo $i ?>
+                                                </a>
+                                            </li>
+                                    <?php }
+                                    } ?>
 
                                 </ul>
                             </div>
@@ -144,7 +143,7 @@
                     <div class="p-[10px] flex">
                         <div class="w-full">
                             <div class="inline-block p-[30px] text-body-text mt-[-5px] mb-[30px] rounded-[5px] shadow-[0px_1px_30px_0px_rgb(36,38,43,0.1)]">
-                                <form class="relative" method="GET">
+                                <form class="relative" method="GET" target="_self">
                                     <button type="submit" href="#" target="_blank" class="flex items-center justify-center absolute right-0 top-0 w-[48px] h-[48px]">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>

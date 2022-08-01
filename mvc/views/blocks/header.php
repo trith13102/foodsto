@@ -52,17 +52,17 @@
                         </li>
                     <?php   } else {
                     ?>
-                 
+
                         <li class="menu-item">
 
-                            <a class="item_title angle-down" href="" target="_self"> <img src="user_logo.jpg" style="width: 30px; height: 30px; display: inline-block; margin-right: 8px; border-radius: 50%;" alt=""></a>
+                            <a class="item_title angle-down" href="" target="_self"> <img src="https://img.icons8.com/nolan/344/40C057/user.png" style="width: 30px; height: 30px; display: inline-block; margin-right: 8px; border-radius: 50%;" alt=""></a>
 
                             <div class="menu-sol">
                                 <ul class="list-menu-sol">
                                     <form action="" method="post" target="_self">
                                         <div>
-                                            <img src="user_logo.jpg" style="border-radius: 50%; margin: auto;" alt="">
-                                           <h1 class="mt-3"><b><?php echo $_SESSION['email'] ?></b></h1>
+                                            <!-- <img src="user_logo.jpg" style="border-radius: 50%; margin: auto;" alt=""> -->
+                                            <h1 class="mt-3"><b><?php echo $_SESSION['email'] ?></b></h1>
                                         </div>
                                         <li>
                                             <a href="#" target="_self">Tài khoản</a>
@@ -97,7 +97,7 @@
                                 <i class="fas fa-shopping-basket"></i>
                                 <div class="basket-item-count">
                                     <span class="cart-items-count">
-                                        <?php echo (isset($_SESSION['cart'])) ? count(($_SESSION['cart'])) : '0';?>
+                                        <?php echo (isset($_SESSION['cart'])) ? count(($_SESSION['cart'])) : '0'; ?>
                                     </span>
                                 </div>
                             </a>
