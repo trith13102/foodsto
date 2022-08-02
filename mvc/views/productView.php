@@ -156,19 +156,23 @@
                                     <h4 before="" class="relative before:bottom-0 before:absolute before:w-[28px] before:h-[3px] before:bg-secondary-color before:content-[attr(before)] text-[20px] mb-[15px] pb-[15px] font-[600]">
                                         Dò tìm theo giá
                                     </h4>
-                                    <form action="" method="get" class="">
+                                    <form target="_self" action="" method="GET" class="">
+                                        <?php 
+                                            $min=$_GET['min'] ?? 0;
+                                            $max = $_GET['max'] ?? 1200;     
+                                        ?>
                                         <div class="scroll-price relative mt-[30px] rounded-[1em] bg-[#d5d5d5] mb-[1em] h-[0.5em] ">
                                             <div class="ui-slider-range absolute z-[1] left-[0%]  h-full bg-secondary-color rounded-[1em]"></div>
-                                            <input type="range" min="58" max="1200" value="0" class="range-input range-min ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
-                                            <input type="range" min="58" max="1200" value="1200" class="range-input range-max ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
+                                            <input onchange="this.form.submit()" name="min"  type="range" min="58" max="1200" value="<?php echo $min?>" class="range-input range-min ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
+                                            <input onchange="this.form.submit()" name="max" type="range" min="58" max="1200" value="<?php echo $max?>" class="range-input range-max ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
                                         </div>
                                         <div class="price-slider-amount">
                                             <!-- <input type="text" id="min-price" value="5> -->
                                             <div class="price-label text-[0.857em]">
                                                 Price:
-                                                <span class="from">$58</span>
+                                                <span class="from"><?php echo number_format($min) ?> VND</span>
                                                 -
-                                                <span class="to">$1,200</span>
+                                                <span class="to"><?php echo number_format($max) ?> VND</span>
                                             </div>
                                         </div>
                                     </form>

@@ -4,8 +4,6 @@ class productModel extends Connect
 {
      public $showProduct = 6;
 
-
-
      public function getPage()
      {
           $page = 1;
@@ -102,7 +100,7 @@ class productModel extends Connect
           if (isset($_GET['keyword'])) {
                $keyword = $_GET['keyword'];
           } else {
-               $keyword = "1";
+               $keyword = "";
           }
           $sql = "SELECT *,products.name AS productName  ,products.thumbnail as productThumbnail,products.id as productId
           FROM products
