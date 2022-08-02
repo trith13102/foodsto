@@ -126,8 +126,13 @@
                                             </li>
                                         <?php } else { ?>
                                             <li class="inline-block">
-                                                <a href="
-                                                            product&page=<?php echo $i ?>?orderby=<?php echo $orderby ?>
+                                                <a target="_self" href="
+                                                            product&page=<?php echo $i ?>
+                                                            <?php if($_GET['min']) { ?>
+                                                            ?min=<?php echo $_GET['min'] ?> &max=<?php echo $_GET['max'] ?>
+                                                            <?php }else{ ?>
+                                                            ?orderby=<?php echo $orderby ?>
+                                                            <?php } ?>
                                                         " target="_blank" class="pages-numberblock block rounded-[5px] px-[15px] w-[45px] h-[45px] leading-[45px] mx-[5px] border cursor-pointer text-title-color bg-white-color border-white-light-color hover:text-white-color hover:bg-primary-color hover:border-primary-color transition-all duration-500">
                                                     <?php echo $i ?>
                                                 </a>
