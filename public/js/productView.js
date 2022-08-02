@@ -1,7 +1,14 @@
+
 const rangeInput = document.querySelectorAll(".range-input"),
-    priceInput =document.querySelectorAll(".price-label span")
-    progress = document.querySelector(".ui-slider-range");
+    priceInput = document.querySelectorAll(".price-label span"),
+progress = document.querySelector(".ui-slider-range");
 let priceGap = 10;
+
+console.log('dadadda');
+
+let minVal = parseInt(rangeInput[0].value),
+    maxVal = parseInt(rangeInput[1].value);
+    
 
 if (!progress.style.width) {
     progress.style.width = "100%";

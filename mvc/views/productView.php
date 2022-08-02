@@ -37,10 +37,12 @@
                 <div class="list-product w-[75%] flex">
                     <div class="pr-[20px] pl-[15px] flex flex-wrap w-full">
                         <div class="w-full">
-                            <div class="flex justify-end">
-                                <!-- <p class="text-[18px] leading-[48px] text-title-color">Showing 1-12 of 41 results</p> -->
+                            <div class="flex justify-between">
+                                <p class="text-[18px] leading-[48px] text-title-color">
+                                    Showing <?php echo $count = ($data['numberPages']>1) ? 6 : $data['totalProducts'] ?> of <?php echo $data['totalProducts'] ?> results
+                                </p>
                                 <form target="_self" action="" method="get" class="mb-[30px]">
-                                    <select name="orderby" class="orderby" id="" aria-label="Shop Order" onchange="this.form.submit()">
+                                    <select target="_self" name="orderby" class="orderby" id="" aria-label="Shop Order" onchange="this.form.submit()">
                                         <?php $orderby = $_GET['orderby'] ?? 'default';   ?>
                                         <option value="menu_order" <?php echo $select = ($orderby == "menu_order") ? 'selected' : '' ?>>Mặc định</option>
                                         <option value="rating" <?php echo $select = ($orderby == "rating") ? 'selected' : '' ?>>Sắp xếp theo mức độ phổ biến</option>
@@ -157,13 +159,13 @@
                                     </h4>
                                     <form target="_self" action="" method="GET" class="">
                                         <?php 
-                                            $min=$_GET['min'] ?? 0;
-                                            $max = $_GET['max'] ?? 1200;     
+                                            $min=$_GET['min'] ?? 1000;
+                                            $max = $_GET['max'] ?? 650000;     
                                         ?>
                                         <div class="scroll-price relative mt-[30px] rounded-[1em] bg-[#d5d5d5] mb-[1em] h-[0.5em] ">
                                             <div class="ui-slider-range absolute z-[1] left-[0%]  h-full bg-secondary-color rounded-[1em]"></div>
-                                            <input onchange="this.form.submit()" name="min"  type="range" min="58" max="1200" value="<?php echo $min?>" class="range-input range-min ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
-                                            <input onchange="this.form.submit()" name="max" type="range" min="58" max="1200" value="<?php echo $max?>" class="range-input range-max ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
+                                            <input onchange="this.form.submit()" name="min"  type="range" min="1000" max="650000" value="<?php echo $min?>" class="range-input range-min ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
+                                            <input onchange="this.form.submit()" name="max" type="range" min="1000" max="650000" value="<?php echo $max?>" class="range-input range-max ui-slider-handle left-[0%]  cursor-ew-resize  absolute    z-[2]  "></input>
                                         </div>
                                         <div class="price-slider-amount">
                                             <!-- <input type="text" id="min-price" value="5> -->
@@ -282,6 +284,8 @@
             </div>
         </section>
         <script src="public/js/productView.js"></script>
+        <script src="public/js/productView2.js"></script>
+
 
     </div>
     <?php require_once './mvc/views/blocks/footer.php' ?>

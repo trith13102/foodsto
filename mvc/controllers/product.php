@@ -13,6 +13,7 @@ class product extends Controller
             'popular' => $model->popularProducts(),
             'getPage' => $model->getPage(),
             'numberPages' => $model->pagesProduct(),
+            'totalProducts' =>$model->totalProduct()
 
         ]);
     }
